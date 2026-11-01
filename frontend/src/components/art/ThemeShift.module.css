@@ -1,0 +1,38 @@
+.shift {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  width: 130vmax;
+  height: 130vmax;
+  margin: -65vmax 0 0 -65vmax;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    transparent 30%,
+    color-mix(in srgb, var(--accent) 22%, transparent) 44%,
+    color-mix(in srgb, var(--accent-2) 10%, transparent) 50%,
+    transparent 58%
+  );
+  opacity: 0;
+  transform: scale(0.15);
+  animation: wave 1100ms var(--ease-out) both;
+}
+
+@keyframes wave {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.15);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}

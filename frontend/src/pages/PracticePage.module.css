@@ -1,0 +1,525 @@
+.page {
+  --jc: var(--accent);
+  --jc2: var(--accent-2);
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.4vw, 28px);
+  min-width: 0;
+}
+
+/* ==================================================================== chooser */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: clamp(14px, 2vw, 22px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards > li {
+  display: flex;
+  min-width: 0;
+}
+
+.card {
+  --jc: var(--accent);
+  --jc2: var(--accent-2);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  padding: clamp(18px, 2vw, 24px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(140% 90% at 100% 0%, color-mix(in srgb, var(--jc) 16%, transparent), transparent 55%),
+    var(--surface);
+  transition: border-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+}
+
+.card:hover {
+  border-color: color-mix(in srgb, var(--jc) 50%, transparent);
+  box-shadow: 0 0 36px color-mix(in srgb, var(--jc) 18%, transparent);
+}
+
+.cardKanji {
+  position: absolute;
+  right: -6px;
+  top: -18px;
+  z-index: -1;
+  font-family: var(--font-kanji);
+  font-size: 140px;
+  line-height: 1;
+  color: var(--jc);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.cardHead {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cardTitle {
+  font-size: clamp(30px, 3vw, 40px);
+  color: #fff;
+}
+
+.cardName {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+.cardJp {
+  font-family: var(--font-kanji);
+  color: var(--jc2);
+  font-size: 15px;
+}
+
+.mini {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mini li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.mini li > div,
+.miniBlank {
+  width: 100%;
+}
+
+.miniBlank {
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  background: var(--bg-1);
+}
+
+.ok,
+.warn {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.ok {
+  color: var(--success);
+}
+
+.ok svg {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+}
+
+.warn {
+  color: var(--warning);
+}
+
+.cardButton {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* ==================================================================== session */
+.back {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: -8px 0 -8px -12px;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: clamp(14px, 2vw, 24px);
+}
+
+.heroGlyph {
+  display: grid;
+  place-items: center;
+  width: clamp(56px, 7vw, 84px);
+  height: clamp(56px, 7vw, 84px);
+  border-radius: 20px;
+  font-family: var(--font-kanji);
+  font-size: clamp(30px, 4vw, 46px);
+  color: var(--jc2);
+  background: radial-gradient(circle, color-mix(in srgb, var(--jc) 26%, transparent), color-mix(in srgb, var(--jc) 6%, transparent));
+  border: 1px solid color-mix(in srgb, var(--jc) 50%, transparent);
+  box-shadow: 0 0 36px color-mix(in srgb, var(--jc) 25%, transparent);
+  text-shadow: 0 0 16px var(--jc);
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-ui);
+  text-transform: uppercase;
+  color: var(--jc2);
+}
+
+.heroTitle {
+  font-size: var(--fs-h1);
+  line-height: 0.92;
+  color: #fff;
+  text-shadow: 0 0 40px color-mix(in srgb, var(--jc) 40%, transparent);
+}
+
+.heroName {
+  color: var(--text-muted);
+  font-size: var(--fs-lead);
+}
+
+.heroKanji {
+  font-family: var(--font-kanji);
+  color: var(--jc2);
+  margin-left: 6px;
+}
+
+.heroBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.description {
+  margin-top: 8px;
+  max-width: 70ch;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+.heroActions {
+  display: flex;
+  gap: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+  align-items: start;
+}
+
+.main,
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.8vw, 20px);
+  min-width: 0;
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.progressLabel {
+  flex: none;
+  font-family: var(--font-display);
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  color: var(--jc2);
+  font-variant-numeric: tabular-nums;
+}
+
+.progress {
+  position: relative;
+  flex: 1;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.progressFill {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--jc), var(--jc2));
+  box-shadow: 0 0 16px var(--jc);
+}
+
+/* ------------------------------------------------------------------ coach */
+.coach {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: clamp(16px, 2vw, 22px);
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  background: linear-gradient(var(--surface-strong), var(--surface-strong)) padding-box,
+    linear-gradient(135deg, color-mix(in srgb, var(--jc) 70%, transparent), transparent 60%) border-box;
+  box-shadow: 0 0 36px color-mix(in srgb, var(--jc) 12%, transparent);
+  min-width: 0;
+}
+
+.stepCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.stepHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stepNum {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: var(--tracking-ui);
+  text-transform: uppercase;
+  color: var(--jc2);
+}
+
+.stepSign {
+  font-size: clamp(40px, 4.6vw, 60px);
+  line-height: 0.9;
+  color: #fff;
+  text-shadow: 0 0 26px color-mix(in srgb, var(--jc) 45%, transparent);
+}
+
+.stepJp {
+  font-family: var(--font-kanji);
+  color: var(--text-muted);
+}
+
+.refCard {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1280 / 1000;
+  margin-top: 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-strong);
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.cues {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+.cues li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.cues li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--jc);
+  box-shadow: 0 0 8px var(--jc);
+}
+
+.sees {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  font-family: var(--font-ui);
+  font-size: 15px;
+}
+
+.sees strong {
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+
+.seesLabel {
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-ui);
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.seesNote {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.seesRight {
+  border-color: rgba(61, 220, 151, 0.45);
+  background: rgba(61, 220, 151, 0.07);
+}
+
+.seesRight .seesNote {
+  color: var(--success);
+}
+
+.seesOther .seesNote {
+  color: var(--warning);
+}
+
+.failure {
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 93, 108, 0.45);
+  background: rgba(255, 93, 108, 0.08);
+  color: var(--text);
+  font-size: var(--fs-sm);
+}
+
+.failure > svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  color: var(--danger);
+  margin-top: 1px;
+}
+
+.failure strong {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 17px;
+  letter-spacing: 0.03em;
+}
+
+.failureDetail {
+  display: block;
+  color: var(--text-muted);
+}
+
+/* ------------------------------------------------------------------ completion */
+.complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: var(--space-4) 0;
+  text-align: center;
+}
+
+.completeSeal {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 6px;
+  border-radius: 50%;
+  color: var(--jc2);
+  background: radial-gradient(circle, color-mix(in srgb, var(--jc) 30%, transparent), transparent 70%);
+}
+
+.completeSeal svg {
+  width: 52px;
+  height: 52px;
+  filter: drop-shadow(0 0 12px var(--jc));
+}
+
+.completeRing {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--jc);
+  box-shadow: 0 0 24px var(--jc), inset 0 0 18px color-mix(in srgb, var(--jc) 40%, transparent);
+}
+
+.completeKicker {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: var(--tracking-ui);
+  text-transform: uppercase;
+  color: var(--success);
+}
+
+.completeTitle {
+  font-size: clamp(40px, 4.4vw, 56px);
+  color: #fff;
+  text-shadow: 0 0 30px var(--jc);
+}
+
+.completeText {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  max-width: 34ch;
+}
+
+.completeActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* ------------------------------------------------------------------ layout */
+@container (min-width: 980px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr) clamp(320px, 32cqi, 400px);
+  }
+}
+
+@container (max-width: 640px) {
+  .hero {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .heroActions {
+    grid-column: 1 / -1;
+  }
+}

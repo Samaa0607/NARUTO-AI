@@ -1,0 +1,38 @@
+/* The dojo: centred column (like the reference, the village and the characters stay visible on
+   both sides at desktop widths), the camera and jutsu cards side by side, the sequence below. */
+
+.dojo {
+  width: 100%;
+  /* The backdrop plate (object-fit: cover) leaves Naruto and Sasuke a clear centre about
+     max(57vw, 101vh) wide (57vw on screens wider than 16:9, 101vh on narrower ones): stay inside it. */
+  max-width: min(1080px, max(56vw, 98vh));
+  margin: 0 auto;
+  padding: 4px clamp(12px, 3vw, 24px) 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--k-ink);
+  font-family: var(--k-body);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); /* ~55% / 45% */
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* tablet and phone: one column */
+@media (max-width: 899px) {
+  .top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dojo {
+    gap: 14px;
+    padding: 0 10px 20px;
+  }
+}

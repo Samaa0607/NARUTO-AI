@@ -1,0 +1,269 @@
+/* ------------------------------------------------------------------ cinematic reveal */
+/* The title during the build-up of an activation (activation voice, charge, name): a light band near
+   the top of the stage, no dark vignette over the picture, so the charge at the hands stays visible;
+   it leaves when the main effect is released. */
+.reveal {
+  --jc: var(--accent);
+  --jc2: var(--accent-2);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: start;
+  /* at the very top: the face, the hands and the charge stay in view */
+  padding-top: clamp(8px, 2.5%, 22px);
+  overflow: hidden;
+  pointer-events: none !important;
+}
+
+.band {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: clamp(4px, 0.8vw, 9px) 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(4, 6, 14, 0.44) 16%,
+    rgba(4, 6, 14, 0.44) 84%,
+    transparent 100%
+  );
+}
+
+.burst {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--jc) 34%, transparent) 0%, transparent 55%);
+  mix-blend-mode: screen;
+}
+
+.slash {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 50%;
+  height: 2px;
+  transform-origin: left center;
+  background: linear-gradient(90deg, transparent, var(--jc2) 20%, #fff 50%, var(--jc2) 80%, transparent);
+  box-shadow: 0 0 18px var(--jc), 0 0 40px var(--jc);
+  rotate: -4deg;
+}
+
+.revealBody {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2px, 0.5vw, 6px);
+  padding: 0 var(--space-4);
+  text-align: center;
+}
+
+.kanji {
+  font-family: var(--font-kanji);
+  font-size: clamp(12px, 1.4vw, 19px);
+  color: var(--jc2);
+  text-shadow: 0 0 18px var(--jc), 0 0 2px #000;
+  white-space: nowrap;
+}
+
+.title {
+  font-size: clamp(22px, 3.1vw, 44px);
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-shadow: 0 0 24px var(--jc), 0 0 60px var(--jc), 0 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.name {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: clamp(10px, 1vw, 13px);
+  letter-spacing: var(--tracking-ui);
+  text-transform: uppercase;
+  color: var(--text);
+  text-shadow: 0 2px 8px #000;
+}
+
+/* ------------------------------------------------------------------ banner while active */
+.banner {
+  --jc: var(--accent);
+  --jc2: var(--accent-2);
+  position: absolute;
+  top: clamp(14px, 2.4vw, 22px);
+  right: clamp(14px, 2.4vw, 22px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 8px;
+  border-radius: 999px;
+  background: rgba(4, 6, 14, 0.74);
+  border: 1px solid color-mix(in srgb, var(--jc) 60%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--jc) 35%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: none !important;
+}
+
+.bannerText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.bannerTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+.bannerState {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: var(--tracking-ui);
+  text-transform: uppercase;
+  color: var(--jc2);
+}
+
+/* ------------------------------------------------------------------ toasts */
+.toasts {
+  position: absolute;
+  top: clamp(56px, 7vw, 70px);
+  left: 50%;
+  translate: -50% 0;
+  width: min(460px, calc(100% - 24px));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none !important;
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 10px 10px 12px;
+  border-radius: var(--radius);
+  background: rgba(22, 6, 12, 0.86);
+  border: 1px solid rgba(255, 93, 108, 0.5);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 24px rgba(255, 93, 108, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: auto;
+}
+
+.toastIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: var(--danger);
+}
+
+/* a wrong sign: a gentle amber note (the progress is kept), not the red reset notice */
+.toastWarn {
+  border-color: rgba(255, 196, 92, 0.55);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 24px rgba(255, 196, 92, 0.14);
+}
+
+.toastWarn .toastIcon {
+  color: #ffc65c;
+}
+
+.toastIcon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.toastText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.toastTitle {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.toastDetail {
+  font-size: 13px;
+  color: #f2c6cc;
+  line-height: 1.4;
+}
+
+.toastClose {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin: -4px -2px 0 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #f2c6cc;
+  cursor: pointer;
+}
+
+.toastClose:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.toastClose svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ------------------------------------------------------------------ crowded (Shadow Clone) */
+.crowded {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(14px, 2.4vw, 22px);
+  translate: -50% 0;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(4, 6, 14, 0.78);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.35;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: none !important;
+}
+
+.crowded svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  color: var(--jutsu-clone);
+}
+
+@media (max-width: 560px) {
+  .crowded {
+    border-radius: var(--radius);
+  }
+
+  .toastDetail {
+    display: none;
+  }
+}

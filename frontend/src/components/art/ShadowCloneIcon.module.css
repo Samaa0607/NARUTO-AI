@@ -1,0 +1,345 @@
+/* Layers of the approved Shadow Clone art, bottom to top: the scene without clones < chakra glow <
+   left / right clone < Naruto + the clouds < smoke puffs and sparks. One 6 s loop: the left clone
+   appears in a puff of smoke, the right one a moment later, both hold (a faint chakra flicker), then
+   vanish in smoke and Naruto stands alone for a beat.
+   The base state (no animation) is the approved still with both clones visible, so Settings >
+   Animations "off" / "reduced" shows the full design. */
+.scene {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: 50%;
+  isolation: isolate;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* the clones grow out from behind Naruto's shoulders (and shrink back there) */
+.left {
+  transform-origin: 36.4% 48.1%;
+}
+
+.right {
+  transform-origin: 65.1% 48.1%;
+}
+
+.animated .left {
+  animation: clone-left 6s cubic-bezier(0.3, 0.7, 0.3, 1) infinite;
+}
+
+.animated .right {
+  animation: clone-right 6s cubic-bezier(0.3, 0.7, 0.3, 1) infinite;
+}
+
+@keyframes clone-left {
+  0%,
+  8% {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+  16% {
+    opacity: 1;
+    transform: scale(1.025);
+  }
+  21% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  39% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.78;
+  }
+  45% {
+    opacity: 1;
+  }
+  64% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  74%,
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes clone-right {
+  0%,
+  14% {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+  22% {
+    opacity: 1;
+    transform: scale(1.025);
+  }
+  27% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  45% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 0.78;
+  }
+  51% {
+    opacity: 1;
+  }
+  68% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  78%,
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* orange chakra flaring around Naruto as the clones are made */
+.aura {
+  position: absolute;
+  inset: 14% 18% 18%;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    rgba(255, 196, 110, 0.7),
+    rgba(255, 140, 40, 0.3) 55%,
+    rgba(255, 120, 30, 0) 100%
+  );
+  opacity: 0;
+  pointer-events: none;
+}
+
+.animated .aura {
+  animation: aura 6s ease-out infinite;
+}
+
+@keyframes aura {
+  0%,
+  5% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  11% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  30% {
+    opacity: 0.3;
+  }
+  50%,
+  100% {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+}
+
+/* "poof": a small cloud bursting where each clone appears / vanishes */
+.puff {
+  position: absolute;
+  width: 34%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.puffLeft {
+  left: 23%;
+  top: 39%;
+}
+
+.puffRight {
+  left: 78%;
+  top: 39%;
+}
+
+.puff i {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 45% 40%,
+    #fff 0 18%,
+    rgba(248, 249, 252, 0.95) 36%,
+    rgba(222, 228, 240, 0.72) 54%,
+    rgba(222, 228, 240, 0.28) 64%,
+    rgba(222, 228, 240, 0) 71%
+  );
+}
+
+.puff i:nth-child(1) {
+  left: 22%;
+  top: 24%;
+  width: 56%;
+  height: 56%;
+}
+
+.puff i:nth-child(2) {
+  left: 2%;
+  top: 40%;
+  width: 44%;
+  height: 44%;
+}
+
+.puff i:nth-child(3) {
+  left: 54%;
+  top: 38%;
+  width: 44%;
+  height: 44%;
+}
+
+.puff i:nth-child(4) {
+  left: 14%;
+  top: 2%;
+  width: 38%;
+  height: 38%;
+}
+
+.puff i:nth-child(5) {
+  left: 48%;
+  top: 6%;
+  width: 36%;
+  height: 36%;
+}
+
+.animated .puffLeft {
+  animation: puff-left 6s ease-out infinite;
+}
+
+.animated .puffRight {
+  animation: puff-right 6s ease-out infinite;
+}
+
+@keyframes puff-left {
+  0%,
+  5% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  10% {
+    opacity: 0.95;
+    transform: scale(0.85);
+  }
+  20% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+  62% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  67% {
+    opacity: 0.7;
+    transform: scale(0.75);
+  }
+  77%,
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes puff-right {
+  0%,
+  11% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  16% {
+    opacity: 0.95;
+    transform: scale(0.85);
+  }
+  26% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+  66% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  71% {
+    opacity: 0.7;
+    transform: scale(0.75);
+  }
+  81%,
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+/* chakra embers drifting up around him */
+.sparks i {
+  position: absolute;
+  width: 2.4%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #ffe1a1;
+  box-shadow: 0 0 3px 1px rgba(255, 150, 40, 0.85);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sparks i:nth-child(1) {
+  left: 30%;
+  top: 62%;
+}
+
+.sparks i:nth-child(2) {
+  left: 66%;
+  top: 58%;
+}
+
+.sparks i:nth-child(3) {
+  left: 44%;
+  top: 72%;
+}
+
+.sparks i:nth-child(4) {
+  left: 75%;
+  top: 70%;
+}
+
+.animated .sparks i {
+  animation: spark 3s ease-in infinite;
+}
+
+.animated .sparks i:nth-child(2) {
+  animation-delay: -0.8s;
+}
+
+.animated .sparks i:nth-child(3) {
+  animation-delay: -1.6s;
+}
+
+.animated .sparks i:nth-child(4) {
+  animation-delay: -2.3s;
+}
+
+@keyframes spark {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.6);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-780%) scale(1);
+  }
+}

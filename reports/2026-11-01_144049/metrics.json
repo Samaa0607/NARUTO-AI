@@ -1,0 +1,2442 @@
+{
+  "format": "shinobi-eval-v1",
+  "created": "2026-11-01T14:40:49",
+  "command": "C:\\Users\\user\\Desktop\\SHINOBI-AI\\evaluate.py run --sets test --sessions me_day_20261101_141550,me_day_20261101_142239,me_day_20261101_141650,me_day_20261101_142339,me_day_20261101_141440,me_day_20261101_142126,me_day_20261101_141623,me_day_20261101_142311,me_day_20261101_140600,me_day_20261101_141753,me_day_20261101_141901,me_day_20261101_142440,me_day_20261101_141518,me_day_20261101_142204,me_day_20261101_140631,me_day_20261101_141955,me_day_20261101_141718,me_day_20261101_142407,me_day_20261101_141409,me_day_20261101_142024,me_day_20261101_140826,me_day_20261101_142054 --title Independent test set: 22 new recordings made since 2026-11-01 14:04",
+  "title": "Independent test set: 22 new recordings made since 2026-11-01 14:04",
+  "notes": [],
+  "settings": {
+    "sets": [
+      "test"
+    ],
+    "recognizers": [
+      "landmarks",
+      "yolox",
+      "fused"
+    ],
+    "skip_start_s": 0.5,
+    "yolox_delay_s": 0.06,
+    "seal_rate_hz": 10,
+    "yolox_runs_per_s_median": 8.93,
+    "seal_min_score": 0.7,
+    "seal_no_hand_score": 0.85,
+    "seal_confirm": 2,
+    "seal_max_age": 0.35,
+    "landmark_min_prob": 0.6,
+    "conf_on": 0.75,
+    "hold_seconds": 0.3,
+    "data": "C:\\Users\\user\\Desktop\\SHINOBI-AI\\data",
+    "splits": "C:\\Users\\user\\Desktop\\SHINOBI-AI\\data\\splits.json"
+  },
+  "sets_evaluated": [
+    "test"
+  ],
+  "sessions_by_set": {
+    "test": [
+      "me_day_20261101_140600",
+      "me_day_20261101_141753",
+      "me_day_20261101_141901",
+      "me_day_20261101_142440",
+      "me_day_20261101_140631",
+      "me_day_20261101_141955",
+      "me_day_20261101_141409",
+      "me_day_20261101_142024",
+      "me_day_20261101_140826",
+      "me_day_20261101_142054",
+      "me_day_20261101_141440",
+      "me_day_20261101_142126",
+      "me_day_20261101_141518",
+      "me_day_20261101_142204",
+      "me_day_20261101_141550",
+      "me_day_20261101_142239",
+      "me_day_20261101_141623",
+      "me_day_20261101_142311",
+      "me_day_20261101_141650",
+      "me_day_20261101_142339",
+      "me_day_20261101_141718",
+      "me_day_20261101_142407"
+    ]
+  },
+  "model": {
+    "path": "C:\\Users\\user\\Desktop\\SHINOBI-AI\\models\\gesture_model.joblib",
+    "exists": true,
+    "usable": true,
+    "reason": "trained with splits",
+    "train_sessions": [
+      "me_day_20261030_174647",
+      "me_day_20261030_174917",
+      "me_day_20261030_175113",
+      "me_night_20261030_214750",
+      "me_night_20261030_215059",
+      "me_night_20261030_215447",
+      "me_night_20261030_215808",
+      "me_night_20261030_220040",
+      "me_night_20261030_220235",
+      "me_night_20261030_220443",
+      "me_night_20261030_220610",
+      "me_night_20261030_220743",
+      "me_night_20261030_221934",
+      "me_night_20261030_222121",
+      "me_night_20261030_222258",
+      "me_night_20261030_222645"
+    ],
+    "validation_sessions": [
+      "me_day_20261030_175251",
+      "me_night_20261030_222524",
+      "me_night_20261030_222754"
+    ],
+    "model_name": "random_forest",
+    "created": "2026-10-31T14:36:03",
+    "selection": "default"
+  },
+  "yolox_used": true,
+  "yolox_requested": true,
+  "frame_level": {
+    "test": {
+      "landmarks": {
+        "frames": 6450,
+        "accuracy": 0.6266666666666667,
+        "balanced_accuracy": 0.6191348408232199,
+        "macro_f1": 0.6152465850518002,
+        "per_class": {
+          "idle": {
+            "precision": 0.2899628252788104,
+            "recall": 0.8041237113402062,
+            "f1": 0.4262295081967213,
+            "support": 873,
+            "predicted": 2421
+          },
+          "ram": {
+            "precision": 0.8105515587529976,
+            "recall": 0.66015625,
+            "f1": 0.7276641550053822,
+            "support": 512,
+            "predicted": 417
+          },
+          "snake": {
+            "precision": 1.0,
+            "recall": 0.032640949554896145,
+            "f1": 0.06321839080459771,
+            "support": 674,
+            "predicted": 22
+          },
+          "tiger": {
+            "precision": 0.7038123167155426,
+            "recall": 0.4444444444444444,
+            "f1": 0.5448354143019296,
+            "support": 540,
+            "predicted": 341
+          },
+          "dog": {
+            "precision": 0.7037433155080214,
+            "recall": 0.9748148148148148,
+            "f1": 0.817391304347826,
+            "support": 675,
+            "predicted": 935
+          },
+          "monkey": {
+            "precision": 0.8906009244992296,
+            "recall": 1.0,
+            "f1": 0.9421352893235533,
+            "support": 578,
+            "predicted": 649
+          },
+          "boar": {
+            "precision": 1.0,
+            "recall": 0.3877917414721723,
+            "f1": 0.5588615782664942,
+            "support": 557,
+            "predicted": 216
+          },
+          "horse": {
+            "precision": 1.0,
+            "recall": 0.784570596797671,
+            "f1": 0.8792822185970637,
+            "support": 687,
+            "predicted": 539
+          },
+          "clone_seal": {
+            "precision": 1.0,
+            "recall": 0.9514705882352941,
+            "f1": 0.9751318764129615,
+            "support": 680,
+            "predicted": 647
+          },
+          "rasengan_palm": {
+            "precision": 0.38783269961977185,
+            "recall": 0.1513353115727003,
+            "f1": 0.21771611526147278,
+            "support": 674,
+            "predicted": 263
+          }
+        },
+        "confusion": {
+          "rows": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse",
+            "clone_seal",
+            "rasengan_palm"
+          ],
+          "cols": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse",
+            "clone_seal",
+            "rasengan_palm"
+          ],
+          "matrix": [
+            [
+              702,
+              0,
+              0,
+              1,
+              5,
+              4,
+              0,
+              0,
+              0,
+              161
+            ],
+            [
+              107,
+              338,
+              0,
+              67,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              651,
+              1,
+              22,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              222,
+              78,
+              0,
+              240,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              8,
+              0,
+              0,
+              0,
+              658,
+              9,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              578,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              11,
+              0,
+              0,
+              0,
+              272,
+              58,
+              216,
+              0,
+              0,
+              0
+            ],
+            [
+              148,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              539,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              33,
+              0,
+              0,
+              0,
+              0,
+              647,
+              0
+            ],
+            [
+              572,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              102
+            ]
+          ],
+          "correct_col": {
+            "idle": "idle",
+            "ram": "ram",
+            "snake": "snake",
+            "tiger": "tiger",
+            "dog": "dog",
+            "monkey": "monkey",
+            "boar": "boar",
+            "horse": "horse",
+            "clone_seal": "clone_seal",
+            "rasengan_palm": "rasengan_palm"
+          }
+        },
+        "sessions": [
+          "me_day_20261101_140631",
+          "me_day_20261101_140826",
+          "me_day_20261101_141409",
+          "me_day_20261101_141440",
+          "me_day_20261101_141518",
+          "me_day_20261101_141550",
+          "me_day_20261101_141623",
+          "me_day_20261101_141650",
+          "me_day_20261101_141718",
+          "me_day_20261101_141753",
+          "me_day_20261101_141901",
+          "me_day_20261101_141955",
+          "me_day_20261101_142024",
+          "me_day_20261101_142054",
+          "me_day_20261101_142126",
+          "me_day_20261101_142204",
+          "me_day_20261101_142239",
+          "me_day_20261101_142311",
+          "me_day_20261101_142339",
+          "me_day_20261101_142407",
+          "me_day_20261101_142440"
+        ],
+        "latency_ms": {
+          "n": 6595,
+          "mean": 0.74,
+          "median": 0.79,
+          "p90": 0.9,
+          "max": 3.4
+        }
+      },
+      "yolox": {
+        "frames": 3903,
+        "accuracy": 0.692800409941071,
+        "balanced_accuracy": 0.5795220307213094,
+        "macro_f1": 0.6036155388850089,
+        "per_class": {
+          "idle": {
+            "precision": 0.546833522942738,
+            "recall": 1.0,
+            "f1": 0.7070360382446679,
+            "support": 1442,
+            "predicted": 2637
+          },
+          "ram": {
+            "precision": 1.0,
+            "recall": 0.1842818428184282,
+            "f1": 0.3112128146453089,
+            "support": 369,
+            "predicted": 68
+          },
+          "snake": {
+            "precision": 1.0,
+            "recall": 0.32664756446991405,
+            "f1": 0.4924406047516199,
+            "support": 349,
+            "predicted": 114
+          },
+          "tiger": {
+            "precision": 0.8461538461538461,
+            "recall": 0.06162464985994398,
+            "f1": 0.11488250652741515,
+            "support": 357,
+            "predicted": 26
+          },
+          "dog": {
+            "precision": 1.0,
+            "recall": 0.13675213675213677,
+            "f1": 0.24060150375939854,
+            "support": 351,
+            "predicted": 48
+          },
+          "monkey": {
+            "precision": 1.0,
+            "recall": 0.960960960960961,
+            "f1": 0.9800918836140887,
+            "support": 333,
+            "predicted": 320
+          },
+          "boar": {
+            "precision": 1.0,
+            "recall": 0.9659090909090909,
+            "f1": 0.9826589595375723,
+            "support": 352,
+            "predicted": 340
+          },
+          "horse": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 350,
+            "predicted": 350
+          }
+        },
+        "confusion": {
+          "rows": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse",
+            "clone_seal",
+            "rasengan_palm"
+          ],
+          "cols": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse"
+          ],
+          "matrix": [
+            [
+              753,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              297,
+              68,
+              0,
+              4,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              235,
+              0,
+              114,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              335,
+              0,
+              0,
+              22,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              303,
+              0,
+              0,
+              0,
+              48,
+              0,
+              0,
+              0
+            ],
+            [
+              13,
+              0,
+              0,
+              0,
+              0,
+              320,
+              0,
+              0
+            ],
+            [
+              12,
+              0,
+              0,
+              0,
+              0,
+              0,
+              340,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              350
+            ],
+            [
+              349,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              340,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "correct_col": {
+            "idle": "idle",
+            "ram": "ram",
+            "snake": "snake",
+            "tiger": "tiger",
+            "dog": "dog",
+            "monkey": "monkey",
+            "boar": "boar",
+            "horse": "horse",
+            "clone_seal": "idle",
+            "rasengan_palm": "idle"
+          }
+        },
+        "sessions": [
+          "me_day_20261101_140600",
+          "me_day_20261101_140631",
+          "me_day_20261101_140826",
+          "me_day_20261101_141409",
+          "me_day_20261101_141440",
+          "me_day_20261101_141518",
+          "me_day_20261101_141550",
+          "me_day_20261101_141623",
+          "me_day_20261101_141650",
+          "me_day_20261101_141718",
+          "me_day_20261101_141753",
+          "me_day_20261101_141901",
+          "me_day_20261101_141955",
+          "me_day_20261101_142024",
+          "me_day_20261101_142054",
+          "me_day_20261101_142126",
+          "me_day_20261101_142204",
+          "me_day_20261101_142239",
+          "me_day_20261101_142311",
+          "me_day_20261101_142339",
+          "me_day_20261101_142407",
+          "me_day_20261101_142440"
+        ],
+        "latency_ms": {
+          "n": 3998,
+          "mean": 31.45,
+          "median": 31.03,
+          "p90": 32.34,
+          "max": 72.34
+        }
+      },
+      "fused": {
+        "frames": 7147,
+        "accuracy": 0.49391353015251155,
+        "balanced_accuracy": 0.4524901586800284,
+        "macro_f1": 0.4616826782635954,
+        "per_class": {
+          "idle": {
+            "precision": 0.25987614776852447,
+            "recall": 0.8928833455612619,
+            "f1": 0.4025802183261661,
+            "support": 1363,
+            "predicted": 4683
+          },
+          "ram": {
+            "precision": 1.0,
+            "recall": 0.15268456375838926,
+            "f1": 0.26491994177583694,
+            "support": 596,
+            "predicted": 91
+          },
+          "snake": {
+            "precision": 1.0,
+            "recall": 0.24480712166172106,
+            "f1": 0.39332538736591177,
+            "support": 674,
+            "predicted": 165
+          },
+          "tiger": {
+            "precision": 0.8076923076923077,
+            "recall": 0.03535353535353535,
+            "f1": 0.06774193548387097,
+            "support": 594,
+            "predicted": 26
+          },
+          "dog": {
+            "precision": 1.0,
+            "recall": 0.1259259259259259,
+            "f1": 0.22368421052631576,
+            "support": 675,
+            "predicted": 85
+          },
+          "monkey": {
+            "precision": 1.0,
+            "recall": 0.8981636060100167,
+            "f1": 0.9463500439753738,
+            "support": 599,
+            "predicted": 538
+          },
+          "boar": {
+            "precision": 1.0,
+            "recall": 0.9619834710743802,
+            "f1": 0.9806234203875316,
+            "support": 605,
+            "predicted": 582
+          },
+          "horse": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 687,
+            "predicted": 687
+          },
+          "clone_seal": {
+            "precision": 1.0,
+            "recall": 0.061764705882352944,
+            "f1": 0.11634349030470914,
+            "support": 680,
+            "predicted": 42
+          },
+          "rasengan_palm": {
+            "precision": 0.4112903225806452,
+            "recall": 0.1513353115727003,
+            "f1": 0.2212581344902386,
+            "support": 674,
+            "predicted": 248
+          }
+        },
+        "confusion": {
+          "rows": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse",
+            "clone_seal",
+            "rasengan_palm"
+          ],
+          "cols": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse",
+            "clone_seal",
+            "rasengan_palm"
+          ],
+          "matrix": [
+            [
+              1217,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              146
+            ],
+            [
+              500,
+              91,
+              0,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              509,
+              0,
+              165,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              573,
+              0,
+              0,
+              21,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              590,
+              0,
+              0,
+              0,
+              85,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              61,
+              0,
+              0,
+              0,
+              0,
+              538,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              23,
+              0,
+              0,
+              0,
+              0,
+              0,
+              582,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              687,
+              0,
+              0
+            ],
+            [
+              638,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              42,
+              0
+            ],
+            [
+              572,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              102
+            ]
+          ],
+          "correct_col": {
+            "idle": "idle",
+            "ram": "ram",
+            "snake": "snake",
+            "tiger": "tiger",
+            "dog": "dog",
+            "monkey": "monkey",
+            "boar": "boar",
+            "horse": "horse",
+            "clone_seal": "clone_seal",
+            "rasengan_palm": "rasengan_palm"
+          }
+        },
+        "sessions": [
+          "me_day_20261101_140600",
+          "me_day_20261101_140631",
+          "me_day_20261101_140826",
+          "me_day_20261101_141409",
+          "me_day_20261101_141440",
+          "me_day_20261101_141518",
+          "me_day_20261101_141550",
+          "me_day_20261101_141623",
+          "me_day_20261101_141650",
+          "me_day_20261101_141718",
+          "me_day_20261101_141753",
+          "me_day_20261101_141901",
+          "me_day_20261101_141955",
+          "me_day_20261101_142024",
+          "me_day_20261101_142054",
+          "me_day_20261101_142126",
+          "me_day_20261101_142204",
+          "me_day_20261101_142239",
+          "me_day_20261101_142311",
+          "me_day_20261101_142339",
+          "me_day_20261101_142407",
+          "me_day_20261101_142440"
+        ],
+        "latency_ms": {
+          "n": 7308,
+          "mean": 0.07,
+          "median": 0.07,
+          "p90": 0.1,
+          "max": 18.02
+        }
+      }
+    }
+  },
+  "sequence_level": {
+    "takes_found": 0,
+    "takes": {
+      "test": {}
+    },
+    "single_sign_streams": {
+      "sessions": 22,
+      "minutes": 7.31,
+      "false_activations": 0,
+      "per_minute": 0.0,
+      "details": []
+    }
+  },
+  "recordings": [
+    {
+      "id": "me_day_20261101_140600",
+      "set": "test",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 426,
+      "scored_frames": 415,
+      "duration_s": 19.95,
+      "hands_found": 0.0,
+      "landmarks": {
+        "frames": 0,
+        "accuracy": null,
+        "latency_ms": null
+      },
+      "video": {
+        "frames": 219,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 213,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 219,
+          "mean": 31.12,
+          "median": 30.88,
+          "p90": 31.86,
+          "max": 46.07
+        }
+      },
+      "yolox_runs_per_s": 10.03,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 415,
+        "accuracy": 1.0,
+        "sources": {
+          "none": 415
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 426,
+          "mean": 0.09,
+          "median": 0.04,
+          "p90": 0.05,
+          "max": 18.02
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_141753",
+      "set": "test",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 336,
+      "scored_frames": 329,
+      "duration_s": 19.94,
+      "hands_found": 1.0,
+      "landmarks": {
+        "frames": 329,
+        "accuracy": 0.5471,
+        "latency_ms": {
+          "n": 336,
+          "mean": 0.68,
+          "median": 0.78,
+          "p90": 0.81,
+          "max": 1.07
+        }
+      },
+      "video": {
+        "frames": 173,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 169,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 173,
+          "mean": 30.98,
+          "median": 30.85,
+          "p90": 31.8,
+          "max": 37.18
+        }
+      },
+      "yolox_runs_per_s": 8.68,
+      "controller": {
+        "confirmed": [
+          [
+            0.542,
+            "rasengan_palm"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 329,
+        "accuracy": 0.5623,
+        "sources": {
+          "landmarks": 144,
+          "none": 185
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [
+          "rasengan_palm"
+        ],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 336,
+          "mean": 0.08,
+          "median": 0.08,
+          "p90": 0.1,
+          "max": 1.18
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_141901",
+      "set": "test",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 294,
+      "scored_frames": 288,
+      "duration_s": 19.94,
+      "hands_found": 0.771,
+      "landmarks": {
+        "frames": 222,
+        "accuracy": 0.955,
+        "latency_ms": {
+          "n": 228,
+          "mean": 0.54,
+          "median": 0.53,
+          "p90": 0.56,
+          "max": 0.95
+        }
+      },
+      "video": {
+        "frames": 198,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 194,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 198,
+          "mean": 32.75,
+          "median": 31.27,
+          "p90": 37.35,
+          "max": 47.84
+        }
+      },
+      "yolox_runs_per_s": 9.33,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 288,
+        "accuracy": 1.0,
+        "sources": {
+          "none": 288
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 294,
+          "mean": 0.09,
+          "median": 0.09,
+          "p90": 0.14,
+          "max": 0.3
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_142440",
+      "set": "test",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 338,
+      "scored_frames": 331,
+      "duration_s": 19.95,
+      "hands_found": 0.973,
+      "landmarks": {
+        "frames": 322,
+        "accuracy": 0.9627,
+        "latency_ms": {
+          "n": 329,
+          "mean": 0.83,
+          "median": 0.81,
+          "p90": 0.92,
+          "max": 1.98
+        }
+      },
+      "video": {
+        "frames": 181,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 177,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 181,
+          "mean": 31.38,
+          "median": 31.0,
+          "p90": 32.7,
+          "max": 40.27
+        }
+      },
+      "yolox_runs_per_s": 9.02,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 331,
+        "accuracy": 0.994,
+        "sources": {
+          "none": 329,
+          "landmarks": 2
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 338,
+          "mean": 0.06,
+          "median": 0.07,
+          "p90": 0.08,
+          "max": 0.2
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_140631",
+      "set": "test",
+      "kind": "single",
+      "group": "ram",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 316,
+      "scored_frames": 308,
+      "duration_s": 19.96,
+      "hands_found": 0.727,
+      "landmarks": {
+        "frames": 224,
+        "accuracy": 0.3348,
+        "latency_ms": {
+          "n": 228,
+          "mean": 0.57,
+          "median": 0.53,
+          "p90": 0.64,
+          "max": 1.02
+        }
+      },
+      "video": {
+        "frames": 196,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 191,
+        "accuracy": 0.1099,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 196,
+          "mean": 31.19,
+          "median": 31.09,
+          "p90": 31.89,
+          "max": 36.86
+        }
+      },
+      "yolox_runs_per_s": 9.27,
+      "controller": {
+        "confirmed": [
+          [
+            8.355,
+            "ram"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 308,
+        "accuracy": 0.0779,
+        "sources": {
+          "none": 279,
+          "yolox": 29
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 8.355,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 316,
+          "mean": 0.06,
+          "median": 0.06,
+          "p90": 0.08,
+          "max": 0.2
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_141955",
+      "set": "test",
+      "kind": "single",
+      "group": "ram",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 295,
+      "scored_frames": 288,
+      "duration_s": 19.93,
+      "hands_found": 1.0,
+      "landmarks": {
+        "frames": 288,
+        "accuracy": 0.9132,
+        "latency_ms": {
+          "n": 295,
+          "mean": 0.59,
+          "median": 0.53,
+          "p90": 0.79,
+          "max": 1.29
+        }
+      },
+      "video": {
+        "frames": 182,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 178,
+        "accuracy": 0.264,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 182,
+          "mean": 31.21,
+          "median": 31.04,
+          "p90": 31.88,
+          "max": 34.76
+        }
+      },
+      "yolox_runs_per_s": 8.93,
+      "controller": {
+        "confirmed": [
+          [
+            3.399,
+            "ram"
+          ],
+          [
+            5.022,
+            "ram"
+          ],
+          [
+            8.15,
+            "ram"
+          ],
+          [
+            11.521,
+            "ram"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 288,
+        "accuracy": 0.2326,
+        "sources": {
+          "none": 221,
+          "yolox": 67
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 3.399,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 295,
+          "mean": 0.07,
+          "median": 0.07,
+          "p90": 0.09,
+          "max": 0.15
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_141409",
+      "set": "test",
+      "kind": "single",
+      "group": "snake",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 342,
+      "scored_frames": 334,
+      "duration_s": 19.98,
+      "hands_found": 1.0,
+      "landmarks": {
+        "frames": 334,
+        "accuracy": 0.0,
+        "latency_ms": {
+          "n": 342,
+          "mean": 0.85,
+          "median": 0.82,
+          "p90": 0.92,
+          "max": 1.76
+        }
+      },
+      "video": {
+        "frames": 179,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 175,
+        "accuracy": 0.16,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 179,
+          "mean": 31.67,
+          "median": 31.22,
+          "p90": 32.19,
+          "max": 72.34
+        }
+      },
+      "yolox_runs_per_s": 8.91,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 334,
+        "accuracy": 0.0629,
+        "sources": {
+          "none": 313,
+          "yolox": 21
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 342,
+          "mean": 0.07,
+          "median": 0.08,
+          "p90": 0.09,
+          "max": 0.3
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_142024",
+      "set": "test",
+      "kind": "single",
+      "group": "snake",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 348,
+      "scored_frames": 340,
+      "duration_s": 19.93,
+      "hands_found": 1.0,
+      "landmarks": {
+        "frames": 340,
+        "accuracy": 0.0647,
+        "latency_ms": {
+          "n": 348,
+          "mean": 0.89,
+          "median": 0.84,
+          "p90": 1.0,
+          "max": 2.48
+        }
+      },
+      "video": {
+        "frames": 178,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 174,
+        "accuracy": 0.4943,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 178,
+          "mean": 31.4,
+          "median": 31.21,
+          "p90": 32.27,
+          "max": 34.42
+        }
+      },
+      "yolox_runs_per_s": 8.93,
+      "controller": {
+        "confirmed": [
+          [
+            1.389,
+            "snake"
+          ],
+          [
+            2.112,
+            "snake"
+          ],
+          [
+            3.478,
+            "snake"
+          ],
+          [
+            5.45,
+            "snake"
+          ],
+          [
+            7.08,
+            "snake"
+          ],
+          [
+            9.228,
+            "snake"
+          ],
+          [
+            11.712,
+            "snake"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 340,
+        "accuracy": 0.4235,
+        "sources": {
+          "none": 196,
+          "yolox": 144
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 1.389,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 348,
+          "mean": 0.08,
+          "median": 0.08,
+          "p90": 0.11,
+          "max": 0.14
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_140826",
+      "set": "test",
+      "kind": "single",
+      "group": "tiger",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 286,
+      "scored_frames": 280,
+      "duration_s": 19.93,
+      "hands_found": 0.807,
+      "landmarks": {
+        "frames": 226,
+        "accuracy": 0.0177,
+        "latency_ms": {
+          "n": 232,
+          "mean": 0.56,
+          "median": 0.52,
+          "p90": 0.79,
+          "max": 0.94
+        }
+      },
+      "video": {
+        "frames": 201,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 196,
+        "accuracy": 0.0,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 201,
+          "mean": 30.82,
+          "median": 30.62,
+          "p90": 31.53,
+          "max": 34.62
+        }
+      },
+      "yolox_runs_per_s": 9.73,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 280,
+        "accuracy": 0.0,
+        "sources": {
+          "none": 280
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 286,
+          "mean": 0.06,
+          "median": 0.07,
+          "p90": 0.07,
+          "max": 0.17
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_142054",
+      "set": "test",
+      "kind": "single",
+      "group": "tiger",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 321,
+      "scored_frames": 314,
+      "duration_s": 19.91,
+      "hands_found": 1.0,
+      "landmarks": {
+        "frames": 314,
+        "accuracy": 0.7516,
+        "latency_ms": {
+          "n": 321,
+          "mean": 0.6,
+          "median": 0.52,
+          "p90": 0.79,
+          "max": 1.19
+        }
+      },
+      "video": {
+        "frames": 165,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 161,
+        "accuracy": 0.1366,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 165,
+          "mean": 31.87,
+          "median": 30.99,
+          "p90": 33.04,
+          "max": 47.7
+        }
+      },
+      "yolox_runs_per_s": 8.29,
+      "controller": {
+        "confirmed": [
+          [
+            9.725,
+            "tiger"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 314,
+        "accuracy": 0.0669,
+        "sources": {
+          "none": 293,
+          "yolox": 21
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 9.725,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 321,
+          "mean": 0.07,
+          "median": 0.07,
+          "p90": 0.09,
+          "max": 0.14
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_141440",
+      "set": "test",
+      "kind": "single",
+      "group": "dog",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 346,
+      "scored_frames": 338,
+      "duration_s": 19.96,
+      "hands_found": 1.0,
+      "landmarks": {
+        "frames": 338,
+        "accuracy": 1.0,
+        "latency_ms": {
+          "n": 346,
+          "mean": 0.79,
+          "median": 0.79,
+          "p90": 0.88,
+          "max": 1.18
+        }
+      },
+      "video": {
+        "frames": 180,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 176,
+        "accuracy": 0.2727,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 180,
+          "mean": 31.91,
+          "median": 31.23,
+          "p90": 33.35,
+          "max": 52.84
+        }
+      },
+      "yolox_runs_per_s": 8.97,
+      "controller": {
+        "confirmed": [
+          [
+            8.465,
+            "dog"
+          ],
+          [
+            14.669,
+            "dog"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 338,
+        "accuracy": 0.2515,
+        "sources": {
+          "none": 253,
+          "yolox": 85
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 8.465,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 346,
+          "mean": 0.07,
+          "median": 0.08,
+          "p90": 0.1,
+          "max": 0.2
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_142126",
+      "set": "test",
+      "kind": "single",
+      "group": "dog",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 344,
+      "scored_frames": 337,
+      "duration_s": 19.88,
+      "hands_found": 1.0,
+      "landmarks": {
+        "frames": 337,
+        "accuracy": 0.9496,
+        "latency_ms": {
+          "n": 344,
+          "mean": 0.84,
+          "median": 0.81,
+          "p90": 0.92,
+          "max": 1.8
+        }
+      },
+      "video": {
+        "frames": 179,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 175,
+        "accuracy": 0.0,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 179,
+          "mean": 30.93,
+          "median": 30.8,
+          "p90": 31.7,
+          "max": 33.02
+        }
+      },
+      "yolox_runs_per_s": 8.95,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 337,
+        "accuracy": 0.0,
+        "sources": {
+          "none": 337
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 344,
+          "mean": 0.07,
+          "median": 0.07,
+          "p90": 0.1,
+          "max": 0.18
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_141518",
+      "set": "test",
+      "kind": "single",
+      "group": "monkey",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 306,
+      "scored_frames": 300,
+      "duration_s": 19.92,
+      "hands_found": 0.937,
+      "landmarks": {
+        "frames": 281,
+        "accuracy": 1.0,
+        "latency_ms": {
+          "n": 287,
+          "mean": 0.55,
+          "median": 0.53,
+          "p90": 0.6,
+          "max": 0.86
+        }
+      },
+      "video": {
+        "frames": 174,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 170,
+        "accuracy": 0.9235,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 174,
+          "mean": 33.27,
+          "median": 31.54,
+          "p90": 37.52,
+          "max": 68.62
+        }
+      },
+      "yolox_runs_per_s": 8.63,
+      "controller": {
+        "confirmed": [
+          [
+            0.78,
+            "monkey"
+          ],
+          [
+            7.544,
+            "monkey"
+          ],
+          [
+            10.384,
+            "monkey"
+          ],
+          [
+            11.667,
+            "monkey"
+          ],
+          [
+            15.129,
+            "monkey"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 300,
+        "accuracy": 0.7967,
+        "sources": {
+          "yolox": 239,
+          "none": 61
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.78,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 306,
+          "mean": 0.07,
+          "median": 0.08,
+          "p90": 0.09,
+          "max": 0.23
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_142204",
+      "set": "test",
+      "kind": "single",
+      "group": "monkey",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 306,
+      "scored_frames": 299,
+      "duration_s": 19.94,
+      "hands_found": 0.993,
+      "landmarks": {
+        "frames": 297,
+        "accuracy": 1.0,
+        "latency_ms": {
+          "n": 304,
+          "mean": 0.54,
+          "median": 0.52,
+          "p90": 0.58,
+          "max": 1.43
+        }
+      },
+      "video": {
+        "frames": 167,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 163,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 167,
+          "mean": 31.82,
+          "median": 31.18,
+          "p90": 32.92,
+          "max": 55.81
+        }
+      },
+      "yolox_runs_per_s": 8.38,
+      "controller": {
+        "confirmed": [
+          [
+            0.811,
+            "monkey"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 299,
+        "accuracy": 1.0,
+        "sources": {
+          "yolox": 299
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.811,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 306,
+          "mean": 0.07,
+          "median": 0.08,
+          "p90": 0.09,
+          "max": 0.21
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_141550",
+      "set": "test",
+      "kind": "single",
+      "group": "boar",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 317,
+      "scored_frames": 311,
+      "duration_s": 19.93,
+      "hands_found": 0.878,
+      "landmarks": {
+        "frames": 273,
+        "accuracy": 0.7546,
+        "latency_ms": {
+          "n": 278,
+          "mean": 0.77,
+          "median": 0.8,
+          "p90": 0.91,
+          "max": 1.27
+        }
+      },
+      "video": {
+        "frames": 187,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 182,
+        "accuracy": 0.9341,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 187,
+          "mean": 31.33,
+          "median": 31.11,
+          "p90": 31.98,
+          "max": 36.33
+        }
+      },
+      "yolox_runs_per_s": 9.18,
+      "controller": {
+        "confirmed": [
+          [
+            0.727,
+            "boar"
+          ],
+          [
+            5.584,
+            "boar"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 311,
+        "accuracy": 0.926,
+        "sources": {
+          "yolox": 288,
+          "none": 23
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.727,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 317,
+          "mean": 0.08,
+          "median": 0.08,
+          "p90": 0.12,
+          "max": 0.26
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_142239",
+      "set": "test",
+      "kind": "single",
+      "group": "boar",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 300,
+      "scored_frames": 294,
+      "duration_s": 19.87,
+      "hands_found": 0.966,
+      "landmarks": {
+        "frames": 284,
+        "accuracy": 0.0352,
+        "latency_ms": {
+          "n": 290,
+          "mean": 0.56,
+          "median": 0.52,
+          "p90": 0.68,
+          "max": 1.01
+        }
+      },
+      "video": {
+        "frames": 175,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 170,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 175,
+          "mean": 31.37,
+          "median": 31.14,
+          "p90": 32.48,
+          "max": 38.47
+        }
+      },
+      "yolox_runs_per_s": 8.71,
+      "controller": {
+        "confirmed": [
+          [
+            0.844,
+            "boar"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 294,
+        "accuracy": 1.0,
+        "sources": {
+          "yolox": 294
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.844,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 300,
+          "mean": 0.07,
+          "median": 0.08,
+          "p90": 0.08,
+          "max": 0.17
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_141623",
+      "set": "test",
+      "kind": "single",
+      "group": "horse",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 350,
+      "scored_frames": 342,
+      "duration_s": 19.95,
+      "hands_found": 1.0,
+      "landmarks": {
+        "frames": 342,
+        "accuracy": 0.9444,
+        "latency_ms": {
+          "n": 350,
+          "mean": 0.87,
+          "median": 0.81,
+          "p90": 0.92,
+          "max": 3.4
+        }
+      },
+      "video": {
+        "frames": 180,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 176,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 180,
+          "mean": 31.48,
+          "median": 31.09,
+          "p90": 32.27,
+          "max": 58.21
+        }
+      },
+      "yolox_runs_per_s": 8.97,
+      "controller": {
+        "confirmed": [
+          [
+            0.822,
+            "horse"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 342,
+        "accuracy": 1.0,
+        "sources": {
+          "yolox": 342
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.822,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 350,
+          "mean": 0.07,
+          "median": 0.1,
+          "p90": 0.1,
+          "max": 0.25
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_142311",
+      "set": "test",
+      "kind": "single",
+      "group": "horse",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 353,
+      "scored_frames": 345,
+      "duration_s": 19.93,
+      "hands_found": 1.0,
+      "landmarks": {
+        "frames": 345,
+        "accuracy": 0.6261,
+        "latency_ms": {
+          "n": 353,
+          "mean": 0.88,
+          "median": 0.88,
+          "p90": 0.97,
+          "max": 1.74
+        }
+      },
+      "video": {
+        "frames": 178,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 174,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 178,
+          "mean": 31.33,
+          "median": 31.19,
+          "p90": 32.15,
+          "max": 35.42
+        }
+      },
+      "yolox_runs_per_s": 8.93,
+      "controller": {
+        "confirmed": [
+          [
+            0.818,
+            "horse"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 345,
+        "accuracy": 1.0,
+        "sources": {
+          "yolox": 345
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.818,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 353,
+          "mean": 0.07,
+          "median": 0.1,
+          "p90": 0.1,
+          "max": 0.2
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_141650",
+      "set": "test",
+      "kind": "single",
+      "group": "clone_seal",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 352,
+      "scored_frames": 344,
+      "duration_s": 19.94,
+      "hands_found": 1.0,
+      "landmarks": {
+        "frames": 344,
+        "accuracy": 0.9331,
+        "latency_ms": {
+          "n": 352,
+          "mean": 0.83,
+          "median": 0.79,
+          "p90": 0.89,
+          "max": 1.46
+        }
+      },
+      "video": {
+        "frames": 179,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 175,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 179,
+          "mean": 31.06,
+          "median": 30.78,
+          "p90": 31.94,
+          "max": 37.06
+        }
+      },
+      "yolox_runs_per_s": 8.98,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 344,
+        "accuracy": 0.0,
+        "sources": {
+          "none": 344
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 352,
+          "mean": 0.07,
+          "median": 0.08,
+          "p90": 0.1,
+          "max": 0.2
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_142339",
+      "set": "test",
+      "kind": "single",
+      "group": "clone_seal",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 344,
+      "scored_frames": 336,
+      "duration_s": 19.94,
+      "hands_found": 1.0,
+      "landmarks": {
+        "frames": 336,
+        "accuracy": 0.9702,
+        "latency_ms": {
+          "n": 344,
+          "mean": 0.86,
+          "median": 0.87,
+          "p90": 0.93,
+          "max": 1.33
+        }
+      },
+      "video": {
+        "frames": 178,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 174,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 178,
+          "mean": 31.04,
+          "median": 30.84,
+          "p90": 31.91,
+          "max": 35.89
+        }
+      },
+      "yolox_runs_per_s": 8.88,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 336,
+        "accuracy": 0.125,
+        "sources": {
+          "none": 294,
+          "landmarks": 42
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 344,
+          "mean": 0.07,
+          "median": 0.08,
+          "p90": 0.1,
+          "max": 0.15
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_141718",
+      "set": "test",
+      "kind": "single",
+      "group": "rasengan_palm",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 343,
+      "scored_frames": 336,
+      "duration_s": 19.9,
+      "hands_found": 1.0,
+      "landmarks": {
+        "frames": 336,
+        "accuracy": 0.1548,
+        "latency_ms": {
+          "n": 343,
+          "mean": 0.79,
+          "median": 0.8,
+          "p90": 0.9,
+          "max": 1.52
+        }
+      },
+      "video": {
+        "frames": 173,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 168,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 173,
+          "mean": 31.12,
+          "median": 30.73,
+          "p90": 31.87,
+          "max": 48.51
+        }
+      },
+      "yolox_runs_per_s": 8.69,
+      "controller": {
+        "confirmed": [
+          [
+            0.552,
+            "rasengan_palm"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 336,
+        "accuracy": 0.1548,
+        "sources": {
+          "landmarks": 52,
+          "none": 284
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.552,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 343,
+          "mean": 0.07,
+          "median": 0.08,
+          "p90": 0.1,
+          "max": 0.22
+        }
+      }
+    },
+    {
+      "id": "me_day_20261101_142407",
+      "set": "test",
+      "kind": "single",
+      "group": "rasengan_palm",
+      "lighting": "day",
+      "date": "2026-11-01",
+      "frames": 345,
+      "scored_frames": 338,
+      "duration_s": 19.92,
+      "hands_found": 1.0,
+      "landmarks": {
+        "frames": 338,
+        "accuracy": 0.1479,
+        "latency_ms": {
+          "n": 345,
+          "mean": 0.81,
+          "median": 0.79,
+          "p90": 0.95,
+          "max": 2.28
+        }
+      },
+      "video": {
+        "frames": 176,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 172,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 176,
+          "mean": 30.9,
+          "median": 30.74,
+          "p90": 31.63,
+          "max": 34.59
+        }
+      },
+      "yolox_runs_per_s": 8.84,
+      "controller": {
+        "confirmed": [
+          [
+            0.534,
+            "rasengan_palm"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 338,
+        "accuracy": 0.1479,
+        "sources": {
+          "landmarks": 50,
+          "none": 288
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.534,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 345,
+          "mean": 0.07,
+          "median": 0.08,
+          "p90": 0.1,
+          "max": 0.36
+        }
+      }
+    }
+  ],
+  "ignored": [
+    {
+      "id": "me_day_20261030_175555",
+      "path": "landmarks/chidori/me_day_20261030_175555.npz",
+      "label": "chidori",
+      "reason": "'chidori' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_175702",
+      "path": "landmarks/chidori/me_day_20261030_175702.npz",
+      "label": "chidori",
+      "reason": "'chidori' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_175819",
+      "path": "landmarks/chidori/me_day_20261030_175819.npz",
+      "label": "chidori",
+      "reason": "'chidori' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_175931",
+      "path": "landmarks/chidori/me_day_20261030_175931.npz",
+      "label": "chidori",
+      "reason": "'chidori' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_180207",
+      "path": "landmarks/fire/me_day_20261030_180207.npz",
+      "label": "fire",
+      "reason": "'fire' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_180328",
+      "path": "landmarks/fire/me_day_20261030_180328.npz",
+      "label": "fire",
+      "reason": "'fire' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_180435",
+      "path": "landmarks/fire/me_day_20261030_180435.npz",
+      "label": "fire",
+      "reason": "'fire' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_180614",
+      "path": "landmarks/fire/me_day_20261030_180614.npz",
+      "label": "fire",
+      "reason": "'fire' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    }
+  ],
+  "warnings": [
+    "1 recording(s) have no set yet and were NOT evaluated: me_day_20261101_140757. Run `python evaluate.py splits`.",
+    "All evaluated recordings come from day 2026-11-01: nothing here says how the app does in other light or on other days.",
+    "YOLOX sees the saved 480p reference video (mp4), not the live 720p camera frame: pixels differ a little from the app's.",
+    "Hands come from the landmarks saved while recording (MediaPipe on the live 720p frame), as the app would have them; MediaPipe itself is not re-run."
+  ],
+  "seconds": 144.2
+}

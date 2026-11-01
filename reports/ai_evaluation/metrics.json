@@ -1,0 +1,2831 @@
+{
+  "created": "2026-11-01 00:54:08",
+  "test_set": "none: data/splits.json has 16 train, 3 validation, 0 test recordings",
+  "evaluate_py_runs": {
+    "A": "reports\\ai_evaluation\\evaluate_py\\2026-11-01_002744\\metrics.json",
+    "B": "reports\\ai_evaluation\\evaluate_py_yolox_path\\2026-11-01_003038\\metrics.json"
+  },
+  "frame_level": {
+    "run_A_installed_model": {
+      "validation": {
+        "landmarks": {
+          "frames": 1088,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "per_class": {
+            "idle": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 731,
+              "predicted": 731
+            },
+            "rasengan_palm": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 357,
+              "predicted": 357
+            }
+          },
+          "confusion": {
+            "rows": [
+              "idle",
+              "rasengan_palm"
+            ],
+            "cols": [
+              "idle",
+              "ram",
+              "snake",
+              "tiger",
+              "dog",
+              "monkey",
+              "boar",
+              "horse",
+              "clone_seal",
+              "rasengan_palm"
+            ],
+            "matrix": [
+              [
+                731,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                357
+              ]
+            ],
+            "correct_col": {
+              "idle": "idle",
+              "rasengan_palm": "rasengan_palm"
+            }
+          },
+          "sessions": [
+            "me_day_20261030_175251",
+            "me_night_20261030_222524",
+            "me_night_20261030_222754"
+          ],
+          "latency_ms": {
+            "n": 1118,
+            "mean": 0.94,
+            "median": 0.81,
+            "p90": 1.47,
+            "max": 12.37
+          }
+        },
+        "yolox": {
+          "frames": 552,
+          "accuracy": 0.9981884057971014,
+          "macro_f1": 0.99909338168631,
+          "balanced_accuracy": 0.9981884057971014,
+          "per_class": {
+            "idle": {
+              "precision": 1.0,
+              "recall": 0.9981884057971014,
+              "f1": 0.99909338168631,
+              "support": 552,
+              "predicted": 551
+            },
+            "horse": {
+              "precision": 0.0,
+              "recall": null,
+              "f1": null,
+              "support": 0,
+              "predicted": 1
+            }
+          },
+          "confusion": {
+            "rows": [
+              "idle",
+              "rasengan_palm"
+            ],
+            "cols": [
+              "idle",
+              "ram",
+              "snake",
+              "tiger",
+              "dog",
+              "monkey",
+              "boar",
+              "horse"
+            ],
+            "matrix": [
+              [
+                364,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                187,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "correct_col": {
+              "idle": "idle",
+              "rasengan_palm": "idle"
+            }
+          },
+          "sessions": [
+            "me_day_20261030_175251",
+            "me_night_20261030_222524",
+            "me_night_20261030_222754"
+          ],
+          "latency_ms": {
+            "n": 569,
+            "mean": 39.93,
+            "median": 38.8,
+            "p90": 49.3,
+            "max": 93.36
+          }
+        },
+        "fused": {
+          "frames": 1088,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "per_class": {
+            "idle": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 731,
+              "predicted": 731
+            },
+            "rasengan_palm": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 357,
+              "predicted": 357
+            }
+          },
+          "confusion": {
+            "rows": [
+              "idle",
+              "rasengan_palm"
+            ],
+            "cols": [
+              "idle",
+              "ram",
+              "snake",
+              "tiger",
+              "dog",
+              "monkey",
+              "boar",
+              "horse",
+              "clone_seal",
+              "rasengan_palm"
+            ],
+            "matrix": [
+              [
+                731,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                357
+              ]
+            ],
+            "correct_col": {
+              "idle": "idle",
+              "rasengan_palm": "rasengan_palm"
+            }
+          },
+          "sessions": [
+            "me_day_20261030_175251",
+            "me_night_20261030_222524",
+            "me_night_20261030_222754"
+          ],
+          "latency_ms": {
+            "n": 1118,
+            "mean": 0.08,
+            "median": 0.08,
+            "p90": 0.13,
+            "max": 0.97
+          }
+        }
+      },
+      "train": {
+        "yolox": {
+          "frames": 3129,
+          "accuracy": 0.9968040907638223,
+          "macro_f1": 0.9963362102722954,
+          "balanced_accuracy": 0.9935360176473087,
+          "per_class": {
+            "idle": {
+              "precision": 0.9935979513444302,
+              "recall": 1.0,
+              "f1": 0.9967886962106615,
+              "support": 1552,
+              "predicted": 1562
+            },
+            "ram": {
+              "precision": 1.0,
+              "recall": 0.984375,
+              "f1": 0.9921259842519685,
+              "support": 192,
+              "predicted": 189
+            },
+            "snake": {
+              "precision": 1.0,
+              "recall": 0.9742268041237113,
+              "f1": 0.9869451697127937,
+              "support": 194,
+              "predicted": 189
+            },
+            "tiger": {
+              "precision": 1.0,
+              "recall": 0.9947368421052631,
+              "f1": 0.9973614775725593,
+              "support": 190,
+              "predicted": 189
+            },
+            "dog": {
+              "precision": 1.0,
+              "recall": 0.9949494949494949,
+              "f1": 0.9974683544303797,
+              "support": 198,
+              "predicted": 197
+            },
+            "monkey": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 437,
+              "predicted": 437
+            },
+            "boar": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 175,
+              "predicted": 175
+            },
+            "horse": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 191,
+              "predicted": 191
+            }
+          },
+          "confusion": {
+            "rows": [
+              "idle",
+              "ram",
+              "snake",
+              "tiger",
+              "dog",
+              "monkey",
+              "boar",
+              "horse",
+              "clone_seal",
+              "rasengan_palm"
+            ],
+            "cols": [
+              "idle",
+              "ram",
+              "snake",
+              "tiger",
+              "dog",
+              "monkey",
+              "boar",
+              "horse"
+            ],
+            "matrix": [
+              [
+                788,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                3,
+                189,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                5,
+                0,
+                189,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                189,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                197,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                437,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                175,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                191
+              ],
+              [
+                187,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                577,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "correct_col": {
+              "idle": "idle",
+              "ram": "ram",
+              "snake": "snake",
+              "tiger": "tiger",
+              "dog": "dog",
+              "monkey": "monkey",
+              "boar": "boar",
+              "horse": "horse",
+              "clone_seal": "idle",
+              "rasengan_palm": "idle"
+            }
+          },
+          "sessions": [
+            "me_day_20261030_174647",
+            "me_day_20261030_174917",
+            "me_day_20261030_175113",
+            "me_night_20261030_214750",
+            "me_night_20261030_215059",
+            "me_night_20261030_215447",
+            "me_night_20261030_215808",
+            "me_night_20261030_220040",
+            "me_night_20261030_220235",
+            "me_night_20261030_220443",
+            "me_night_20261030_220610",
+            "me_night_20261030_220743",
+            "me_night_20261030_221934",
+            "me_night_20261030_222121",
+            "me_night_20261030_222258",
+            "me_night_20261030_222645"
+          ],
+          "latency_ms": {
+            "n": 3217,
+            "mean": 31.95,
+            "median": 30.61,
+            "p90": 35.55,
+            "max": 77.39
+          }
+        }
+      }
+    },
+    "run_B_yolox_path_no_landmark_model": {
+      "validation": {
+        "fused": {
+          "frames": 1088,
+          "accuracy": 0.671875,
+          "macro_f1": 0.40186915887850466,
+          "balanced_accuracy": 0.5,
+          "per_class": {
+            "idle": {
+              "precision": 0.671875,
+              "recall": 1.0,
+              "f1": 0.8037383177570093,
+              "support": 731,
+              "predicted": 1088
+            },
+            "rasengan_palm": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 357,
+              "predicted": 0
+            }
+          },
+          "confusion": {
+            "rows": [
+              "idle",
+              "rasengan_palm"
+            ],
+            "cols": [
+              "idle",
+              "ram",
+              "snake",
+              "tiger",
+              "dog",
+              "monkey",
+              "boar",
+              "horse",
+              "clone_seal",
+              "rasengan_palm"
+            ],
+            "matrix": [
+              [
+                731,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                357,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "correct_col": {
+              "idle": "idle",
+              "rasengan_palm": "rasengan_palm"
+            }
+          },
+          "sessions": [
+            "me_day_20261030_175251",
+            "me_night_20261030_222524",
+            "me_night_20261030_222754"
+          ],
+          "latency_ms": {
+            "n": 1118,
+            "mean": 0.05,
+            "median": 0.04,
+            "p90": 0.07,
+            "max": 0.17
+          }
+        }
+      },
+      "train": {
+        "fused": {
+          "frames": 5518,
+          "accuracy": 0.7381297571583907,
+          "macro_f1": 0.7616606820673895,
+          "balanced_accuracy": 0.7906411858927924,
+          "per_class": {
+            "idle": {
+              "precision": 0.4970414201183432,
+              "recall": 1.0,
+              "f1": 0.6640316205533597,
+              "support": 1428,
+              "predicted": 2873
+            },
+            "ram": {
+              "precision": 1.0,
+              "recall": 0.976878612716763,
+              "f1": 0.9883040935672515,
+              "support": 346,
+              "predicted": 338
+            },
+            "snake": {
+              "precision": 1.0,
+              "recall": 0.96,
+              "f1": 0.9795918367346939,
+              "support": 350,
+              "predicted": 336
+            },
+            "tiger": {
+              "precision": 1.0,
+              "recall": 0.993485342019544,
+              "f1": 0.9967320261437909,
+              "support": 307,
+              "predicted": 305
+            },
+            "dog": {
+              "precision": 1.0,
+              "recall": 0.9910179640718563,
+              "f1": 0.9954887218045112,
+              "support": 334,
+              "predicted": 331
+            },
+            "monkey": {
+              "precision": 1.0,
+              "recall": 0.9850299401197605,
+              "f1": 0.9924585218702865,
+              "support": 668,
+              "predicted": 658
+            },
+            "boar": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 339,
+              "predicted": 339
+            },
+            "horse": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 338,
+              "predicted": 338
+            },
+            "clone_seal": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 376,
+              "predicted": 0
+            },
+            "rasengan_palm": {
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 1032,
+              "predicted": 0
+            }
+          },
+          "confusion": {
+            "rows": [
+              "idle",
+              "ram",
+              "snake",
+              "tiger",
+              "dog",
+              "monkey",
+              "boar",
+              "horse",
+              "clone_seal",
+              "rasengan_palm"
+            ],
+            "cols": [
+              "idle",
+              "ram",
+              "snake",
+              "tiger",
+              "dog",
+              "monkey",
+              "boar",
+              "horse",
+              "clone_seal",
+              "rasengan_palm"
+            ],
+            "matrix": [
+              [
+                1428,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                8,
+                338,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                14,
+                0,
+                336,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                2,
+                0,
+                0,
+                305,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                3,
+                0,
+                0,
+                0,
+                331,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                10,
+                0,
+                0,
+                0,
+                0,
+                658,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                339,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                338,
+                0,
+                0
+              ],
+              [
+                376,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                1032,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "correct_col": {
+              "idle": "idle",
+              "ram": "ram",
+              "snake": "snake",
+              "tiger": "tiger",
+              "dog": "dog",
+              "monkey": "monkey",
+              "boar": "boar",
+              "horse": "horse",
+              "clone_seal": "clone_seal",
+              "rasengan_palm": "rasengan_palm"
+            }
+          },
+          "sessions": [
+            "me_day_20261030_174647",
+            "me_day_20261030_174917",
+            "me_day_20261030_175113",
+            "me_night_20261030_214750",
+            "me_night_20261030_215059",
+            "me_night_20261030_215447",
+            "me_night_20261030_215808",
+            "me_night_20261030_220040",
+            "me_night_20261030_220235",
+            "me_night_20261030_220443",
+            "me_night_20261030_220610",
+            "me_night_20261030_220743",
+            "me_night_20261030_221934",
+            "me_night_20261030_222121",
+            "me_night_20261030_222258",
+            "me_night_20261030_222645"
+          ],
+          "latency_ms": {
+            "n": 5657,
+            "mean": 0.09,
+            "median": 0.07,
+            "p90": 0.15,
+            "max": 10.58
+          }
+        }
+      }
+    }
+  },
+  "per_recording_confirmations": {
+    "A": [
+      {
+        "id": "me_night_20261030_222524",
+        "set": "validation",
+        "sign": "idle",
+        "accuracy": 1.0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_222754",
+        "set": "validation",
+        "sign": "idle",
+        "accuracy": 1.0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_day_20261030_175251",
+        "set": "validation",
+        "sign": "rasengan_palm",
+        "accuracy": 1.0,
+        "first_confirmed_s": 0.478,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      }
+    ],
+    "B": [
+      {
+        "id": "me_night_20261030_222524",
+        "set": "validation",
+        "sign": "idle",
+        "accuracy": 1.0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_222754",
+        "set": "validation",
+        "sign": "idle",
+        "accuracy": 1.0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_day_20261030_175251",
+        "set": "validation",
+        "sign": "rasengan_palm",
+        "accuracy": 0.0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_221934",
+        "set": "train",
+        "sign": "idle",
+        "accuracy": 1.0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_222121",
+        "set": "train",
+        "sign": "idle",
+        "accuracy": 1.0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_222258",
+        "set": "train",
+        "sign": "idle",
+        "accuracy": 1.0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_222645",
+        "set": "train",
+        "sign": "idle",
+        "accuracy": 1.0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_220443",
+        "set": "train",
+        "sign": "ram",
+        "accuracy": 0.9769,
+        "first_confirmed_s": 0.622,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_220610",
+        "set": "train",
+        "sign": "snake",
+        "accuracy": 0.96,
+        "first_confirmed_s": 0.574,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_220235",
+        "set": "train",
+        "sign": "tiger",
+        "accuracy": 0.9935,
+        "first_confirmed_s": 0.662,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_215059",
+        "set": "train",
+        "sign": "dog",
+        "accuracy": 0.991,
+        "first_confirmed_s": 0.697,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_215447",
+        "set": "train",
+        "sign": "monkey",
+        "accuracy": 0.9707,
+        "first_confirmed_s": 0.701,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_215808",
+        "set": "train",
+        "sign": "monkey",
+        "accuracy": 1.0,
+        "first_confirmed_s": 0.653,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_220743",
+        "set": "train",
+        "sign": "boar",
+        "accuracy": 1.0,
+        "first_confirmed_s": 0.593,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_220040",
+        "set": "train",
+        "sign": "horse",
+        "accuracy": 1.0,
+        "first_confirmed_s": 0.606,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_night_20261030_214750",
+        "set": "train",
+        "sign": "clone_seal",
+        "accuracy": 0.0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_day_20261030_174647",
+        "set": "train",
+        "sign": "rasengan_palm",
+        "accuracy": 0.0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_day_20261030_174917",
+        "set": "train",
+        "sign": "rasengan_palm",
+        "accuracy": 0.0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      },
+      {
+        "id": "me_day_20261030_175113",
+        "set": "train",
+        "sign": "rasengan_palm",
+        "accuracy": 0.0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": []
+      }
+    ]
+  },
+  "fps": {
+    "about": "The real server (python -m shinobi.server, its own port) over the WebSocket, fed the camera fixtures (1280x720, 15 fps, the user's recordings spliced into sign sequences, looping) like a browser: one frame in flight, JPEG 80. Stage timings are the server's own FrameState.timings (ms). 'no effect' = frames without a running effect. The machine was shared with other agents' work while measuring.",
+    "url": "ws://127.0.0.1:8003/ws",
+    "runs": [
+      {
+        "fixture": "idle",
+        "frames_answered": 71,
+        "seconds": 5.8,
+        "answered_fps": 12.15,
+        "effects_seen": {}
+      },
+      {
+        "fixture": "fire_style",
+        "frames_answered": 282,
+        "seconds": 27.1,
+        "answered_fps": 10.36,
+        "effects_seen": {
+          "fire": 126
+        }
+      },
+      {
+        "fixture": "chidori",
+        "frames_answered": 258,
+        "seconds": 27.2,
+        "answered_fps": 9.45,
+        "effects_seen": {
+          "chidori": 129
+        }
+      },
+      {
+        "fixture": "shadow_clone",
+        "frames_answered": 267,
+        "seconds": 27.2,
+        "answered_fps": 9.8,
+        "effects_seen": {
+          "shadow_clone": 161
+        }
+      },
+      {
+        "fixture": "rasengan",
+        "frames_answered": 295,
+        "seconds": 27.1,
+        "answered_fps": 10.83,
+        "effects_seen": {
+          "rasengan": 161
+        }
+      }
+    ],
+    "by_condition": {
+      "no effect": {
+        "frames": 596,
+        "rtt_ms": {
+          "n": 596,
+          "median": 84.3,
+          "p90": 109.9,
+          "p99": 124.5,
+          "mean": 77.1
+        },
+        "server_fps": {
+          "n": 596,
+          "median": 11.9,
+          "p90": 14.9,
+          "p99": 15.9,
+          "mean": 12.1
+        },
+        "capacity_fps_median": 15.1,
+        "stages_ms": {
+          "decode": {
+            "n": 596,
+            "median": 8.4,
+            "p90": 9.4,
+            "p99": 14.0,
+            "mean": 7.7
+          },
+          "hands": {
+            "n": 596,
+            "median": 45.6,
+            "p90": 71.7,
+            "p99": 87.1,
+            "mean": 44.6
+          },
+          "model": {
+            "n": 596,
+            "median": 0.9,
+            "p90": 1.4,
+            "p99": 2.1,
+            "mean": 0.8
+          },
+          "yolox": {
+            "n": 594,
+            "median": 32.4,
+            "p90": 37.7,
+            "p99": 49.8,
+            "mean": 30.0
+          },
+          "seg": {
+            "n": 1,
+            "median": 60.2,
+            "p90": 60.2,
+            "p99": 60.2,
+            "mean": 60.2
+          },
+          "fx": {
+            "n": 596,
+            "median": 0.0,
+            "p90": 0.0,
+            "p99": 0.0,
+            "mean": 0.0
+          },
+          "encode": {
+            "n": 596,
+            "median": 9.3,
+            "p90": 9.9,
+            "p99": 12.8,
+            "mean": 8.1
+          },
+          "total": {
+            "n": 596,
+            "median": 66.2,
+            "p90": 92.3,
+            "p99": 107.0,
+            "mean": 62.0
+          }
+        }
+      },
+      "fire": {
+        "frames": 126,
+        "rtt_ms": {
+          "n": 126,
+          "median": 107.4,
+          "p90": 141.3,
+          "p99": 150.7,
+          "mean": 103.0
+        },
+        "server_fps": {
+          "n": 126,
+          "median": 9.6,
+          "p90": 13.2,
+          "p99": 14.7,
+          "mean": 10.3
+        },
+        "capacity_fps_median": 11.2,
+        "stages_ms": {
+          "decode": {
+            "n": 126,
+            "median": 8.3,
+            "p90": 8.8,
+            "p99": 9.1,
+            "mean": 7.4
+          },
+          "hands": {
+            "n": 126,
+            "median": 43.5,
+            "p90": 70.4,
+            "p99": 74.8,
+            "mean": 42.1
+          },
+          "model": {
+            "n": 126,
+            "median": 0.1,
+            "p90": 1.3,
+            "p99": 2.0,
+            "mean": 0.5
+          },
+          "yolox": {
+            "n": 126,
+            "median": 32.5,
+            "p90": 40.0,
+            "p99": 45.1,
+            "mean": 30.9
+          },
+          "seg": null,
+          "fx": {
+            "n": 126,
+            "median": 28.2,
+            "p90": 39.5,
+            "p99": 45.1,
+            "mean": 28.5
+          },
+          "encode": {
+            "n": 126,
+            "median": 9.2,
+            "p90": 9.9,
+            "p99": 11.9,
+            "mean": 8.2
+          },
+          "total": {
+            "n": 126,
+            "median": 89.6,
+            "p90": 124.6,
+            "p99": 133.3,
+            "mean": 87.7
+          }
+        }
+      },
+      "chidori": {
+        "frames": 129,
+        "rtt_ms": {
+          "n": 129,
+          "median": 114.6,
+          "p90": 151.5,
+          "p99": 207.6,
+          "mean": 113.4
+        },
+        "server_fps": {
+          "n": 129,
+          "median": 9.8,
+          "p90": 13.8,
+          "p99": 14.7,
+          "mean": 10.2
+        },
+        "capacity_fps_median": 10.4,
+        "stages_ms": {
+          "decode": {
+            "n": 129,
+            "median": 8.2,
+            "p90": 9.0,
+            "p99": 14.8,
+            "mean": 7.3
+          },
+          "hands": {
+            "n": 129,
+            "median": 38.1,
+            "p90": 71.4,
+            "p99": 86.0,
+            "mean": 42.6
+          },
+          "model": {
+            "n": 129,
+            "median": 0.5,
+            "p90": 1.1,
+            "p99": 1.5,
+            "mean": 0.5
+          },
+          "yolox": {
+            "n": 129,
+            "median": 32.9,
+            "p90": 40.5,
+            "p99": 47.0,
+            "mean": 29.9
+          },
+          "seg": null,
+          "fx": {
+            "n": 129,
+            "median": 32.6,
+            "p90": 49.9,
+            "p99": 106.1,
+            "mean": 39.0
+          },
+          "encode": {
+            "n": 129,
+            "median": 9.3,
+            "p90": 10.1,
+            "p99": 11.0,
+            "mean": 7.7
+          },
+          "total": {
+            "n": 129,
+            "median": 96.6,
+            "p90": 133.1,
+            "p99": 187.4,
+            "mean": 97.9
+          }
+        }
+      },
+      "shadow_clone": {
+        "frames": 161,
+        "rtt_ms": {
+          "n": 161,
+          "median": 106.7,
+          "p90": 140.2,
+          "p99": 148.5,
+          "mean": 107.2
+        },
+        "server_fps": {
+          "n": 161,
+          "median": 9.3,
+          "p90": 11.5,
+          "p99": 13.9,
+          "mean": 9.4
+        },
+        "capacity_fps_median": 11.5,
+        "stages_ms": {
+          "decode": {
+            "n": 161,
+            "median": 8.5,
+            "p90": 8.9,
+            "p99": 10.5,
+            "mean": 8.2
+          },
+          "hands": {
+            "n": 161,
+            "median": 46.2,
+            "p90": 70.6,
+            "p99": 84.6,
+            "mean": 48.4
+          },
+          "model": {
+            "n": 161,
+            "median": 0.7,
+            "p90": 1.3,
+            "p99": 2.0,
+            "mean": 0.7
+          },
+          "yolox": {
+            "n": 161,
+            "median": 39.1,
+            "p90": 44.6,
+            "p99": 48.4,
+            "mean": 38.0
+          },
+          "seg": {
+            "n": 159,
+            "median": 46.4,
+            "p90": 71.2,
+            "p99": 86.7,
+            "mean": 49.3
+          },
+          "fx": {
+            "n": 161,
+            "median": 19.1,
+            "p90": 39.3,
+            "p99": 54.6,
+            "mean": 21.8
+          },
+          "encode": {
+            "n": 161,
+            "median": 9.7,
+            "p90": 11.1,
+            "p99": 13.6,
+            "mean": 9.6
+          },
+          "total": {
+            "n": 161,
+            "median": 87.1,
+            "p90": 120.5,
+            "p99": 130.4,
+            "mean": 89.7
+          }
+        }
+      },
+      "rasengan": {
+        "frames": 161,
+        "rtt_ms": {
+          "n": 161,
+          "median": 80.6,
+          "p90": 127.1,
+          "p99": 168.5,
+          "mean": 86.0
+        },
+        "server_fps": {
+          "n": 161,
+          "median": 12.0,
+          "p90": 14.5,
+          "p99": 15.0,
+          "mean": 11.5
+        },
+        "capacity_fps_median": 15.8,
+        "stages_ms": {
+          "decode": {
+            "n": 161,
+            "median": 8.7,
+            "p90": 10.1,
+            "p99": 19.6,
+            "mean": 8.1
+          },
+          "hands": {
+            "n": 161,
+            "median": 31.2,
+            "p90": 61.3,
+            "p99": 71.9,
+            "mean": 37.3
+          },
+          "model": {
+            "n": 161,
+            "median": 0.1,
+            "p90": 1.3,
+            "p99": 2.0,
+            "mean": 0.5
+          },
+          "yolox": {
+            "n": 161,
+            "median": 33.0,
+            "p90": 41.3,
+            "p99": 52.8,
+            "mean": 31.3
+          },
+          "seg": null,
+          "fx": {
+            "n": 161,
+            "median": 11.6,
+            "p90": 27.1,
+            "p99": 44.7,
+            "mean": 15.4
+          },
+          "encode": {
+            "n": 161,
+            "median": 9.1,
+            "p90": 10.4,
+            "p99": 13.9,
+            "mean": 8.1
+          },
+          "total": {
+            "n": 161,
+            "median": 63.3,
+            "p90": 106.0,
+            "p99": 144.7,
+            "mean": 70.3
+          }
+        }
+      }
+    },
+    "cpu_count": 8,
+    "code_mtimes": {
+      "__init__.py": "2026-11-01 00:25:55",
+      "camera.py": "2026-10-30 15:57:00",
+      "catalog.py": "2026-11-01 00:25:46",
+      "classifier.py": "2026-10-31 15:57:04",
+      "config.py": "2026-11-01 00:25:07",
+      "controller.py": "2026-10-31 23:33:35",
+      "base.py": "2026-11-01 00:25:30",
+      "chidori.py": "2026-11-01 00:51:19",
+      "fire.py": "2026-11-01 00:51:19",
+      "fx.py": "2026-11-01 00:26:24",
+      "rasengan.py": "2026-11-01 00:51:19",
+      "shadow_clone.py": "2026-11-01 00:51:19",
+      "engine.py": "2026-11-01 00:29:05",
+      "events.py": "2026-11-01 00:29:40",
+      "features.py": "2026-10-30 15:47:32",
+      "filters.py": "2026-10-30 15:37:33",
+      "fusion.py": "2026-10-30 22:37:35",
+      "hands.py": "2026-10-30 16:55:10",
+      "hud.py": "2026-10-30 20:05:40",
+      "main.py": "2026-11-01 00:30:32",
+      "seal_detector.py": "2026-10-30 22:36:07",
+      "segmentation.py": "2026-10-30 21:11:25",
+      "server.py": "2026-11-01 00:30:03",
+      "tracking.py": "2026-10-30 16:54:33"
+    },
+    "measured_at": "2026-11-01 00:51:54",
+    "server_info": {
+      "name": "SHINOBI AI",
+      "version": "0.1.0",
+      "protocol": 1,
+      "yolox": true,
+      "landmark_model": true,
+      "recognizable": [
+        "ram",
+        "snake",
+        "tiger",
+        "dog",
+        "monkey",
+        "boar",
+        "horse",
+        "clone_seal",
+        "rasengan_palm"
+      ],
+      "jutsu_available": {
+        "fire_style": true,
+        "chidori": true,
+        "shadow_clone": true,
+        "rasengan": true
+      },
+      "sessions": {
+        "active": 1,
+        "max": 1
+      },
+      "frame": {
+        "max_width": 1280,
+        "max_height": 1280,
+        "jpeg_quality": 0.8,
+        "max_in_flight": 2
+      },
+      "mirror": true,
+      "sequence_max_gap": 7.0,
+      "activation": {
+        "charge": {
+          "fire_style": 1.2,
+          "chidori": 1.2,
+          "shadow_clone": 1.2,
+          "rasengan": 1.2
+        },
+        "voice_default": 0.4,
+        "voice_gap": 0.05
+      }
+    }
+  },
+  "loro": {
+    "about": "Leave-one-recording-out on the 19 split recordings (train + validation; there is no test set): train.py's random forest (n_estimators 300, min_samples_leaf 2, balanced) on mirrored + jittered copies, every 2nd frame, refitted without the held-out recording, scored on all its frames with a hand after the first 0.5 s. A sign with ONE recording is absent from training when its recording is held out: its frames cannot be right, so those rows show only what it is mistaken for and are left out of the metrics.",
+    "recordings": [
+      {
+        "id": "me_night_20261030_220743",
+        "label": "boar",
+        "status": "train",
+        "frames": 339,
+        "label_in_training": false,
+        "accuracy": 0.0,
+        "said": {
+          "monkey": 281,
+          "dog": 58
+        }
+      },
+      {
+        "id": "me_night_20261030_214750",
+        "label": "clone_seal",
+        "status": "train",
+        "frames": 376,
+        "label_in_training": false,
+        "accuracy": 0.0,
+        "said": {
+          "idle": 175,
+          "ram": 147,
+          "tiger": 54
+        }
+      },
+      {
+        "id": "me_night_20261030_215059",
+        "label": "dog",
+        "status": "train",
+        "frames": 334,
+        "label_in_training": false,
+        "accuracy": 0.0,
+        "said": {
+          "monkey": 129,
+          "idle": 204,
+          "boar": 1
+        }
+      },
+      {
+        "id": "me_night_20261030_220040",
+        "label": "horse",
+        "status": "train",
+        "frames": 338,
+        "label_in_training": false,
+        "accuracy": 0.0,
+        "said": {
+          "idle": 338
+        }
+      },
+      {
+        "id": "me_night_20261030_221934",
+        "label": "idle",
+        "status": "train",
+        "frames": 101,
+        "label_in_training": true,
+        "accuracy": 0.9307,
+        "said": {
+          "monkey": 7,
+          "idle": 94
+        }
+      },
+      {
+        "id": "me_night_20261030_222121",
+        "label": "idle",
+        "status": "train",
+        "frames": 335,
+        "label_in_training": true,
+        "accuracy": 0.9164,
+        "said": {
+          "idle": 307,
+          "dog": 28
+        }
+      },
+      {
+        "id": "me_night_20261030_222258",
+        "label": "idle",
+        "status": "train",
+        "frames": 344,
+        "label_in_training": true,
+        "accuracy": 0.9651,
+        "said": {
+          "idle": 332,
+          "rasengan_palm": 12
+        }
+      },
+      {
+        "id": "me_night_20261030_222524",
+        "label": "idle",
+        "status": "validation",
+        "frames": 358,
+        "label_in_training": true,
+        "accuracy": 0.986,
+        "said": {
+          "idle": 353,
+          "horse": 5
+        }
+      },
+      {
+        "id": "me_night_20261030_222645",
+        "label": "idle",
+        "status": "train",
+        "frames": 313,
+        "label_in_training": true,
+        "accuracy": 0.9681,
+        "said": {
+          "idle": 303,
+          "monkey": 10
+        }
+      },
+      {
+        "id": "me_night_20261030_222754",
+        "label": "idle",
+        "status": "validation",
+        "frames": 373,
+        "label_in_training": true,
+        "accuracy": 1.0,
+        "said": {
+          "idle": 373
+        }
+      },
+      {
+        "id": "me_night_20261030_215447",
+        "label": "monkey",
+        "status": "train",
+        "frames": 122,
+        "label_in_training": true,
+        "accuracy": 0.0492,
+        "said": {
+          "idle": 4,
+          "monkey": 6,
+          "dog": 112
+        }
+      },
+      {
+        "id": "me_night_20261030_215808",
+        "label": "monkey",
+        "status": "train",
+        "frames": 305,
+        "label_in_training": true,
+        "accuracy": 0.859,
+        "said": {
+          "monkey": 262,
+          "idle": 43
+        }
+      },
+      {
+        "id": "me_night_20261030_220443",
+        "label": "ram",
+        "status": "train",
+        "frames": 346,
+        "label_in_training": false,
+        "accuracy": 0.0,
+        "said": {
+          "idle": 337,
+          "clone_seal": 6,
+          "tiger": 3
+        }
+      },
+      {
+        "id": "me_day_20261030_174647",
+        "label": "rasengan_palm",
+        "status": "train",
+        "frames": 343,
+        "label_in_training": true,
+        "accuracy": 1.0,
+        "said": {
+          "rasengan_palm": 343
+        }
+      },
+      {
+        "id": "me_day_20261030_174917",
+        "label": "rasengan_palm",
+        "status": "train",
+        "frames": 369,
+        "label_in_training": true,
+        "accuracy": 1.0,
+        "said": {
+          "rasengan_palm": 369
+        }
+      },
+      {
+        "id": "me_day_20261030_175113",
+        "label": "rasengan_palm",
+        "status": "train",
+        "frames": 320,
+        "label_in_training": true,
+        "accuracy": 1.0,
+        "said": {
+          "rasengan_palm": 320
+        }
+      },
+      {
+        "id": "me_day_20261030_175251",
+        "label": "rasengan_palm",
+        "status": "validation",
+        "frames": 357,
+        "label_in_training": true,
+        "accuracy": 1.0,
+        "said": {
+          "rasengan_palm": 357
+        }
+      },
+      {
+        "id": "me_night_20261030_220610",
+        "label": "snake",
+        "status": "train",
+        "frames": 350,
+        "label_in_training": false,
+        "accuracy": 0.0,
+        "said": {
+          "idle": 350
+        }
+      },
+      {
+        "id": "me_night_20261030_220235",
+        "label": "tiger",
+        "status": "train",
+        "frames": 307,
+        "label_in_training": false,
+        "accuracy": 0.0,
+        "said": {
+          "idle": 306,
+          "ram": 1
+        }
+      }
+    ],
+    "metrics_estimable": {
+      "frames": 3640,
+      "accuracy": 0.9392857142857143,
+      "balanced_accuracy": 0.8645478107837902,
+      "macro_f1": 0.9061683869830408,
+      "per_class": {
+        "idle": {
+          "precision": 0.9740187949143173,
+          "recall": 0.9660087719298246,
+          "f1": 0.9699972474538948,
+          "support": 1824,
+          "predicted": 1809
+        },
+        "ram": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "support": 0,
+          "predicted": 0
+        },
+        "snake": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "support": 0,
+          "predicted": 0
+        },
+        "tiger": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "support": 0,
+          "predicted": 0
+        },
+        "dog": {
+          "precision": 0.0,
+          "recall": null,
+          "f1": null,
+          "support": 0,
+          "predicted": 140
+        },
+        "monkey": {
+          "precision": 0.9403508771929825,
+          "recall": 0.6276346604215457,
+          "f1": 0.752808988764045,
+          "support": 427,
+          "predicted": 285
+        },
+        "boar": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "support": 0,
+          "predicted": 0
+        },
+        "horse": {
+          "precision": 0.0,
+          "recall": null,
+          "f1": null,
+          "support": 0,
+          "predicted": 5
+        },
+        "clone_seal": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "support": 0,
+          "predicted": 0
+        },
+        "rasengan_palm": {
+          "precision": 0.9914346895074947,
+          "recall": 1.0,
+          "f1": 0.9956989247311828,
+          "support": 1389,
+          "predicted": 1401
+        }
+      },
+      "confusion_all": {
+        "rows": [
+          "idle",
+          "ram",
+          "snake",
+          "tiger",
+          "dog",
+          "monkey",
+          "boar",
+          "horse",
+          "clone_seal",
+          "rasengan_palm"
+        ],
+        "cols": [
+          "idle",
+          "ram",
+          "snake",
+          "tiger",
+          "dog",
+          "monkey",
+          "boar",
+          "horse",
+          "clone_seal",
+          "rasengan_palm"
+        ],
+        "matrix": [
+          [
+            1762,
+            0,
+            0,
+            0,
+            28,
+            17,
+            0,
+            5,
+            0,
+            12
+          ],
+          [
+            337,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0
+          ],
+          [
+            350,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            306,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            204,
+            0,
+            0,
+            0,
+            0,
+            129,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            47,
+            0,
+            0,
+            0,
+            112,
+            268,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            58,
+            281,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            338,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            175,
+            147,
+            0,
+            54,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1389
+          ]
+        ],
+        "correct_col": {
+          "idle": "idle",
+          "ram": "ram",
+          "snake": "snake",
+          "tiger": "tiger",
+          "dog": "dog",
+          "monkey": "monkey",
+          "boar": "boar",
+          "horse": "horse",
+          "clone_seal": "clone_seal",
+          "rasengan_palm": "rasengan_palm"
+        }
+      }
+    },
+    "estimable_signs": [
+      "idle",
+      "monkey",
+      "rasengan_palm"
+    ]
+  },
+  "montecarlo": {
+    "about": "SequenceMatcher alone (the app's class, current rules: per-jutsu counters, a wrong sign keeps the progress, 7 s limit in Live, none in Practice) fed one uniformly random sign every 1.8-3.6 s, for 200.0 simulated hours. It shows how often signs made in NO particular order complete a jutsu by chance. Recognition is assumed perfect here; the spliced random streams of the 'sequences' part include the real recognisers.",
+    "hours": 200.0,
+    "live": {
+      "per_hour": {
+        "shadow_clone": 1.36,
+        "fire_style": 1.39,
+        "chidori": 1.34,
+        "rasengan": 1.46
+      },
+      "total_per_hour": 5.54
+    },
+    "practice": {
+      "fire_style": {
+        "per_hour": {
+          "fire_style": 37.09
+        },
+        "total_per_hour": 37.09
+      },
+      "chidori": {
+        "per_hour": {
+          "chidori": 37.32
+        },
+        "total_per_hour": 37.32
+      },
+      "shadow_clone": {
+        "per_hour": {
+          "shadow_clone": 37.07
+        },
+        "total_per_hour": 37.07
+      },
+      "rasengan": {
+        "per_hour": {
+          "rasengan": 37.31
+        },
+        "total_per_hour": 37.31
+      }
+    },
+    "live_previous_rule_for_comparison": {
+      "per_hour": {
+        "chidori": 0.33,
+        "rasengan": 0.26,
+        "shadow_clone": 0.32,
+        "fire_style": 0.27
+      },
+      "total_per_hour": 1.17
+    }
+  },
+  "negatives": {
+    "about": "Hands that make NO sign of the app; the right answer for every frame is idle. Never-trained clips (claw, OK sign, two open palms) + the 2 held-out idle recordings (validation set).",
+    "model": {
+      "path": "C:\\Users\\user\\Desktop\\SHINOBI-AI\\models\\gesture_model.joblib",
+      "model_name": "random_forest",
+      "created": "2026-10-31T14:36:03",
+      "selection": "default"
+    },
+    "clips": [
+      {
+        "id": "me_day_20261030_175555",
+        "what": "claw hand (old 'chidori' gesture)",
+        "status": "never trained",
+        "duration_s": 20.1,
+        "landmarks": {
+          "idle": 337,
+          "rasengan_palm": 8
+        },
+        "yolox": {
+          "idle": 199
+        },
+        "fused": {
+          "idle": 344,
+          "rasengan_palm": 1
+        },
+        "confirmed": [],
+        "live_fired": [],
+        "practice_fired": {
+          "fire_style": 0,
+          "chidori": 0,
+          "shadow_clone": 0,
+          "rasengan": 0
+        }
+      },
+      {
+        "id": "me_day_20261030_175702",
+        "what": "claw hand (old 'chidori' gesture)",
+        "status": "never trained",
+        "duration_s": 20.0,
+        "landmarks": {
+          "idle": 307
+        },
+        "yolox": {
+          "idle": 203
+        },
+        "fused": {
+          "idle": 307
+        },
+        "confirmed": [],
+        "live_fired": [],
+        "practice_fired": {
+          "fire_style": 0,
+          "chidori": 0,
+          "shadow_clone": 0,
+          "rasengan": 0
+        }
+      },
+      {
+        "id": "me_day_20261030_175819",
+        "what": "claw hand (old 'chidori' gesture)",
+        "status": "never trained",
+        "duration_s": 20.0,
+        "landmarks": {
+          "idle": 319
+        },
+        "yolox": {
+          "idle": 216
+        },
+        "fused": {
+          "idle": 319
+        },
+        "confirmed": [],
+        "live_fired": [],
+        "practice_fired": {
+          "fire_style": 0,
+          "chidori": 0,
+          "shadow_clone": 0,
+          "rasengan": 0
+        }
+      },
+      {
+        "id": "me_day_20261030_175931",
+        "what": "claw hand (old 'chidori' gesture)",
+        "status": "never trained",
+        "duration_s": 20.0,
+        "landmarks": {
+          "idle": 337,
+          "rasengan_palm": 14
+        },
+        "yolox": {
+          "idle": 199
+        },
+        "fused": {
+          "idle": 347,
+          "rasengan_palm": 4
+        },
+        "confirmed": [],
+        "live_fired": [],
+        "practice_fired": {
+          "fire_style": 0,
+          "chidori": 0,
+          "shadow_clone": 0,
+          "rasengan": 0
+        }
+      },
+      {
+        "id": "me_day_20261030_180207",
+        "what": "OK sign (old 'fire' gesture)",
+        "status": "never trained",
+        "duration_s": 20.0,
+        "landmarks": {
+          "rasengan_palm": 329
+        },
+        "yolox": {
+          "idle": 210
+        },
+        "fused": {
+          "rasengan_palm": 325,
+          "idle": 4
+        },
+        "confirmed": [
+          "rasengan_palm"
+        ],
+        "live_fired": [],
+        "practice_fired": {
+          "fire_style": 0,
+          "chidori": 0,
+          "shadow_clone": 0,
+          "rasengan": 0
+        }
+      },
+      {
+        "id": "me_day_20261030_180328",
+        "what": "OK sign (old 'fire' gesture)",
+        "status": "never trained",
+        "duration_s": 20.0,
+        "landmarks": {
+          "rasengan_palm": 289,
+          "idle": 42
+        },
+        "yolox": {
+          "idle": 202
+        },
+        "fused": {
+          "rasengan_palm": 218,
+          "idle": 113
+        },
+        "confirmed": [
+          "rasengan_palm"
+        ],
+        "live_fired": [],
+        "practice_fired": {
+          "fire_style": 0,
+          "chidori": 0,
+          "shadow_clone": 0,
+          "rasengan": 0
+        }
+      },
+      {
+        "id": "me_day_20261030_180435",
+        "what": "OK sign (old 'fire' gesture)",
+        "status": "never trained",
+        "duration_s": 20.0,
+        "landmarks": {
+          "idle": 169,
+          "rasengan_palm": 160
+        },
+        "yolox": {
+          "idle": 191,
+          "snake": 1
+        },
+        "fused": {
+          "idle": 203,
+          "rasengan_palm": 126
+        },
+        "confirmed": [
+          "rasengan_palm"
+        ],
+        "live_fired": [],
+        "practice_fired": {
+          "fire_style": 0,
+          "chidori": 0,
+          "shadow_clone": 0,
+          "rasengan": 0
+        }
+      },
+      {
+        "id": "me_day_20261030_180614",
+        "what": "OK sign (old 'fire' gesture)",
+        "status": "never trained",
+        "duration_s": 20.0,
+        "landmarks": {
+          "rasengan_palm": 297
+        },
+        "yolox": {
+          "idle": 201
+        },
+        "fused": {
+          "rasengan_palm": 297
+        },
+        "confirmed": [
+          "rasengan_palm"
+        ],
+        "live_fired": [],
+        "practice_fired": {
+          "fire_style": 0,
+          "chidori": 0,
+          "shadow_clone": 0,
+          "rasengan": 0
+        }
+      },
+      {
+        "id": "me_day_20261030_174011",
+        "what": "two open palms (data/_discarded)",
+        "status": "never trained",
+        "duration_s": 20.0,
+        "landmarks": {
+          "idle": 328
+        },
+        "yolox": {
+          "idle": 180
+        },
+        "fused": {
+          "idle": 328
+        },
+        "confirmed": [],
+        "live_fired": [],
+        "practice_fired": {
+          "fire_style": 0,
+          "chidori": 0,
+          "shadow_clone": 0,
+          "rasengan": 0
+        }
+      },
+      {
+        "id": "me_day_20261030_174108",
+        "what": "two open palms (data/_discarded)",
+        "status": "never trained",
+        "duration_s": 20.0,
+        "landmarks": {
+          "idle": 331
+        },
+        "yolox": {
+          "idle": 176
+        },
+        "fused": {
+          "idle": 331
+        },
+        "confirmed": [],
+        "live_fired": [],
+        "practice_fired": {
+          "fire_style": 0,
+          "chidori": 0,
+          "shadow_clone": 0,
+          "rasengan": 0
+        }
+      },
+      {
+        "id": "me_night_20261030_222524",
+        "what": "idle held",
+        "status": "validation",
+        "duration_s": 20.0,
+        "landmarks": {
+          "idle": 358
+        },
+        "yolox": {
+          "idle": 179,
+          "horse": 1
+        },
+        "fused": {
+          "idle": 358
+        },
+        "confirmed": [],
+        "live_fired": [],
+        "practice_fired": {
+          "fire_style": 0,
+          "chidori": 0,
+          "shadow_clone": 0,
+          "rasengan": 0
+        }
+      },
+      {
+        "id": "me_night_20261030_222754",
+        "what": "idle held",
+        "status": "validation",
+        "duration_s": 20.1,
+        "landmarks": {
+          "idle": 373
+        },
+        "yolox": {
+          "idle": 185
+        },
+        "fused": {
+          "idle": 373
+        },
+        "confirmed": [],
+        "live_fired": [],
+        "practice_fired": {
+          "fire_style": 0,
+          "chidori": 0,
+          "shadow_clone": 0,
+          "rasengan": 0
+        }
+      }
+    ],
+    "live": {
+      "events": 0,
+      "minutes": 4.01,
+      "per_hour": 0.0,
+      "upper_95_per_hour_if_zero": 44.9,
+      "details": []
+    },
+    "practice": {
+      "fire_style": {
+        "events": 0,
+        "minutes": 4.01,
+        "per_hour": 0.0,
+        "upper_95_per_hour_if_zero": 44.9,
+        "details": []
+      },
+      "chidori": {
+        "events": 0,
+        "minutes": 4.01,
+        "per_hour": 0.0,
+        "upper_95_per_hour_if_zero": 44.9,
+        "details": []
+      },
+      "shadow_clone": {
+        "events": 0,
+        "minutes": 4.01,
+        "per_hour": 0.0,
+        "upper_95_per_hour_if_zero": 44.9,
+        "details": []
+      },
+      "rasengan": {
+        "events": 0,
+        "minutes": 4.01,
+        "per_hour": 0.0,
+        "upper_95_per_hour_if_zero": 44.9,
+        "details": []
+      }
+    }
+  },
+  "sequences": {
+    "about": "No guided sequence takes exist (data/sequences is missing), so performances are SPLICED from the single-sign recordings: an idle lead-in, each sign held 1.6-2.6 s, 0.4-1.2 s of idle between signs (real transitions between seals are not in the data), 3 s of idle after. Windows are random; the held-out validation recording is used where a sign has one (idle, rasengan_palm). Everything else comes from TRAIN recordings, see 'signs' per jutsu.",
+    "trials": {
+      "fire_style|live|model": {
+        "jutsu": "fire_style",
+        "mode": "live",
+        "landmark_model": true,
+        "trials": 40,
+        "outcomes": {
+          "success": 40
+        },
+        "activation_rate": 1.0,
+        "wrong_jutsu_fired": {},
+        "latency_from_last_sign_start_s": {
+          "n": 40,
+          "median": 0.743,
+          "p90": 0.891,
+          "min": 0.581,
+          "max": 1.266
+        },
+        "latency_from_last_sign_end_s": {
+          "n": 40,
+          "median": -1.461,
+          "p90": -0.914,
+          "min": -1.931,
+          "max": -0.461
+        },
+        "first_four_confirmed_in_order": 40,
+        "signs": {
+          "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "boar": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "horse": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+        }
+      },
+      "fire_style|live|yolox_path": {
+        "jutsu": "fire_style",
+        "mode": "live",
+        "landmark_model": false,
+        "trials": 40,
+        "outcomes": {
+          "success": 40
+        },
+        "activation_rate": 1.0,
+        "wrong_jutsu_fired": {},
+        "latency_from_last_sign_start_s": {
+          "n": 40,
+          "median": 0.709,
+          "p90": 0.818,
+          "min": 0.584,
+          "max": 1.18
+        },
+        "latency_from_last_sign_end_s": {
+          "n": 40,
+          "median": -1.368,
+          "p90": -0.951,
+          "min": -1.89,
+          "max": -0.582
+        },
+        "first_four_confirmed_in_order": 40,
+        "signs": {
+          "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "boar": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "horse": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+        }
+      },
+      "fire_style|practice|model": {
+        "jutsu": "fire_style",
+        "mode": "practice",
+        "landmark_model": true,
+        "trials": 40,
+        "outcomes": {
+          "success": 40
+        },
+        "activation_rate": 1.0,
+        "wrong_jutsu_fired": {},
+        "latency_from_last_sign_start_s": {
+          "n": 40,
+          "median": 0.733,
+          "p90": 0.838,
+          "min": 0.609,
+          "max": 0.907
+        },
+        "latency_from_last_sign_end_s": {
+          "n": 40,
+          "median": -1.327,
+          "p90": -0.924,
+          "min": -1.876,
+          "max": -0.812
+        },
+        "first_four_confirmed_in_order": 40,
+        "signs": {
+          "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "boar": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "horse": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+        }
+      },
+      "fire_style|practice|yolox_path": {
+        "jutsu": "fire_style",
+        "mode": "practice",
+        "landmark_model": false,
+        "trials": 40,
+        "outcomes": {
+          "success": 40
+        },
+        "activation_rate": 1.0,
+        "wrong_jutsu_fired": {},
+        "latency_from_last_sign_start_s": {
+          "n": 40,
+          "median": 0.763,
+          "p90": 0.85,
+          "min": 0.578,
+          "max": 1.511
+        },
+        "latency_from_last_sign_end_s": {
+          "n": 40,
+          "median": -1.166,
+          "p90": -0.947,
+          "min": -1.968,
+          "max": -0.735
+        },
+        "first_four_confirmed_in_order": 40,
+        "signs": {
+          "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "boar": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "horse": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+        }
+      },
+      "chidori|live|model": {
+        "jutsu": "chidori",
+        "mode": "live",
+        "landmark_model": true,
+        "trials": 40,
+        "outcomes": {
+          "success": 40
+        },
+        "activation_rate": 1.0,
+        "wrong_jutsu_fired": {},
+        "latency_from_last_sign_start_s": {
+          "n": 40,
+          "median": 0.745,
+          "p90": 0.805,
+          "min": 0.598,
+          "max": 0.841
+        },
+        "latency_from_last_sign_end_s": {
+          "n": 40,
+          "median": -1.309,
+          "p90": -0.995,
+          "min": -1.828,
+          "max": -0.922
+        },
+        "first_four_confirmed_in_order": 40,
+        "signs": {
+          "snake": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "dog": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+        }
+      },
+      "chidori|live|yolox_path": {
+        "jutsu": "chidori",
+        "mode": "live",
+        "landmark_model": false,
+        "trials": 40,
+        "outcomes": {
+          "success": 40
+        },
+        "activation_rate": 1.0,
+        "wrong_jutsu_fired": {},
+        "latency_from_last_sign_start_s": {
+          "n": 40,
+          "median": 0.742,
+          "p90": 0.796,
+          "min": 0.602,
+          "max": 0.831
+        },
+        "latency_from_last_sign_end_s": {
+          "n": 40,
+          "median": -1.46,
+          "p90": -0.914,
+          "min": -1.966,
+          "max": -0.787
+        },
+        "first_four_confirmed_in_order": 40,
+        "signs": {
+          "snake": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "dog": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+        }
+      },
+      "chidori|practice|model": {
+        "jutsu": "chidori",
+        "mode": "practice",
+        "landmark_model": true,
+        "trials": 40,
+        "outcomes": {
+          "success": 40
+        },
+        "activation_rate": 1.0,
+        "wrong_jutsu_fired": {},
+        "latency_from_last_sign_start_s": {
+          "n": 40,
+          "median": 0.69,
+          "p90": 0.798,
+          "min": 0.589,
+          "max": 0.844
+        },
+        "latency_from_last_sign_end_s": {
+          "n": 40,
+          "median": -1.471,
+          "p90": -1.066,
+          "min": -1.929,
+          "max": -0.888
+        },
+        "first_four_confirmed_in_order": 40,
+        "signs": {
+          "snake": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "dog": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+        }
+      },
+      "chidori|practice|yolox_path": {
+        "jutsu": "chidori",
+        "mode": "practice",
+        "landmark_model": false,
+        "trials": 40,
+        "outcomes": {
+          "success": 40
+        },
+        "activation_rate": 1.0,
+        "wrong_jutsu_fired": {},
+        "latency_from_last_sign_start_s": {
+          "n": 40,
+          "median": 0.719,
+          "p90": 0.783,
+          "min": 0.613,
+          "max": 0.807
+        },
+        "latency_from_last_sign_end_s": {
+          "n": 40,
+          "median": -1.392,
+          "p90": -1.054,
+          "min": -1.897,
+          "max": -0.89
+        },
+        "first_four_confirmed_in_order": 40,
+        "signs": {
+          "snake": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "dog": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+        }
+      },
+      "shadow_clone|live|model": {
+        "jutsu": "shadow_clone",
+        "mode": "live",
+        "landmark_model": true,
+        "trials": 40,
+        "outcomes": {
+          "success": 40
+        },
+        "activation_rate": 1.0,
+        "wrong_jutsu_fired": {},
+        "latency_from_last_sign_start_s": {
+          "n": 40,
+          "median": 0.454,
+          "p90": 0.476,
+          "min": 0.373,
+          "max": 0.511
+        },
+        "latency_from_last_sign_end_s": {
+          "n": 40,
+          "median": -1.575,
+          "p90": -1.201,
+          "min": -2.13,
+          "max": -1.165
+        },
+        "first_four_confirmed_in_order": 40,
+        "signs": {
+          "ram": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "snake": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "clone_seal": "landmark model; its only recording is a TRAIN recording -> optimistic"
+        }
+      },
+      "shadow_clone|practice|model": {
+        "jutsu": "shadow_clone",
+        "mode": "practice",
+        "landmark_model": true,
+        "trials": 40,
+        "outcomes": {
+          "success": 40
+        },
+        "activation_rate": 1.0,
+        "wrong_jutsu_fired": {},
+        "latency_from_last_sign_start_s": {
+          "n": 40,
+          "median": 0.458,
+          "p90": 0.495,
+          "min": 0.386,
+          "max": 0.553
+        },
+        "latency_from_last_sign_end_s": {
+          "n": 40,
+          "median": -1.813,
+          "p90": -1.336,
+          "min": -2.113,
+          "max": -1.069
+        },
+        "first_four_confirmed_in_order": 40,
+        "signs": {
+          "ram": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "snake": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "clone_seal": "landmark model; its only recording is a TRAIN recording -> optimistic"
+        }
+      },
+      "rasengan|live|model": {
+        "jutsu": "rasengan",
+        "mode": "live",
+        "landmark_model": true,
+        "trials": 40,
+        "outcomes": {
+          "success": 40
+        },
+        "activation_rate": 1.0,
+        "wrong_jutsu_fired": {},
+        "latency_from_last_sign_start_s": {
+          "n": 40,
+          "median": 0.48,
+          "p90": 0.51,
+          "min": 0.416,
+          "max": 0.528
+        },
+        "latency_from_last_sign_end_s": {
+          "n": 40,
+          "median": -1.645,
+          "p90": -1.212,
+          "min": -2.082,
+          "max": -1.12
+        },
+        "first_four_confirmed_in_order": 40,
+        "signs": {
+          "clone_seal": "landmark model; its only recording is a TRAIN recording -> optimistic",
+          "dog": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "horse": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "rasengan_palm": "landmark model; held-out VALIDATION recording (used to choose the model)"
+        }
+      },
+      "rasengan|practice|model": {
+        "jutsu": "rasengan",
+        "mode": "practice",
+        "landmark_model": true,
+        "trials": 40,
+        "outcomes": {
+          "success": 40
+        },
+        "activation_rate": 1.0,
+        "wrong_jutsu_fired": {},
+        "latency_from_last_sign_start_s": {
+          "n": 40,
+          "median": 0.477,
+          "p90": 0.502,
+          "min": 0.393,
+          "max": 0.514
+        },
+        "latency_from_last_sign_end_s": {
+          "n": 40,
+          "median": -1.638,
+          "p90": -1.215,
+          "min": -2.067,
+          "max": -1.153
+        },
+        "first_four_confirmed_in_order": 40,
+        "signs": {
+          "clone_seal": "landmark model; its only recording is a TRAIN recording -> optimistic",
+          "dog": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "horse": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+          "rasengan_palm": "landmark model; held-out VALIDATION recording (used to choose the model)"
+        }
+      }
+    },
+    "mixed": {
+      "performances": 100,
+      "expected_fired": 100,
+      "missed": 0,
+      "wrong_or_extra": {},
+      "streams": 25
+    },
+    "random_streams": {
+      "minutes_per_stream": 20.0,
+      "live": {
+        "events": 0,
+        "minutes": 20.01,
+        "per_hour": 0.0,
+        "upper_95_per_hour_if_zero": 9.0,
+        "by_jutsu": {},
+        "confirmed_signs": 399
+      },
+      "practice": {
+        "fire_style": {
+          "events": 14,
+          "minutes": 20.01,
+          "per_hour": 41.99,
+          "upper_95_per_hour_if_zero": null
+        },
+        "chidori": {
+          "events": 12,
+          "minutes": 20.01,
+          "per_hour": 35.99,
+          "upper_95_per_hour_if_zero": null
+        },
+        "shadow_clone": {
+          "events": 12,
+          "minutes": 20.01,
+          "per_hour": 35.99,
+          "upper_95_per_hour_if_zero": null
+        },
+        "rasengan": {
+          "events": 10,
+          "minutes": 20.01,
+          "per_hour": 29.99,
+          "upper_95_per_hour_if_zero": null
+        }
+      }
+    },
+    "settings": {
+      "SEQUENCE_MAX_GAP": 7.0,
+      "COOLDOWN_SECONDS": 1.5,
+      "HOLD_SECONDS": 0.3,
+      "SEAL_CONFIRM": 2,
+      "SEAL_MIN_SCORE": 0.7,
+      "LANDMARK_MIN_PROB": 0.6,
+      "seed": 20261101
+    }
+  }
+}

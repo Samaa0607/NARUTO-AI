@@ -1,0 +1,369 @@
+.page {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------------------------ title */
+.head {
+  position: relative;
+  margin: 0 auto clamp(14px, 2.4vh, 26px);
+  max-width: 640px;
+  text-align: center;
+}
+
+/* soft cream haze behind the title (readable over the village sky) */
+.head::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -10px -8%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 248, 236, 0.85), rgba(255, 248, 236, 0.55) 62%, rgba(255, 248, 236, 0));
+  pointer-events: none;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--k-brush);
+  font-weight: 400;
+  font-size: clamp(38px, 2.2vw + 26px, 54px);
+  line-height: 1.05;
+  color: var(--k-brush-black);
+  letter-spacing: 0.01em;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  font-family: var(--k-body);
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #4d3e2f;
+}
+
+/* ------------------------------------------------------------------ cards: camera, then two columns */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(26px, 3vh, 34px);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(26px, 3vh, 34px) clamp(18px, 2vw, 28px);
+  align-items: start;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(26px, 3vh, 34px);
+  min-width: 0;
+}
+
+/* framing tips under the camera picker */
+.tips {
+  display: grid;
+  gap: 8px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(47, 120, 208, 0.16);
+  background: rgba(242, 248, 255, 0.85);
+  color: #2b4f7a;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.tip svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  color: #2f78d0;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.lead {
+  margin: 2px 0 2px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--k-ink-soft);
+}
+
+.note {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--k-ink-soft);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+}
+
+.testRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding-top: 2px;
+}
+
+/* ------------------------------------------------------------------ camera */
+.cameraGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.preview {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(122, 82, 40, 0.2);
+  background:
+    radial-gradient(120% 90% at 50% 30%, #fffdf8, #f3e9d8);
+  box-shadow: inset 0 1px 6px rgba(60, 35, 10, 0.08);
+}
+
+.previewLive {
+  background: #1d1915;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* selfie view, like Live and Practice */
+}
+
+.previewBar {
+  position: absolute;
+  inset: auto 10px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.liveChip,
+.previewLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 26px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(255, 251, 243, 0.92);
+  color: var(--k-ink);
+  font-size: 12.5px;
+  font-weight: 800;
+}
+
+.previewLabel {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.liveDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e0451b;
+  box-shadow: 0 0 0 3px rgba(224, 69, 27, 0.2);
+}
+
+.previewState {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 16px 22px;
+  text-align: center;
+}
+
+.previewIcon {
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #eef6ff, #cfe4fa);
+  color: #2563a8;
+}
+
+.previewIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.previewIconBad {
+  background: radial-gradient(circle at 35% 30%, #fff1e8, #ffd2b8);
+  color: #b8420a;
+}
+
+.previewTitle {
+  margin: 0;
+  font-family: var(--k-brush);
+  font-size: 24px;
+  line-height: 1.1;
+  color: var(--k-ink);
+}
+
+.previewText {
+  margin: 0;
+  max-width: 40ch;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--k-ink-soft);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ------------------------------------------------------------------ music */
+.musicRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 200px;
+  min-width: 0;
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(47, 120, 208, 0.22);
+  background: #f2f8ff;
+  color: #24558f;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.statusOn {
+  border-color: rgba(240, 100, 30, 0.3);
+  background: #fff5ec;
+  color: #9a3a08;
+}
+
+.statusDot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--k-orange);
+  box-shadow: 0 0 0 3px rgba(240, 100, 30, 0.18);
+}
+
+.credit {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--k-ink-faint);
+}
+
+/* ------------------------------------------------------------------ reset */
+.confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.done {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--k-ready);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.done svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ------------------------------------------------------------------ small screens */
+@media (max-width: 900px) {
+  /* one column, cards in reading order: sound, music, experience, reset */
+  .columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .column {
+    display: contents;
+  }
+
+  .orderSound {
+    order: 1;
+  }
+
+  .orderMusic {
+    order: 2;
+  }
+
+  .orderExperience {
+    order: 3;
+  }
+
+  .orderReset {
+    order: 4;
+  }
+
+  .cameraGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .head::before {
+    inset: -8px 0;
+  }
+
+  .subtitle {
+    font-size: 14.5px;
+  }
+}

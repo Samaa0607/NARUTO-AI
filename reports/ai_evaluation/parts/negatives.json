@@ -1,0 +1,343 @@
+{
+  "about": "Hands that make NO sign of the app; the right answer for every frame is idle. Never-trained clips (claw, OK sign, two open palms) + the 2 held-out idle recordings (validation set).",
+  "model": {
+    "path": "C:\\Users\\user\\Desktop\\SHINOBI-AI\\models\\gesture_model.joblib",
+    "model_name": "random_forest",
+    "created": "2026-10-31T14:36:03",
+    "selection": "default"
+  },
+  "clips": [
+    {
+      "id": "me_day_20261030_175555",
+      "what": "claw hand (old 'chidori' gesture)",
+      "status": "never trained",
+      "duration_s": 20.1,
+      "landmarks": {
+        "idle": 337,
+        "rasengan_palm": 8
+      },
+      "yolox": {
+        "idle": 199
+      },
+      "fused": {
+        "idle": 344,
+        "rasengan_palm": 1
+      },
+      "confirmed": [],
+      "live_fired": [],
+      "practice_fired": {
+        "fire_style": 0,
+        "chidori": 0,
+        "shadow_clone": 0,
+        "rasengan": 0
+      }
+    },
+    {
+      "id": "me_day_20261030_175702",
+      "what": "claw hand (old 'chidori' gesture)",
+      "status": "never trained",
+      "duration_s": 20.0,
+      "landmarks": {
+        "idle": 307
+      },
+      "yolox": {
+        "idle": 203
+      },
+      "fused": {
+        "idle": 307
+      },
+      "confirmed": [],
+      "live_fired": [],
+      "practice_fired": {
+        "fire_style": 0,
+        "chidori": 0,
+        "shadow_clone": 0,
+        "rasengan": 0
+      }
+    },
+    {
+      "id": "me_day_20261030_175819",
+      "what": "claw hand (old 'chidori' gesture)",
+      "status": "never trained",
+      "duration_s": 20.0,
+      "landmarks": {
+        "idle": 319
+      },
+      "yolox": {
+        "idle": 216
+      },
+      "fused": {
+        "idle": 319
+      },
+      "confirmed": [],
+      "live_fired": [],
+      "practice_fired": {
+        "fire_style": 0,
+        "chidori": 0,
+        "shadow_clone": 0,
+        "rasengan": 0
+      }
+    },
+    {
+      "id": "me_day_20261030_175931",
+      "what": "claw hand (old 'chidori' gesture)",
+      "status": "never trained",
+      "duration_s": 20.0,
+      "landmarks": {
+        "idle": 337,
+        "rasengan_palm": 14
+      },
+      "yolox": {
+        "idle": 199
+      },
+      "fused": {
+        "idle": 347,
+        "rasengan_palm": 4
+      },
+      "confirmed": [],
+      "live_fired": [],
+      "practice_fired": {
+        "fire_style": 0,
+        "chidori": 0,
+        "shadow_clone": 0,
+        "rasengan": 0
+      }
+    },
+    {
+      "id": "me_day_20261030_180207",
+      "what": "OK sign (old 'fire' gesture)",
+      "status": "never trained",
+      "duration_s": 20.0,
+      "landmarks": {
+        "rasengan_palm": 329
+      },
+      "yolox": {
+        "idle": 210
+      },
+      "fused": {
+        "rasengan_palm": 325,
+        "idle": 4
+      },
+      "confirmed": [
+        "rasengan_palm"
+      ],
+      "live_fired": [],
+      "practice_fired": {
+        "fire_style": 0,
+        "chidori": 0,
+        "shadow_clone": 0,
+        "rasengan": 0
+      }
+    },
+    {
+      "id": "me_day_20261030_180328",
+      "what": "OK sign (old 'fire' gesture)",
+      "status": "never trained",
+      "duration_s": 20.0,
+      "landmarks": {
+        "rasengan_palm": 289,
+        "idle": 42
+      },
+      "yolox": {
+        "idle": 202
+      },
+      "fused": {
+        "rasengan_palm": 218,
+        "idle": 113
+      },
+      "confirmed": [
+        "rasengan_palm"
+      ],
+      "live_fired": [],
+      "practice_fired": {
+        "fire_style": 0,
+        "chidori": 0,
+        "shadow_clone": 0,
+        "rasengan": 0
+      }
+    },
+    {
+      "id": "me_day_20261030_180435",
+      "what": "OK sign (old 'fire' gesture)",
+      "status": "never trained",
+      "duration_s": 20.0,
+      "landmarks": {
+        "idle": 169,
+        "rasengan_palm": 160
+      },
+      "yolox": {
+        "idle": 191,
+        "snake": 1
+      },
+      "fused": {
+        "idle": 203,
+        "rasengan_palm": 126
+      },
+      "confirmed": [
+        "rasengan_palm"
+      ],
+      "live_fired": [],
+      "practice_fired": {
+        "fire_style": 0,
+        "chidori": 0,
+        "shadow_clone": 0,
+        "rasengan": 0
+      }
+    },
+    {
+      "id": "me_day_20261030_180614",
+      "what": "OK sign (old 'fire' gesture)",
+      "status": "never trained",
+      "duration_s": 20.0,
+      "landmarks": {
+        "rasengan_palm": 297
+      },
+      "yolox": {
+        "idle": 201
+      },
+      "fused": {
+        "rasengan_palm": 297
+      },
+      "confirmed": [
+        "rasengan_palm"
+      ],
+      "live_fired": [],
+      "practice_fired": {
+        "fire_style": 0,
+        "chidori": 0,
+        "shadow_clone": 0,
+        "rasengan": 0
+      }
+    },
+    {
+      "id": "me_day_20261030_174011",
+      "what": "two open palms (data/_discarded)",
+      "status": "never trained",
+      "duration_s": 20.0,
+      "landmarks": {
+        "idle": 328
+      },
+      "yolox": {
+        "idle": 180
+      },
+      "fused": {
+        "idle": 328
+      },
+      "confirmed": [],
+      "live_fired": [],
+      "practice_fired": {
+        "fire_style": 0,
+        "chidori": 0,
+        "shadow_clone": 0,
+        "rasengan": 0
+      }
+    },
+    {
+      "id": "me_day_20261030_174108",
+      "what": "two open palms (data/_discarded)",
+      "status": "never trained",
+      "duration_s": 20.0,
+      "landmarks": {
+        "idle": 331
+      },
+      "yolox": {
+        "idle": 176
+      },
+      "fused": {
+        "idle": 331
+      },
+      "confirmed": [],
+      "live_fired": [],
+      "practice_fired": {
+        "fire_style": 0,
+        "chidori": 0,
+        "shadow_clone": 0,
+        "rasengan": 0
+      }
+    },
+    {
+      "id": "me_night_20261030_222524",
+      "what": "idle held",
+      "status": "validation",
+      "duration_s": 20.0,
+      "landmarks": {
+        "idle": 358
+      },
+      "yolox": {
+        "idle": 179,
+        "horse": 1
+      },
+      "fused": {
+        "idle": 358
+      },
+      "confirmed": [],
+      "live_fired": [],
+      "practice_fired": {
+        "fire_style": 0,
+        "chidori": 0,
+        "shadow_clone": 0,
+        "rasengan": 0
+      }
+    },
+    {
+      "id": "me_night_20261030_222754",
+      "what": "idle held",
+      "status": "validation",
+      "duration_s": 20.1,
+      "landmarks": {
+        "idle": 373
+      },
+      "yolox": {
+        "idle": 185
+      },
+      "fused": {
+        "idle": 373
+      },
+      "confirmed": [],
+      "live_fired": [],
+      "practice_fired": {
+        "fire_style": 0,
+        "chidori": 0,
+        "shadow_clone": 0,
+        "rasengan": 0
+      }
+    }
+  ],
+  "live": {
+    "events": 0,
+    "minutes": 4.01,
+    "per_hour": 0.0,
+    "upper_95_per_hour_if_zero": 44.9,
+    "details": []
+  },
+  "practice": {
+    "fire_style": {
+      "events": 0,
+      "minutes": 4.01,
+      "per_hour": 0.0,
+      "upper_95_per_hour_if_zero": 44.9,
+      "details": []
+    },
+    "chidori": {
+      "events": 0,
+      "minutes": 4.01,
+      "per_hour": 0.0,
+      "upper_95_per_hour_if_zero": 44.9,
+      "details": []
+    },
+    "shadow_clone": {
+      "events": 0,
+      "minutes": 4.01,
+      "per_hour": 0.0,
+      "upper_95_per_hour_if_zero": 44.9,
+      "details": []
+    },
+    "rasengan": {
+      "events": 0,
+      "minutes": 4.01,
+      "per_hour": 0.0,
+      "upper_95_per_hour_if_zero": 44.9,
+      "details": []
+    }
+  }
+}

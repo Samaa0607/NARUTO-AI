@@ -1,0 +1,15 @@
+# Python 3.12
+# mediapipe installs opencv-contrib-python itself. Do NOT also install opencv-python:
+# both provide the same "cv2" module and break each other.
+mediapipe==1.2.0
+opencv-contrib-python==5.0.0.93
+numpy==2.5.4
+scikit-learn==1.9.1
+onnxruntime==1.31.1      # runs the YOLOX hand-seal detector (CPU)
+fastapi==0.162.0         # web server for the React app (python -m shinobi.server)
+uvicorn==0.54.0          # runs that server (HTTP + WebSocket)
+websockets==17.4         # WebSocket support for uvicorn
+httpx==0.28.1            # tests only: FastAPI's TestClient
+joblib
+matplotlib
+pytest

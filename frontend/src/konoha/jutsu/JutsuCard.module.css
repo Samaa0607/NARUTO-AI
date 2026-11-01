@@ -1,0 +1,343 @@
+/* Jutsu card: white card, warm cream "stage" with the animated jutsu icon, brush name,
+   badge, description, status. Selected: orange ring and a small lift; hover: light blue edge. */
+
+.card {
+  --jc: var(--k-orange);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1.5px solid rgba(122, 82, 40, 0.16);
+  background: #fffdf8;
+  color: var(--k-ink);
+  font-family: var(--k-body);
+  box-shadow: 0 8px 22px rgba(60, 35, 10, 0.12), 0 1px 3px rgba(60, 35, 10, 0.08);
+  transition:
+    transform 320ms var(--k-ease),
+    box-shadow 320ms var(--k-ease),
+    border-color 220ms var(--k-ease);
+}
+
+.card:hover {
+  border-color: rgba(47, 120, 208, 0.42);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(60, 35, 10, 0.15), 0 0 0 3px rgba(47, 120, 208, 0.08);
+}
+
+.active,
+.active:hover {
+  border-color: var(--k-orange);
+  transform: translateY(-5px);
+  box-shadow:
+    0 16px 34px rgba(240, 100, 30, 0.2),
+    0 2px 6px rgba(60, 35, 10, 0.1),
+    0 0 0 4px rgba(240, 100, 30, 0.14);
+}
+
+.card:has(.hit:focus-visible) {
+  outline: 2.5px solid var(--k-blue);
+  outline-offset: 3px;
+}
+
+/* ------------------------------------------------------------------ stage */
+.stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 168px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(122, 82, 40, 0.12);
+  background:
+    radial-gradient(70% 90% at 50% 58%, color-mix(in srgb, var(--jc) 16%, transparent) 0%, transparent 70%),
+    repeating-linear-gradient(115deg, rgba(120, 80, 30, 0.02) 0 2px, transparent 2px 7px),
+    linear-gradient(180deg, #fdf6e8 0%, #f7ecd7 100%);
+}
+
+/* the selected card: a slim orange top edge */
+.stage::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--k-orange), var(--k-orange-2));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 420ms var(--k-ease);
+}
+
+.active .stage::before {
+  transform: scaleX(1);
+}
+
+.glyph {
+  position: absolute;
+  right: -6px;
+  bottom: -26px;
+  font-family: 'Yuji Syuku', 'Noto Serif JP', serif;
+  font-size: 132px;
+  line-height: 1;
+  color: var(--jc);
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+.index {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-family: var(--k-brush);
+  font-size: 22px;
+  line-height: 1;
+  color: rgba(42, 32, 23, 0.38);
+}
+
+.active .index {
+  color: var(--k-orange);
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px 4px 8px;
+  border-radius: 999px;
+  font-family: var(--k-body);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.badge svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.4;
+}
+
+.official {
+  color: #1f5fae;
+  background: #e5effb;
+  border: 1px solid rgba(47, 120, 208, 0.3);
+}
+
+.custom {
+  color: #b34a12;
+  background: #fde9da;
+  border: 1px solid rgba(240, 100, 30, 0.3);
+}
+
+/* the place of the jutsu icon (components/art/JutsuIcon draws the window, the ring and the art) */
+.seal {
+  position: relative;
+  display: block;
+  width: 118px;
+  height: 118px;
+  margin-top: 10px;
+  border-radius: 50%;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--jc) 32%, transparent);
+  transition: transform 420ms var(--k-ease), box-shadow 320ms var(--k-ease);
+}
+
+.active .seal {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 0 3px #fffdf8,
+    0 0 0 5px var(--k-orange),
+    0 12px 30px color-mix(in srgb, var(--jc) 45%, transparent);
+}
+
+/* ------------------------------------------------------------------ text */
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 18px 16px;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--k-brush);
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.hit {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--k-ink);
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.hit:focus-visible {
+  outline: none;
+}
+
+/* the button covers the whole card */
+.hit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.active .hit {
+  color: var(--k-orange);
+}
+
+.sub {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--k-ink-soft);
+}
+
+.kanji {
+  font-family: 'Yuji Syuku', 'Noto Serif JP', serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--k-ink);
+}
+
+.desc {
+  display: -webkit-box;
+  margin: 4px 0 0;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--k-ink);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+.meaning {
+  margin: 0;
+  font-size: 12.5px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--k-ink-faint);
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px 5px 10px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.ready {
+  color: var(--k-ready);
+  background: var(--k-ready-bg);
+}
+
+.train {
+  color: var(--k-train);
+  background: var(--k-train-bg);
+}
+
+.signs {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--k-ink-faint);
+  white-space: nowrap;
+}
+
+@container (max-width: 519px) {
+  .stage {
+    height: 150px;
+  }
+
+  .seal {
+    width: 104px;
+    height: 104px;
+  }
+
+  .name {
+    font-size: 30px;
+  }
+}
+
+/* ------------------------------------------------------------------ compact (Practice page) */
+.compact .stage {
+  height: 128px;
+}
+
+.compact .seal {
+  width: 88px;
+  height: 88px;
+  margin-top: 8px;
+}
+
+.compact .glyph {
+  font-size: 104px;
+  bottom: -20px;
+}
+
+.compact .body {
+  gap: 4px;
+  padding: 12px 16px 14px;
+}
+
+.compact .name {
+  font-size: 30px;
+}
+
+/* narrow cards: the seal sits lower so the badge never touches it */
+@container (max-width: 519px) {
+  .seal {
+    margin-top: 34px;
+  }
+
+  .stage {
+    height: 170px;
+  }
+
+  .compact .stage {
+    height: 140px;
+  }
+
+  .compact .seal {
+    margin-top: 30px;
+  }
+}

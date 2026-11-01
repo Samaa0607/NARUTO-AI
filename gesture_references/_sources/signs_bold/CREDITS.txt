@@ -1,0 +1,12 @@
+Bold hand-seal line art in this folder (used by the web app's sequence cards)
+=====================================================================
+
+Adapted from the drawings in ../signs (Schlum, Wikimedia Commons, "Naruto Mudra" series, vectorized
+from photographs), CC BY-SA 4.0  https://creativecommons.org/licenses/by-sa/4.0/
+See ../signs/CREDITS.txt for the original files and their sources.
+
+Changes: lines thickened in proportion to their width and darkened to near-black, nail fill
+darkened, white background made transparent (tools/build_bold_signs.py). The shapes and positions
+of the hands are unchanged. These adapted drawings are CC BY-SA 4.0 as well.
+
+rasengan_palm.png is SHINOBI AI's own drawing (see ../signs/CREDITS.txt), thickened the same way.

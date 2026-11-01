@@ -1,0 +1,1362 @@
+{
+  "format": "shinobi-eval-v1",
+  "created": "2026-11-01T00:30:38",
+  "command": "evaluate.py run --sets validation,train --model none --recognizers fused --out reports/ai_evaluation/evaluate_py_yolox_path --title AI evaluation 2026-11-01 (run B: fused WITHOUT the landmark model = the YOLOX path of the app) --note Fused here = YOLOX + hands only; clone_seal and rasengan_palm cannot be named. This is the closest honest proxy for the app's seal decisions on the seal recordings, which the landmark model was trained on.",
+  "title": "AI evaluation 2026-11-01 (run B: fused WITHOUT the landmark model = the YOLOX path of the app)",
+  "notes": [
+    "Fused here = YOLOX + hands only; clone_seal and rasengan_palm cannot be named. This is the closest honest proxy for the app's seal decisions on the seal recordings, which the landmark model was trained on."
+  ],
+  "settings": {
+    "sets": [
+      "validation",
+      "train"
+    ],
+    "recognizers": [
+      "fused"
+    ],
+    "skip_start_s": 0.5,
+    "yolox_delay_s": 0.06,
+    "seal_rate_hz": 10,
+    "yolox_runs_per_s_median": 9.17,
+    "seal_min_score": 0.7,
+    "seal_no_hand_score": 0.85,
+    "seal_confirm": 2,
+    "seal_max_age": 0.35,
+    "landmark_min_prob": 0.6,
+    "conf_on": 0.75,
+    "hold_seconds": 0.3,
+    "data": "C:\\Users\\user\\Desktop\\SHINOBI-AI\\data",
+    "splits": "C:\\Users\\user\\Desktop\\SHINOBI-AI\\data\\splits.json"
+  },
+  "sets_evaluated": [
+    "validation",
+    "train"
+  ],
+  "sessions_by_set": {
+    "validation": [
+      "me_night_20261030_222524",
+      "me_night_20261030_222754",
+      "me_day_20261030_175251"
+    ],
+    "train": [
+      "me_night_20261030_221934",
+      "me_night_20261030_222121",
+      "me_night_20261030_222258",
+      "me_night_20261030_222645",
+      "me_night_20261030_220443",
+      "me_night_20261030_220610",
+      "me_night_20261030_220235",
+      "me_night_20261030_215059",
+      "me_night_20261030_215447",
+      "me_night_20261030_215808",
+      "me_night_20261030_220743",
+      "me_night_20261030_220040",
+      "me_night_20261030_214750",
+      "me_day_20261030_174647",
+      "me_day_20261030_174917",
+      "me_day_20261030_175113"
+    ]
+  },
+  "model": {
+    "path": "None",
+    "exists": false,
+    "usable": false,
+    "reason": "switched off (--model none)",
+    "train_sessions": [],
+    "validation_sessions": []
+  },
+  "yolox_used": true,
+  "yolox_requested": true,
+  "frame_level": {
+    "validation": {
+      "fused": {
+        "frames": 1088,
+        "accuracy": 0.671875,
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.40186915887850466,
+        "per_class": {
+          "idle": {
+            "precision": 0.671875,
+            "recall": 1.0,
+            "f1": 0.8037383177570093,
+            "support": 731,
+            "predicted": 1088
+          },
+          "ram": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "snake": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "tiger": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "dog": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "monkey": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "boar": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "horse": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "clone_seal": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "rasengan_palm": {
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 357,
+            "predicted": 0
+          }
+        },
+        "confusion": {
+          "rows": [
+            "idle",
+            "rasengan_palm"
+          ],
+          "cols": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse",
+            "clone_seal",
+            "rasengan_palm"
+          ],
+          "matrix": [
+            [
+              731,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              357,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "correct_col": {
+            "idle": "idle",
+            "rasengan_palm": "rasengan_palm"
+          }
+        },
+        "sessions": [
+          "me_day_20261030_175251",
+          "me_night_20261030_222524",
+          "me_night_20261030_222754"
+        ],
+        "latency_ms": {
+          "n": 1118,
+          "mean": 0.05,
+          "median": 0.04,
+          "p90": 0.07,
+          "max": 0.17
+        }
+      }
+    },
+    "train": {
+      "fused": {
+        "frames": 5518,
+        "accuracy": 0.7381297571583907,
+        "balanced_accuracy": 0.7906411858927924,
+        "macro_f1": 0.7616606820673895,
+        "per_class": {
+          "idle": {
+            "precision": 0.4970414201183432,
+            "recall": 1.0,
+            "f1": 0.6640316205533597,
+            "support": 1428,
+            "predicted": 2873
+          },
+          "ram": {
+            "precision": 1.0,
+            "recall": 0.976878612716763,
+            "f1": 0.9883040935672515,
+            "support": 346,
+            "predicted": 338
+          },
+          "snake": {
+            "precision": 1.0,
+            "recall": 0.96,
+            "f1": 0.9795918367346939,
+            "support": 350,
+            "predicted": 336
+          },
+          "tiger": {
+            "precision": 1.0,
+            "recall": 0.993485342019544,
+            "f1": 0.9967320261437909,
+            "support": 307,
+            "predicted": 305
+          },
+          "dog": {
+            "precision": 1.0,
+            "recall": 0.9910179640718563,
+            "f1": 0.9954887218045112,
+            "support": 334,
+            "predicted": 331
+          },
+          "monkey": {
+            "precision": 1.0,
+            "recall": 0.9850299401197605,
+            "f1": 0.9924585218702865,
+            "support": 668,
+            "predicted": 658
+          },
+          "boar": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 339,
+            "predicted": 339
+          },
+          "horse": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 338,
+            "predicted": 338
+          },
+          "clone_seal": {
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 376,
+            "predicted": 0
+          },
+          "rasengan_palm": {
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1032,
+            "predicted": 0
+          }
+        },
+        "confusion": {
+          "rows": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse",
+            "clone_seal",
+            "rasengan_palm"
+          ],
+          "cols": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse",
+            "clone_seal",
+            "rasengan_palm"
+          ],
+          "matrix": [
+            [
+              1428,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              8,
+              338,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              14,
+              0,
+              336,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              305,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              0,
+              0,
+              331,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              0,
+              0,
+              0,
+              658,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              339,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              338,
+              0,
+              0
+            ],
+            [
+              376,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1032,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "correct_col": {
+            "idle": "idle",
+            "ram": "ram",
+            "snake": "snake",
+            "tiger": "tiger",
+            "dog": "dog",
+            "monkey": "monkey",
+            "boar": "boar",
+            "horse": "horse",
+            "clone_seal": "clone_seal",
+            "rasengan_palm": "rasengan_palm"
+          }
+        },
+        "sessions": [
+          "me_day_20261030_174647",
+          "me_day_20261030_174917",
+          "me_day_20261030_175113",
+          "me_night_20261030_214750",
+          "me_night_20261030_215059",
+          "me_night_20261030_215447",
+          "me_night_20261030_215808",
+          "me_night_20261030_220040",
+          "me_night_20261030_220235",
+          "me_night_20261030_220443",
+          "me_night_20261030_220610",
+          "me_night_20261030_220743",
+          "me_night_20261030_221934",
+          "me_night_20261030_222121",
+          "me_night_20261030_222258",
+          "me_night_20261030_222645"
+        ],
+        "latency_ms": {
+          "n": 5657,
+          "mean": 0.09,
+          "median": 0.07,
+          "p90": 0.15,
+          "max": 10.58
+        }
+      }
+    }
+  },
+  "sequence_level": {
+    "takes_found": 0,
+    "takes": {
+      "validation": {},
+      "train": {}
+    },
+    "single_sign_streams": {
+      "sessions": 19,
+      "minutes": 6.34,
+      "false_activations": 0,
+      "per_minute": 0.0,
+      "details": []
+    }
+  },
+  "recordings": [
+    {
+      "id": "me_night_20261030_222524",
+      "set": "validation",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 372,
+      "scored_frames": 358,
+      "duration_s": 20.01,
+      "hands_found": 1.0,
+      "video": {
+        "frames": 187,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 8.9,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 358,
+        "accuracy": 1.0,
+        "sources": {
+          "none": 358
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 372,
+          "mean": 0.05,
+          "median": 0.04,
+          "p90": 0.07,
+          "max": 0.17
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_222754",
+      "set": "validation",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 381,
+      "scored_frames": 373,
+      "duration_s": 20.05,
+      "hands_found": 1.0,
+      "video": {
+        "frames": 190,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.03,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 373,
+        "accuracy": 1.0,
+        "sources": {
+          "none": 373
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 381,
+          "mean": 0.05,
+          "median": 0.03,
+          "p90": 0.07,
+          "max": 0.14
+        }
+      }
+    },
+    {
+      "id": "me_day_20261030_175251",
+      "set": "validation",
+      "kind": "single",
+      "group": "rasengan_palm",
+      "lighting": "day",
+      "date": "2026-10-30",
+      "frames": 365,
+      "scored_frames": 357,
+      "duration_s": 20.01,
+      "hands_found": 1.0,
+      "video": {
+        "frames": 192,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 8.85,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 357,
+        "accuracy": 0.0,
+        "sources": {
+          "none": 357
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 365,
+          "mean": 0.04,
+          "median": 0.04,
+          "p90": 0.06,
+          "max": 0.16
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_221934",
+      "set": "train",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 412,
+      "scored_frames": 401,
+      "duration_s": 20.0,
+      "hands_found": 0.252,
+      "video": {
+        "frames": 217,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.75,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 401,
+        "accuracy": 1.0,
+        "sources": {
+          "none": 401
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 412,
+          "mean": 0.04,
+          "median": 0.03,
+          "p90": 0.06,
+          "max": 0.09
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_222121",
+      "set": "train",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 363,
+      "scored_frames": 355,
+      "duration_s": 20.02,
+      "hands_found": 0.944,
+      "video": {
+        "frames": 187,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 8.94,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 355,
+        "accuracy": 1.0,
+        "sources": {
+          "none": 355
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 363,
+          "mean": 0.05,
+          "median": 0.03,
+          "p90": 0.07,
+          "max": 0.18
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_222258",
+      "set": "train",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 361,
+      "scored_frames": 354,
+      "duration_s": 20.02,
+      "hands_found": 0.972,
+      "video": {
+        "frames": 196,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.24,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 354,
+        "accuracy": 1.0,
+        "sources": {
+          "none": 354
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 361,
+          "mean": 0.05,
+          "median": 0.05,
+          "p90": 0.07,
+          "max": 0.29
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_222645",
+      "set": "train",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 324,
+      "scored_frames": 318,
+      "duration_s": 20.01,
+      "hands_found": 0.984,
+      "video": {
+        "frames": 210,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.6,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 318,
+        "accuracy": 1.0,
+        "sources": {
+          "none": 318
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 324,
+          "mean": 0.06,
+          "median": 0.07,
+          "p90": 0.07,
+          "max": 0.28
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_220443",
+      "set": "train",
+      "kind": "single",
+      "group": "ram",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 354,
+      "scored_frames": 346,
+      "duration_s": 20.05,
+      "hands_found": 1.0,
+      "video": {
+        "frames": 198,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.23,
+      "controller": {
+        "confirmed": [
+          [
+            0.622,
+            "ram"
+          ],
+          [
+            13.95,
+            "ram"
+          ],
+          [
+            16.448,
+            "ram"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 346,
+        "accuracy": 0.9769,
+        "sources": {
+          "yolox": 338,
+          "none": 8
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.622,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 354,
+          "mean": 0.06,
+          "median": 0.07,
+          "p90": 0.09,
+          "max": 0.29
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_220610",
+      "set": "train",
+      "kind": "single",
+      "group": "snake",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 364,
+      "scored_frames": 350,
+      "duration_s": 20.03,
+      "hands_found": 1.0,
+      "video": {
+        "frames": 201,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.29,
+      "controller": {
+        "confirmed": [
+          [
+            0.574,
+            "snake"
+          ],
+          [
+            6.927,
+            "snake"
+          ],
+          [
+            7.817,
+            "snake"
+          ],
+          [
+            10.981,
+            "snake"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 350,
+        "accuracy": 0.96,
+        "sources": {
+          "yolox": 336,
+          "none": 14
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.574,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 364,
+          "mean": 0.07,
+          "median": 0.08,
+          "p90": 0.09,
+          "max": 0.21
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_220235",
+      "set": "train",
+      "kind": "single",
+      "group": "tiger",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 315,
+      "scored_frames": 307,
+      "duration_s": 20.07,
+      "hands_found": 1.0,
+      "video": {
+        "frames": 195,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.17,
+      "controller": {
+        "confirmed": [
+          [
+            0.662,
+            "tiger"
+          ],
+          [
+            9.562,
+            "tiger"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 307,
+        "accuracy": 0.9935,
+        "sources": {
+          "yolox": 305,
+          "none": 2
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.662,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 315,
+          "mean": 0.07,
+          "median": 0.07,
+          "p90": 0.1,
+          "max": 0.23
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_215059",
+      "set": "train",
+      "kind": "single",
+      "group": "dog",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 340,
+      "scored_frames": 334,
+      "duration_s": 20.04,
+      "hands_found": 1.0,
+      "video": {
+        "frames": 203,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.38,
+      "controller": {
+        "confirmed": [
+          [
+            0.697,
+            "dog"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 334,
+        "accuracy": 0.991,
+        "sources": {
+          "yolox": 331,
+          "none": 3
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.697,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 340,
+          "mean": 0.07,
+          "median": 0.07,
+          "p90": 0.1,
+          "max": 0.35
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_215447",
+      "set": "train",
+      "kind": "single",
+      "group": "monkey",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 348,
+      "scored_frames": 341,
+      "duration_s": 20.02,
+      "hands_found": 0.358,
+      "video": {
+        "frames": 218,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.64,
+      "controller": {
+        "confirmed": [
+          [
+            0.701,
+            "monkey"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 341,
+        "accuracy": 0.9707,
+        "sources": {
+          "yolox": 331,
+          "none": 10
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.701,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 348,
+          "mean": 0.04,
+          "median": 0.04,
+          "p90": 0.07,
+          "max": 0.11
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_215808",
+      "set": "train",
+      "kind": "single",
+      "group": "monkey",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 334,
+      "scored_frames": 327,
+      "duration_s": 20.01,
+      "hands_found": 0.933,
+      "video": {
+        "frames": 229,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.9,
+      "controller": {
+        "confirmed": [
+          [
+            0.653,
+            "monkey"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 327,
+        "accuracy": 1.0,
+        "sources": {
+          "yolox": 327
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.653,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 334,
+          "mean": 0.07,
+          "median": 0.07,
+          "p90": 0.09,
+          "max": 0.27
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_220743",
+      "set": "train",
+      "kind": "single",
+      "group": "boar",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 352,
+      "scored_frames": 339,
+      "duration_s": 20.06,
+      "hands_found": 1.0,
+      "video": {
+        "frames": 180,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 8.67,
+      "controller": {
+        "confirmed": [
+          [
+            0.593,
+            "boar"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 339,
+        "accuracy": 1.0,
+        "sources": {
+          "yolox": 339
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.593,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 352,
+          "mean": 0.1,
+          "median": 0.09,
+          "p90": 0.17,
+          "max": 0.32
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_220040",
+      "set": "train",
+      "kind": "single",
+      "group": "horse",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 346,
+      "scored_frames": 338,
+      "duration_s": 20.01,
+      "hands_found": 1.0,
+      "video": {
+        "frames": 196,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.15,
+      "controller": {
+        "confirmed": [
+          [
+            0.606,
+            "horse"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 338,
+        "accuracy": 1.0,
+        "sources": {
+          "yolox": 338
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.606,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 346,
+          "mean": 0.26,
+          "median": 0.17,
+          "p90": 0.44,
+          "max": 10.58
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_214750",
+      "set": "train",
+      "kind": "single",
+      "group": "clone_seal",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 384,
+      "scored_frames": 376,
+      "duration_s": 20.02,
+      "hands_found": 1.0,
+      "video": {
+        "frames": 192,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 8.99,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 376,
+        "accuracy": 0.0,
+        "sources": {
+          "none": 376
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 384,
+          "mean": 0.14,
+          "median": 0.11,
+          "p90": 0.25,
+          "max": 2.4
+        }
+      }
+    },
+    {
+      "id": "me_day_20261030_174647",
+      "set": "train",
+      "kind": "single",
+      "group": "rasengan_palm",
+      "lighting": "day",
+      "date": "2026-10-30",
+      "frames": 357,
+      "scored_frames": 343,
+      "duration_s": 20.06,
+      "hands_found": 1.0,
+      "video": {
+        "frames": 204,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.17,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 343,
+        "accuracy": 0.0,
+        "sources": {
+          "none": 343
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 357,
+          "mean": 0.14,
+          "median": 0.13,
+          "p90": 0.21,
+          "max": 0.52
+        }
+      }
+    },
+    {
+      "id": "me_day_20261030_174917",
+      "set": "train",
+      "kind": "single",
+      "group": "rasengan_palm",
+      "lighting": "day",
+      "date": "2026-10-30",
+      "frames": 376,
+      "scored_frames": 369,
+      "duration_s": 20.06,
+      "hands_found": 1.0,
+      "video": {
+        "frames": 199,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.02,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 369,
+        "accuracy": 0.0,
+        "sources": {
+          "none": 369
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 376,
+          "mean": 0.07,
+          "median": 0.06,
+          "p90": 0.11,
+          "max": 0.27
+        }
+      }
+    },
+    {
+      "id": "me_day_20261030_175113",
+      "set": "train",
+      "kind": "single",
+      "group": "rasengan_palm",
+      "lighting": "day",
+      "date": "2026-10-30",
+      "frames": 327,
+      "scored_frames": 320,
+      "duration_s": 20.01,
+      "hands_found": 1.0,
+      "video": {
+        "frames": 192,
+        "aligned": "exact"
+      },
+      "yolox_runs_per_s": 9.1,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 320,
+        "accuracy": 0.0,
+        "sources": {
+          "none": 320
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 327,
+          "mean": 0.1,
+          "median": 0.11,
+          "p90": 0.15,
+          "max": 0.26
+        }
+      }
+    }
+  ],
+  "ignored": [
+    {
+      "id": "me_day_20261030_175555",
+      "path": "landmarks/chidori/me_day_20261030_175555.npz",
+      "label": "chidori",
+      "reason": "'chidori' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_175702",
+      "path": "landmarks/chidori/me_day_20261030_175702.npz",
+      "label": "chidori",
+      "reason": "'chidori' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_175819",
+      "path": "landmarks/chidori/me_day_20261030_175819.npz",
+      "label": "chidori",
+      "reason": "'chidori' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_175931",
+      "path": "landmarks/chidori/me_day_20261030_175931.npz",
+      "label": "chidori",
+      "reason": "'chidori' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_180207",
+      "path": "landmarks/fire/me_day_20261030_180207.npz",
+      "label": "fire",
+      "reason": "'fire' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_180328",
+      "path": "landmarks/fire/me_day_20261030_180328.npz",
+      "label": "fire",
+      "reason": "'fire' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_180435",
+      "path": "landmarks/fire/me_day_20261030_180435.npz",
+      "label": "fire",
+      "reason": "'fire' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_180614",
+      "path": "landmarks/fire/me_day_20261030_180614.npz",
+      "label": "fire",
+      "reason": "'fire' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    }
+  ],
+  "warnings": [
+    "No landmark model: switched off (--model none). Landmark numbers are missing and fused = YOLOX + hands only (clone_seal and rasengan_palm cannot be recognised).",
+    "Signs without any test recording yet: idle, ram, snake, tiger, dog, monkey, boar, horse, clone_seal, rasengan_palm. They have no honest test number.",
+    "Only one recording evaluated for: boar, clone_seal, dog, horse, ram, snake, tiger. One recording = one person, one day, one light: treat those numbers as a smoke test.",
+    "All evaluated recordings come from day 2026-10-30, night 2026-10-30: nothing here says how the app does in other light or on other days.",
+    "YOLOX sees the saved 480p reference video (mp4), not the live 720p camera frame: pixels differ a little from the app's.",
+    "Hands come from the landmarks saved while recording (MediaPipe on the live 720p frame), as the app would have them; MediaPipe itself is not re-run."
+  ],
+  "seconds": 166.6
+}

@@ -1,0 +1,141 @@
+.status {
+  --tone: var(--accent);
+  display: grid;
+  justify-items: center;
+  gap: var(--space-5);
+  padding: clamp(28px, 5vw, 56px) var(--space-5);
+  text-align: center;
+  min-width: 0;
+}
+
+.error {
+  --tone: #ff7d89;
+}
+
+.warning {
+  --tone: var(--warning);
+}
+
+.seal {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--tone) 45%, transparent);
+  background:
+    radial-gradient(circle, color-mix(in srgb, var(--tone) 18%, transparent), transparent 70%);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--tone) 18%, transparent);
+}
+
+.ring::before {
+  content: '';
+  position: absolute;
+  inset: -9px;
+  border-radius: 50%;
+  border: 1px dashed color-mix(in srgb, var(--tone) 30%, transparent);
+  animation: turn 24s linear infinite;
+}
+
+@keyframes turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon {
+  position: relative;
+  display: inline-flex;
+  color: var(--tone);
+}
+
+.icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.body {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  max-width: 560px;
+  min-width: 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 34px);
+  letter-spacing: var(--tracking-display);
+  line-height: 1.05;
+  color: var(--text);
+}
+
+.text {
+  display: grid;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+/* compact: icon left, text right */
+.compact {
+  grid-template-columns: auto minmax(0, 1fr);
+  justify-items: start;
+  align-items: center;
+  text-align: left;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+}
+
+.compact .seal {
+  width: 56px;
+  height: 56px;
+}
+
+.compact .ring::before {
+  inset: -6px;
+}
+
+.compact .icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.compact .body {
+  justify-items: start;
+  gap: 6px;
+}
+
+.compact .title {
+  font-size: 24px;
+}
+
+.compact .text {
+  font-size: 14.5px;
+}
+
+.compact .actions {
+  justify-content: flex-start;
+  margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+  .compact {
+    grid-template-columns: 1fr;
+  }
+}

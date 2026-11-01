@@ -1,0 +1,487 @@
+{
+  "about": "The real server (python -m shinobi.server, its own port) over the WebSocket, fed the camera fixtures (1280x720, 15 fps, the user's recordings spliced into sign sequences, looping) like a browser: one frame in flight, JPEG 80. Stage timings are the server's own FrameState.timings (ms). 'no effect' = frames without a running effect. The machine was shared with other agents' work while measuring.",
+  "url": "ws://127.0.0.1:8003/ws",
+  "runs": [
+    {
+      "fixture": "idle",
+      "frames_answered": 71,
+      "seconds": 5.8,
+      "answered_fps": 12.15,
+      "effects_seen": {}
+    },
+    {
+      "fixture": "fire_style",
+      "frames_answered": 282,
+      "seconds": 27.1,
+      "answered_fps": 10.36,
+      "effects_seen": {
+        "fire": 126
+      }
+    },
+    {
+      "fixture": "chidori",
+      "frames_answered": 258,
+      "seconds": 27.2,
+      "answered_fps": 9.45,
+      "effects_seen": {
+        "chidori": 129
+      }
+    },
+    {
+      "fixture": "shadow_clone",
+      "frames_answered": 267,
+      "seconds": 27.2,
+      "answered_fps": 9.8,
+      "effects_seen": {
+        "shadow_clone": 161
+      }
+    },
+    {
+      "fixture": "rasengan",
+      "frames_answered": 295,
+      "seconds": 27.1,
+      "answered_fps": 10.83,
+      "effects_seen": {
+        "rasengan": 161
+      }
+    }
+  ],
+  "by_condition": {
+    "no effect": {
+      "frames": 596,
+      "rtt_ms": {
+        "n": 596,
+        "median": 84.3,
+        "p90": 109.9,
+        "p99": 124.5,
+        "mean": 77.1
+      },
+      "server_fps": {
+        "n": 596,
+        "median": 11.9,
+        "p90": 14.9,
+        "p99": 15.9,
+        "mean": 12.1
+      },
+      "capacity_fps_median": 15.1,
+      "stages_ms": {
+        "decode": {
+          "n": 596,
+          "median": 8.4,
+          "p90": 9.4,
+          "p99": 14.0,
+          "mean": 7.7
+        },
+        "hands": {
+          "n": 596,
+          "median": 45.6,
+          "p90": 71.7,
+          "p99": 87.1,
+          "mean": 44.6
+        },
+        "model": {
+          "n": 596,
+          "median": 0.9,
+          "p90": 1.4,
+          "p99": 2.1,
+          "mean": 0.8
+        },
+        "yolox": {
+          "n": 594,
+          "median": 32.4,
+          "p90": 37.7,
+          "p99": 49.8,
+          "mean": 30.0
+        },
+        "seg": {
+          "n": 1,
+          "median": 60.2,
+          "p90": 60.2,
+          "p99": 60.2,
+          "mean": 60.2
+        },
+        "fx": {
+          "n": 596,
+          "median": 0.0,
+          "p90": 0.0,
+          "p99": 0.0,
+          "mean": 0.0
+        },
+        "encode": {
+          "n": 596,
+          "median": 9.3,
+          "p90": 9.9,
+          "p99": 12.8,
+          "mean": 8.1
+        },
+        "total": {
+          "n": 596,
+          "median": 66.2,
+          "p90": 92.3,
+          "p99": 107.0,
+          "mean": 62.0
+        }
+      }
+    },
+    "fire": {
+      "frames": 126,
+      "rtt_ms": {
+        "n": 126,
+        "median": 107.4,
+        "p90": 141.3,
+        "p99": 150.7,
+        "mean": 103.0
+      },
+      "server_fps": {
+        "n": 126,
+        "median": 9.6,
+        "p90": 13.2,
+        "p99": 14.7,
+        "mean": 10.3
+      },
+      "capacity_fps_median": 11.2,
+      "stages_ms": {
+        "decode": {
+          "n": 126,
+          "median": 8.3,
+          "p90": 8.8,
+          "p99": 9.1,
+          "mean": 7.4
+        },
+        "hands": {
+          "n": 126,
+          "median": 43.5,
+          "p90": 70.4,
+          "p99": 74.8,
+          "mean": 42.1
+        },
+        "model": {
+          "n": 126,
+          "median": 0.1,
+          "p90": 1.3,
+          "p99": 2.0,
+          "mean": 0.5
+        },
+        "yolox": {
+          "n": 126,
+          "median": 32.5,
+          "p90": 40.0,
+          "p99": 45.1,
+          "mean": 30.9
+        },
+        "seg": null,
+        "fx": {
+          "n": 126,
+          "median": 28.2,
+          "p90": 39.5,
+          "p99": 45.1,
+          "mean": 28.5
+        },
+        "encode": {
+          "n": 126,
+          "median": 9.2,
+          "p90": 9.9,
+          "p99": 11.9,
+          "mean": 8.2
+        },
+        "total": {
+          "n": 126,
+          "median": 89.6,
+          "p90": 124.6,
+          "p99": 133.3,
+          "mean": 87.7
+        }
+      }
+    },
+    "chidori": {
+      "frames": 129,
+      "rtt_ms": {
+        "n": 129,
+        "median": 114.6,
+        "p90": 151.5,
+        "p99": 207.6,
+        "mean": 113.4
+      },
+      "server_fps": {
+        "n": 129,
+        "median": 9.8,
+        "p90": 13.8,
+        "p99": 14.7,
+        "mean": 10.2
+      },
+      "capacity_fps_median": 10.4,
+      "stages_ms": {
+        "decode": {
+          "n": 129,
+          "median": 8.2,
+          "p90": 9.0,
+          "p99": 14.8,
+          "mean": 7.3
+        },
+        "hands": {
+          "n": 129,
+          "median": 38.1,
+          "p90": 71.4,
+          "p99": 86.0,
+          "mean": 42.6
+        },
+        "model": {
+          "n": 129,
+          "median": 0.5,
+          "p90": 1.1,
+          "p99": 1.5,
+          "mean": 0.5
+        },
+        "yolox": {
+          "n": 129,
+          "median": 32.9,
+          "p90": 40.5,
+          "p99": 47.0,
+          "mean": 29.9
+        },
+        "seg": null,
+        "fx": {
+          "n": 129,
+          "median": 32.6,
+          "p90": 49.9,
+          "p99": 106.1,
+          "mean": 39.0
+        },
+        "encode": {
+          "n": 129,
+          "median": 9.3,
+          "p90": 10.1,
+          "p99": 11.0,
+          "mean": 7.7
+        },
+        "total": {
+          "n": 129,
+          "median": 96.6,
+          "p90": 133.1,
+          "p99": 187.4,
+          "mean": 97.9
+        }
+      }
+    },
+    "shadow_clone": {
+      "frames": 161,
+      "rtt_ms": {
+        "n": 161,
+        "median": 106.7,
+        "p90": 140.2,
+        "p99": 148.5,
+        "mean": 107.2
+      },
+      "server_fps": {
+        "n": 161,
+        "median": 9.3,
+        "p90": 11.5,
+        "p99": 13.9,
+        "mean": 9.4
+      },
+      "capacity_fps_median": 11.5,
+      "stages_ms": {
+        "decode": {
+          "n": 161,
+          "median": 8.5,
+          "p90": 8.9,
+          "p99": 10.5,
+          "mean": 8.2
+        },
+        "hands": {
+          "n": 161,
+          "median": 46.2,
+          "p90": 70.6,
+          "p99": 84.6,
+          "mean": 48.4
+        },
+        "model": {
+          "n": 161,
+          "median": 0.7,
+          "p90": 1.3,
+          "p99": 2.0,
+          "mean": 0.7
+        },
+        "yolox": {
+          "n": 161,
+          "median": 39.1,
+          "p90": 44.6,
+          "p99": 48.4,
+          "mean": 38.0
+        },
+        "seg": {
+          "n": 159,
+          "median": 46.4,
+          "p90": 71.2,
+          "p99": 86.7,
+          "mean": 49.3
+        },
+        "fx": {
+          "n": 161,
+          "median": 19.1,
+          "p90": 39.3,
+          "p99": 54.6,
+          "mean": 21.8
+        },
+        "encode": {
+          "n": 161,
+          "median": 9.7,
+          "p90": 11.1,
+          "p99": 13.6,
+          "mean": 9.6
+        },
+        "total": {
+          "n": 161,
+          "median": 87.1,
+          "p90": 120.5,
+          "p99": 130.4,
+          "mean": 89.7
+        }
+      }
+    },
+    "rasengan": {
+      "frames": 161,
+      "rtt_ms": {
+        "n": 161,
+        "median": 80.6,
+        "p90": 127.1,
+        "p99": 168.5,
+        "mean": 86.0
+      },
+      "server_fps": {
+        "n": 161,
+        "median": 12.0,
+        "p90": 14.5,
+        "p99": 15.0,
+        "mean": 11.5
+      },
+      "capacity_fps_median": 15.8,
+      "stages_ms": {
+        "decode": {
+          "n": 161,
+          "median": 8.7,
+          "p90": 10.1,
+          "p99": 19.6,
+          "mean": 8.1
+        },
+        "hands": {
+          "n": 161,
+          "median": 31.2,
+          "p90": 61.3,
+          "p99": 71.9,
+          "mean": 37.3
+        },
+        "model": {
+          "n": 161,
+          "median": 0.1,
+          "p90": 1.3,
+          "p99": 2.0,
+          "mean": 0.5
+        },
+        "yolox": {
+          "n": 161,
+          "median": 33.0,
+          "p90": 41.3,
+          "p99": 52.8,
+          "mean": 31.3
+        },
+        "seg": null,
+        "fx": {
+          "n": 161,
+          "median": 11.6,
+          "p90": 27.1,
+          "p99": 44.7,
+          "mean": 15.4
+        },
+        "encode": {
+          "n": 161,
+          "median": 9.1,
+          "p90": 10.4,
+          "p99": 13.9,
+          "mean": 8.1
+        },
+        "total": {
+          "n": 161,
+          "median": 63.3,
+          "p90": 106.0,
+          "p99": 144.7,
+          "mean": 70.3
+        }
+      }
+    }
+  },
+  "cpu_count": 8,
+  "code_mtimes": {
+    "__init__.py": "2026-11-01 00:25:55",
+    "camera.py": "2026-10-30 15:57:00",
+    "catalog.py": "2026-11-01 00:25:46",
+    "classifier.py": "2026-10-31 15:57:04",
+    "config.py": "2026-11-01 00:25:07",
+    "controller.py": "2026-10-31 23:33:35",
+    "base.py": "2026-11-01 00:25:30",
+    "chidori.py": "2026-11-01 00:51:19",
+    "fire.py": "2026-11-01 00:51:19",
+    "fx.py": "2026-11-01 00:26:24",
+    "rasengan.py": "2026-11-01 00:51:19",
+    "shadow_clone.py": "2026-11-01 00:51:19",
+    "engine.py": "2026-11-01 00:29:05",
+    "events.py": "2026-11-01 00:29:40",
+    "features.py": "2026-10-30 15:47:32",
+    "filters.py": "2026-10-30 15:37:33",
+    "fusion.py": "2026-10-30 22:37:35",
+    "hands.py": "2026-10-30 16:55:10",
+    "hud.py": "2026-10-30 20:05:40",
+    "main.py": "2026-11-01 00:30:32",
+    "seal_detector.py": "2026-10-30 22:36:07",
+    "segmentation.py": "2026-10-30 21:11:25",
+    "server.py": "2026-11-01 00:30:03",
+    "tracking.py": "2026-10-30 16:54:33"
+  },
+  "measured_at": "2026-11-01 00:51:54",
+  "server_info": {
+    "name": "SHINOBI AI",
+    "version": "0.1.0",
+    "protocol": 1,
+    "yolox": true,
+    "landmark_model": true,
+    "recognizable": [
+      "ram",
+      "snake",
+      "tiger",
+      "dog",
+      "monkey",
+      "boar",
+      "horse",
+      "clone_seal",
+      "rasengan_palm"
+    ],
+    "jutsu_available": {
+      "fire_style": true,
+      "chidori": true,
+      "shadow_clone": true,
+      "rasengan": true
+    },
+    "sessions": {
+      "active": 1,
+      "max": 1
+    },
+    "frame": {
+      "max_width": 1280,
+      "max_height": 1280,
+      "jpeg_quality": 0.8,
+      "max_in_flight": 2
+    },
+    "mirror": true,
+    "sequence_max_gap": 7.0,
+    "activation": {
+      "charge": {
+        "fire_style": 1.2,
+        "chidori": 1.2,
+        "shadow_clone": 1.2,
+        "rasengan": 1.2
+      },
+      "voice_default": 0.4,
+      "voice_gap": 0.05
+    }
+  }
+}

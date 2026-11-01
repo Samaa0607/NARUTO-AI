@@ -1,0 +1,556 @@
+/* "LIVE CAMERA" card: the video box (processed frames / local preview / camera states) and the
+   Start / Stop buttons under it. */
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card > :last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px clamp(14px, 2.4vw, 26px) 18px;
+}
+
+/* ------------------------------------------------------------------ video box */
+.stage {
+  --tone: var(--k-ink-faint);
+  position: relative;
+  container-type: inline-size;
+  width: 100%;
+  aspect-ratio: var(--ar, 16 / 9);
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--k-paper-edge);
+  /* camera off: soft light-blue paper */
+  background:
+    radial-gradient(90% 80% at 50% 35%, rgba(255, 255, 255, 0.75), transparent 70%),
+    linear-gradient(165deg, #e9f1f8, #d9e5f0);
+  box-shadow: 0 6px 16px rgba(60, 35, 10, 0.16);
+}
+
+.on {
+  background: #15120f;
+}
+
+.stage:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 0;
+  background: #000;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.media [hidden] {
+  display: none !important;
+}
+
+.canvas,
+.preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+}
+
+.preview {
+  transform: scaleX(-1); /* selfie view, like the server's mirrored frames */
+  filter: saturate(0.7) brightness(0.62);
+}
+
+/* ------------------------------------------------------------------ chips on the video */
+.success {
+  --tone: #3f8f4a;
+}
+
+.warning {
+  --tone: #c27d12;
+}
+
+.danger {
+  --tone: #cc4436;
+}
+
+.neutral {
+  --tone: #8a7b68;
+}
+
+.accent {
+  --tone: var(--k-orange);
+}
+
+.chip {
+  position: absolute;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: calc(100% - 20px);
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.93);
+  color: var(--k-ink);
+  font-family: var(--k-body);
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+}
+
+.connChip {
+  top: 10px;
+  left: 10px;
+  max-width: calc(100% - 70px);
+}
+
+.dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--tone);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tone) 22%, transparent);
+}
+
+.meta {
+  font-weight: 600;
+  color: var(--k-ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.meta::before {
+  content: '·';
+  margin-right: 6px;
+  color: var(--k-ink-faint);
+}
+
+.signChip {
+  left: 10px;
+  bottom: 10px;
+  overflow: hidden;
+  padding-right: 12px;
+}
+
+.signChip svg {
+  flex: none;
+  width: 15px;
+  height: 15px;
+  color: var(--k-orange);
+}
+
+.signKicker {
+  font-weight: 600;
+  color: var(--k-ink-soft);
+}
+
+.signName {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.signIdle .signName {
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--k-ink-soft);
+}
+
+.signIdle svg {
+  color: var(--k-ink-faint);
+}
+
+.holdBar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--k-orange);
+  transform-origin: left center;
+  transition: transform 120ms linear;
+}
+
+.fullscreen {
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  background: rgba(20, 16, 12, 0.45);
+  color: #fff;
+  cursor: pointer;
+  transition: background 160ms var(--k-ease);
+}
+
+.fullscreen:hover {
+  background: rgba(20, 16, 12, 0.7);
+}
+
+.fullscreen:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.fullscreen svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* ------------------------------------------------------------------ AI not live */
+.notice {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: min(400px, calc(100% - 24px));
+  max-height: calc(100% - 20px);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 16px;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid var(--k-paper-edge);
+  background: var(--k-paper);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  color: var(--k-ink);
+  font-family: var(--k-body);
+}
+
+.noticeIcon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--tone) 15%, transparent);
+  color: var(--tone);
+}
+
+.noticeIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.noticeTitle {
+  font-family: var(--k-brush);
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.noticeText {
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--k-ink-soft);
+}
+
+.noticeText strong {
+  font-weight: 700;
+  color: var(--k-ink);
+}
+
+.retry {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  padding: 6px 12px;
+  border: 1px solid var(--k-paper-edge);
+  border-radius: 8px;
+  background: #fffaf0;
+  color: var(--k-ink);
+  font-family: var(--k-body);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.retry:hover {
+  border-color: rgba(122, 82, 40, 0.45);
+}
+
+.retry:focus-visible {
+  outline: 2px solid var(--k-blue);
+  outline-offset: 2px;
+}
+
+.retry svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ------------------------------------------------------------------ activation / toasts */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.overlay > * {
+  pointer-events: auto;
+}
+
+/* sized to the video box (not the window) and in the brush font of the new look; a compact band at
+   the top during the activation build-up, so the charge at the hands stays visible */
+.overlay h2 {
+  font-family: var(--k-brush);
+  font-size: clamp(22px, 6cqi, 48px);
+  letter-spacing: 0.03em;
+}
+
+.overlay p[lang='ja'] {
+  font-size: clamp(13px, 2.6cqi, 22px);
+}
+
+/* the "active" banner sits under the full-screen button */
+.overlay > [data-testid='jutsu-banner'] {
+  top: 54px;
+}
+
+/* ------------------------------------------------------------------ camera not running */
+.idle {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 22px;
+  text-align: center;
+  color: var(--k-ink);
+  font-family: var(--k-body);
+}
+
+.idleIcon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--k-blue);
+  box-shadow: 0 3px 10px rgba(47, 120, 208, 0.18);
+}
+
+.idleIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.problem .idleIcon {
+  color: #c0392b;
+  background: #fde8e1;
+  box-shadow: 0 3px 10px rgba(192, 57, 43, 0.16);
+}
+
+.idleTitle {
+  margin-top: 2px;
+  font-family: var(--k-brush);
+  font-size: 27px;
+  line-height: 1.1;
+}
+
+.idleText {
+  max-width: 42ch;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--k-ink-soft);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@container (max-width: 420px) {
+  .fps {
+    display: none;
+  }
+
+  .notice {
+    gap: 4px;
+    padding: 10px 12px;
+  }
+
+  .noticeIcon,
+  .noticeDetail {
+    display: none;
+  }
+
+  .noticeTitle {
+    font-size: 21px;
+  }
+
+  .noticeText {
+    font-size: 12.5px;
+  }
+
+  .idle {
+    gap: 4px;
+    padding: 10px 14px;
+  }
+
+  .idleIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .idleTitle {
+    font-size: 23px;
+  }
+
+  .idleText {
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+
+  .chip {
+    font-size: 11.5px;
+    padding: 3px 8px;
+  }
+}
+
+/* ------------------------------------------------------------------ buttons */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 18px;
+  margin-top: 16px;
+}
+
+.controls > button {
+  flex: 0 1 200px;
+  min-width: 0;
+}
+
+.stopIcon {
+  fill: currentColor;
+}
+
+.controls > button .stopIcon {
+  width: 17px;
+  height: 17px;
+}
+
+.picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 0 8px 0 10px;
+  min-height: 36px;
+  border: 1px solid var(--k-paper-edge);
+  border-radius: 9px;
+  background: #fffaf0;
+  color: var(--k-ink-soft);
+  font-family: var(--k-body);
+  font-size: 13px;
+}
+
+.picker svg {
+  flex: none;
+  width: 15px;
+  height: 15px;
+}
+
+.picker select {
+  min-width: 0;
+  max-width: 220px;
+  border: 0;
+  background: transparent;
+  color: var(--k-ink);
+  font-weight: 600;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.picker select:focus-visible {
+  outline: 2px solid var(--k-blue);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .controls {
+    gap: 10px;
+  }
+
+  .controls > button {
+    flex: 1 1 140px;
+    padding: 0 12px;
+    font-size: 20px;
+    gap: 8px;
+  }
+}
+
+/* ------------------------------------------------------------------ hero (the Live page) */
+/* the video takes the card's width, but never more height than --video-max-h (set by the page) so
+   Start / Stop stay on screen; a taller-than-wide window narrows the video instead of cropping it */
+/* the card is as tall as the side column: the video and the buttons sit in the middle of it */
+.hero > :last-child {
+  justify-content: center;
+  padding: 14px clamp(10px, 1.4vw, 18px) 16px;
+}
+
+.hero .stage {
+  width: min(100%, calc(var(--video-max-h, 100vh) * var(--ar, 1.7778)));
+  margin-inline: auto;
+  border-radius: 12px;
+}
+
+.hero .idleIcon {
+  width: 60px;
+  height: 60px;
+}
+
+.hero .idleIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.hero .idleTitle {
+  font-size: clamp(27px, 3.4cqi, 34px);
+}
+
+.hero .idleText {
+  font-size: 15px;
+}
+
+.hero .controls {
+  margin-top: 14px;
+}
+
+@media (min-width: 481px) {
+  .hero .controls > button {
+    flex-basis: 220px;
+  }
+}

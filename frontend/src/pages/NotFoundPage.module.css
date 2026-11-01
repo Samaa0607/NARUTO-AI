@@ -1,0 +1,84 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 18px;
+  min-height: min(680px, calc(100dvh - var(--nav-height) - 160px));
+  padding: clamp(24px, 6vw, 72px) 0;
+  text-align: center;
+}
+
+.kanji {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -54%);
+  font-family: var(--font-kanji);
+  font-size: clamp(260px, 40vw, 520px);
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.06;
+  pointer-events: none;
+  user-select: none;
+}
+
+.code {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(110px, 20vw, 240px);
+  line-height: 0.82;
+  letter-spacing: 0.04em;
+  background: var(--chakra-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 40px var(--glow));
+}
+
+.slash {
+  position: absolute;
+  left: -6%;
+  right: -6%;
+  top: 52%;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, transparent, #fff 30%, var(--accent-2) 60%, transparent);
+  transform: rotate(-12deg);
+  box-shadow: 0 0 18px var(--accent);
+  animation: slash 900ms var(--ease-out) 200ms both;
+}
+
+@keyframes slash {
+  from {
+    transform: rotate(-12deg) scaleX(0);
+  }
+}
+
+.title {
+  font-size: var(--fs-h2);
+}
+
+.text {
+  max-width: 48ch;
+  color: var(--text-muted);
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+}
+
+.path {
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 0.92em;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}

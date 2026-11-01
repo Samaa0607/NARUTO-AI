@@ -1,0 +1,38 @@
+/* NARUTO redesign ("Konoha" look): light, warm parchment UI over the village background.
+   Shared tokens for every new component. Prefix --k- so the older dark pages keep their own tokens
+   until they are redesigned. */
+
+:root {
+  /* type */
+  --k-logo: 'Permanent Marker', 'Caveat Brush', cursive;          /* NARUTO wordmark only */
+  --k-brush: 'Caveat Brush', 'Segoe Print', cursive;              /* headings, nav, jutsu names */
+  --k-body: 'Nunito Variable', 'Segoe UI', system-ui, sans-serif;  /* descriptions, labels */
+
+  /* paper and ink */
+  --k-paper: #f8f0df;            /* card */
+  --k-paper-2: #f1e5cc;          /* inset tiles, rows */
+  --k-paper-edge: rgba(122, 82, 40, 0.22);
+  --k-ink: #2a2017;              /* text */
+  --k-ink-soft: #6d5a45;         /* secondary text */
+  --k-ink-faint: #9c8a73;
+  --k-brush-black: #1d1915;      /* brush tags */
+
+  /* accents: Naruto orange, Sasuke blue */
+  --k-orange: #f0641e;
+  --k-orange-2: #ff8a3d;
+  --k-orange-soft: rgba(240, 100, 30, 0.14);
+  --k-blue: #2f78d0;
+  --k-blue-soft: rgba(47, 120, 208, 0.14);
+
+  /* status */
+  --k-ready: #3f7f47;
+  --k-ready-bg: #d8e8cc;
+  --k-train: #8f6420;
+  --k-train-bg: #f3dfb6;
+
+  /* shape */
+  --k-radius: 16px;
+  --k-radius-sm: 10px;
+  --k-shadow: 0 10px 30px rgba(60, 35, 10, 0.18), 0 2px 6px rgba(60, 35, 10, 0.12);
+  --k-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}

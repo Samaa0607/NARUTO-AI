@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+.pytest_cache/
+data/
+models/*.joblib
+models/*.png
+models/training_report.txt
+
+# frames of the owner's own recordings (faces): never upload
+reports/2026-11-01_diagnosis/evidence/*.png
+# extra model copies (experiments, rollback backup), like models/*.joblib above
+models/experiments/
+models/previous_production_*/
+# the production landmark model (MLP, own work: trained on the owner's landmark features) IS uploaded
+!models/gesture_model.joblib
+
+# not uploaded until redistribution rights are verified (see README "Not included")
+models/yolox_nano.onnx
+frontend/src/assets/konoha/background.jpg
+frontend/src/assets/konoha/shadow-clone/

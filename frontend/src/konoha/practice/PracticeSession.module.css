@@ -1,0 +1,388 @@
+/* Practice session: camera and "current step" side by side (like the dojo), the 4-step sequence
+   card below. */
+
+.session {
+  --jc: var(--k-orange);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.camera {
+  min-width: 0;
+}
+
+/* ------------------------------------------------------------------ coach */
+.coach {
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 400ms var(--k-ease);
+}
+
+.coach > :last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px clamp(14px, 1.8vw, 20px) 16px;
+}
+
+.coachDone {
+  box-shadow:
+    var(--k-shadow),
+    0 0 0 2px rgba(240, 100, 30, 0.45),
+    0 0 36px rgba(255, 138, 61, 0.35);
+}
+
+.step {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.tile {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  border: 2px solid rgba(122, 82, 40, 0.2);
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(60, 35, 10, 0.1);
+}
+
+/* the sign to make now: a slow, gentle glow while the AI watches */
+.tileLive {
+  border-color: rgba(240, 100, 30, 0.7);
+  animation: breathe 2.4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(240, 100, 30, 0.1), 0 4px 14px rgba(240, 100, 30, 0.14);
+    scale: 1;
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(240, 100, 30, 0.16), 0 8px 24px rgba(240, 100, 30, 0.24);
+    scale: 1.015;
+  }
+}
+
+.tile img,
+.tile > span[role='img'] {
+  inset: 14px 10px 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 24px);
+}
+
+.num {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--k-orange);
+  color: #fff;
+  font-family: var(--k-brush);
+  font-size: 22px;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(240, 100, 30, 0.35);
+}
+
+.stepText {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stepKicker {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+}
+
+.signName {
+  margin: 0;
+  font-family: var(--k-brush);
+  font-size: clamp(34px, 3vw, 44px);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--k-orange);
+}
+
+.jp {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--k-ink-soft);
+}
+
+.cues {
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--k-ink);
+}
+
+.cues li {
+  position: relative;
+  padding-left: 14px;
+}
+
+.cues li + li {
+  margin-top: 3px;
+}
+
+.cues li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--k-orange);
+}
+
+.refLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--k-blue);
+}
+
+.refLink svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* what the AI sees right now */
+.sees {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  padding: 9px 12px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(122, 82, 40, 0.18);
+  background: #fffdf8;
+  font-size: 14px;
+  transition: border-color 200ms var(--k-ease), background 200ms var(--k-ease);
+}
+
+.sees > svg {
+  width: 18px;
+  height: 18px;
+  color: var(--k-blue);
+}
+
+.seesLabel {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+}
+
+.seesSign {
+  font-family: var(--k-brush);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--k-ink);
+}
+
+.seesNote {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.seesRight {
+  border-color: rgba(63, 127, 71, 0.55);
+  background: #eef6e8;
+}
+
+.seesRight .seesNote,
+.seesRight .seesSign {
+  color: var(--k-ready);
+}
+
+.seesOther {
+  border-color: rgba(47, 120, 208, 0.4);
+  background: #eef5fd;
+}
+
+.seesOther .seesNote {
+  color: #1f5fae;
+}
+
+.seesOff {
+  opacity: 0.75;
+}
+
+/* wrong sign / too slow */
+.failure {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(200, 50, 30, 0.45);
+  background: #fdecea;
+  color: #8f2516;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.failure > svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+}
+
+.failure strong {
+  display: block;
+}
+
+/* a wrong attempt: a gentle amber note (the steps done are kept), not the red reset notice */
+.warning {
+  border-color: rgba(200, 140, 30, 0.5);
+  background: #fff6e2;
+  color: #7a4c0c;
+}
+
+.warning .failureDetail {
+  color: #6b4a17;
+}
+
+.failureDetail {
+  display: block;
+  margin-top: 2px;
+  color: #6e2a20;
+  font-size: 13px;
+}
+
+.training {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(143, 100, 32, 0.3);
+  background: rgba(243, 223, 182, 0.55);
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--k-ink);
+}
+
+.training > svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  color: var(--k-train);
+}
+
+/* completion */
+.complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 8px 6px;
+  text-align: center;
+}
+
+.completeSeal {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, var(--k-orange-2), var(--k-orange));
+  color: #fff;
+  box-shadow: 0 0 0 6px rgba(240, 100, 30, 0.15), 0 10px 26px rgba(240, 100, 30, 0.35);
+  animation: pop 520ms var(--k-ease);
+}
+
+.completeSeal svg {
+  width: 44px;
+  height: 44px;
+  stroke-width: 3;
+}
+
+@keyframes pop {
+  from {
+    scale: 0.4;
+    opacity: 0;
+  }
+  60% {
+    scale: 1.12;
+  }
+}
+
+.completeTitle {
+  margin: 4px 0 0;
+  font-family: var(--k-brush);
+  font-size: clamp(32px, 3vw, 40px);
+  line-height: 1;
+  color: var(--k-orange);
+}
+
+.completeText {
+  margin: 0;
+  max-width: 34ch;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--k-ink-soft);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+@media (max-width: 899px) {
+  .top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .step {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tile {
+    max-width: 260px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}

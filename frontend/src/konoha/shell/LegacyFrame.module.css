@@ -1,0 +1,22 @@
+.frame {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(16px, 3vw, 36px);
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 10, 21, 0.9);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  box-shadow: 0 24px 60px rgba(40, 22, 6, 0.35), 0 2px 8px rgba(40, 22, 6, 0.2);
+  /* the old pages expect the dark tokens of styles/tokens.css */
+  color: var(--text);
+  font-family: var(--font-body);
+  color-scheme: dark;
+}
+
+@media (max-width: 560px) {
+  .frame {
+    border-radius: 16px;
+  }
+}

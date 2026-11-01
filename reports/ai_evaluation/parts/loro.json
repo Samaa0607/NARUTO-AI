@@ -1,0 +1,473 @@
+{
+  "about": "Leave-one-recording-out on the 19 split recordings (train + validation; there is no test set): train.py's random forest (n_estimators 300, min_samples_leaf 2, balanced) on mirrored + jittered copies, every 2nd frame, refitted without the held-out recording, scored on all its frames with a hand after the first 0.5 s. A sign with ONE recording is absent from training when its recording is held out: its frames cannot be right, so those rows show only what it is mistaken for and are left out of the metrics.",
+  "recordings": [
+    {
+      "id": "me_night_20261030_220743",
+      "label": "boar",
+      "status": "train",
+      "frames": 339,
+      "label_in_training": false,
+      "accuracy": 0.0,
+      "said": {
+        "monkey": 281,
+        "dog": 58
+      }
+    },
+    {
+      "id": "me_night_20261030_214750",
+      "label": "clone_seal",
+      "status": "train",
+      "frames": 376,
+      "label_in_training": false,
+      "accuracy": 0.0,
+      "said": {
+        "idle": 175,
+        "ram": 147,
+        "tiger": 54
+      }
+    },
+    {
+      "id": "me_night_20261030_215059",
+      "label": "dog",
+      "status": "train",
+      "frames": 334,
+      "label_in_training": false,
+      "accuracy": 0.0,
+      "said": {
+        "monkey": 129,
+        "idle": 204,
+        "boar": 1
+      }
+    },
+    {
+      "id": "me_night_20261030_220040",
+      "label": "horse",
+      "status": "train",
+      "frames": 338,
+      "label_in_training": false,
+      "accuracy": 0.0,
+      "said": {
+        "idle": 338
+      }
+    },
+    {
+      "id": "me_night_20261030_221934",
+      "label": "idle",
+      "status": "train",
+      "frames": 101,
+      "label_in_training": true,
+      "accuracy": 0.9307,
+      "said": {
+        "monkey": 7,
+        "idle": 94
+      }
+    },
+    {
+      "id": "me_night_20261030_222121",
+      "label": "idle",
+      "status": "train",
+      "frames": 335,
+      "label_in_training": true,
+      "accuracy": 0.9164,
+      "said": {
+        "idle": 307,
+        "dog": 28
+      }
+    },
+    {
+      "id": "me_night_20261030_222258",
+      "label": "idle",
+      "status": "train",
+      "frames": 344,
+      "label_in_training": true,
+      "accuracy": 0.9651,
+      "said": {
+        "idle": 332,
+        "rasengan_palm": 12
+      }
+    },
+    {
+      "id": "me_night_20261030_222524",
+      "label": "idle",
+      "status": "validation",
+      "frames": 358,
+      "label_in_training": true,
+      "accuracy": 0.986,
+      "said": {
+        "idle": 353,
+        "horse": 5
+      }
+    },
+    {
+      "id": "me_night_20261030_222645",
+      "label": "idle",
+      "status": "train",
+      "frames": 313,
+      "label_in_training": true,
+      "accuracy": 0.9681,
+      "said": {
+        "idle": 303,
+        "monkey": 10
+      }
+    },
+    {
+      "id": "me_night_20261030_222754",
+      "label": "idle",
+      "status": "validation",
+      "frames": 373,
+      "label_in_training": true,
+      "accuracy": 1.0,
+      "said": {
+        "idle": 373
+      }
+    },
+    {
+      "id": "me_night_20261030_215447",
+      "label": "monkey",
+      "status": "train",
+      "frames": 122,
+      "label_in_training": true,
+      "accuracy": 0.0492,
+      "said": {
+        "idle": 4,
+        "monkey": 6,
+        "dog": 112
+      }
+    },
+    {
+      "id": "me_night_20261030_215808",
+      "label": "monkey",
+      "status": "train",
+      "frames": 305,
+      "label_in_training": true,
+      "accuracy": 0.859,
+      "said": {
+        "monkey": 262,
+        "idle": 43
+      }
+    },
+    {
+      "id": "me_night_20261030_220443",
+      "label": "ram",
+      "status": "train",
+      "frames": 346,
+      "label_in_training": false,
+      "accuracy": 0.0,
+      "said": {
+        "idle": 337,
+        "clone_seal": 6,
+        "tiger": 3
+      }
+    },
+    {
+      "id": "me_day_20261030_174647",
+      "label": "rasengan_palm",
+      "status": "train",
+      "frames": 343,
+      "label_in_training": true,
+      "accuracy": 1.0,
+      "said": {
+        "rasengan_palm": 343
+      }
+    },
+    {
+      "id": "me_day_20261030_174917",
+      "label": "rasengan_palm",
+      "status": "train",
+      "frames": 369,
+      "label_in_training": true,
+      "accuracy": 1.0,
+      "said": {
+        "rasengan_palm": 369
+      }
+    },
+    {
+      "id": "me_day_20261030_175113",
+      "label": "rasengan_palm",
+      "status": "train",
+      "frames": 320,
+      "label_in_training": true,
+      "accuracy": 1.0,
+      "said": {
+        "rasengan_palm": 320
+      }
+    },
+    {
+      "id": "me_day_20261030_175251",
+      "label": "rasengan_palm",
+      "status": "validation",
+      "frames": 357,
+      "label_in_training": true,
+      "accuracy": 1.0,
+      "said": {
+        "rasengan_palm": 357
+      }
+    },
+    {
+      "id": "me_night_20261030_220610",
+      "label": "snake",
+      "status": "train",
+      "frames": 350,
+      "label_in_training": false,
+      "accuracy": 0.0,
+      "said": {
+        "idle": 350
+      }
+    },
+    {
+      "id": "me_night_20261030_220235",
+      "label": "tiger",
+      "status": "train",
+      "frames": 307,
+      "label_in_training": false,
+      "accuracy": 0.0,
+      "said": {
+        "idle": 306,
+        "ram": 1
+      }
+    }
+  ],
+  "metrics_estimable": {
+    "frames": 3640,
+    "accuracy": 0.9392857142857143,
+    "balanced_accuracy": 0.8645478107837902,
+    "macro_f1": 0.9061683869830408,
+    "per_class": {
+      "idle": {
+        "precision": 0.9740187949143173,
+        "recall": 0.9660087719298246,
+        "f1": 0.9699972474538948,
+        "support": 1824,
+        "predicted": 1809
+      },
+      "ram": {
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "support": 0,
+        "predicted": 0
+      },
+      "snake": {
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "support": 0,
+        "predicted": 0
+      },
+      "tiger": {
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "support": 0,
+        "predicted": 0
+      },
+      "dog": {
+        "precision": 0.0,
+        "recall": null,
+        "f1": null,
+        "support": 0,
+        "predicted": 140
+      },
+      "monkey": {
+        "precision": 0.9403508771929825,
+        "recall": 0.6276346604215457,
+        "f1": 0.752808988764045,
+        "support": 427,
+        "predicted": 285
+      },
+      "boar": {
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "support": 0,
+        "predicted": 0
+      },
+      "horse": {
+        "precision": 0.0,
+        "recall": null,
+        "f1": null,
+        "support": 0,
+        "predicted": 5
+      },
+      "clone_seal": {
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "support": 0,
+        "predicted": 0
+      },
+      "rasengan_palm": {
+        "precision": 0.9914346895074947,
+        "recall": 1.0,
+        "f1": 0.9956989247311828,
+        "support": 1389,
+        "predicted": 1401
+      }
+    },
+    "confusion_all": {
+      "rows": [
+        "idle",
+        "ram",
+        "snake",
+        "tiger",
+        "dog",
+        "monkey",
+        "boar",
+        "horse",
+        "clone_seal",
+        "rasengan_palm"
+      ],
+      "cols": [
+        "idle",
+        "ram",
+        "snake",
+        "tiger",
+        "dog",
+        "monkey",
+        "boar",
+        "horse",
+        "clone_seal",
+        "rasengan_palm"
+      ],
+      "matrix": [
+        [
+          1762,
+          0,
+          0,
+          0,
+          28,
+          17,
+          0,
+          5,
+          0,
+          12
+        ],
+        [
+          337,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          350,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          306,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          204,
+          0,
+          0,
+          0,
+          0,
+          129,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          47,
+          0,
+          0,
+          0,
+          112,
+          268,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          58,
+          281,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          338,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          175,
+          147,
+          0,
+          54,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1389
+        ]
+      ],
+      "correct_col": {
+        "idle": "idle",
+        "ram": "ram",
+        "snake": "snake",
+        "tiger": "tiger",
+        "dog": "dog",
+        "monkey": "monkey",
+        "boar": "boar",
+        "horse": "horse",
+        "clone_seal": "clone_seal",
+        "rasengan_palm": "rasengan_palm"
+      }
+    }
+  },
+  "estimable_signs": [
+    "idle",
+    "monkey",
+    "rasengan_palm"
+  ]
+}

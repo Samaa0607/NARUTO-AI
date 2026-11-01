@@ -1,0 +1,149 @@
+/* Page column shared by the Jutsu and Practice pages: centred, and narrow enough that Naruto and
+   Sasuke stay visible on both sides at desktop widths (same rule as konoha/dojo/DojoView). */
+
+.page {
+  width: 100%;
+  max-width: min(1080px, max(56vw, 98vh));
+  margin: 0 auto;
+  padding: 4px clamp(12px, 3vw, 24px) 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: var(--k-ink);
+  font-family: var(--k-body);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.lead {
+  margin: 0;
+  max-width: 60ch;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(255, 251, 242, 0.88);
+  box-shadow: 0 2px 10px rgba(60, 35, 10, 0.1);
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--k-ink);
+}
+
+.unknown {
+  margin: 0;
+  align-self: center;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(143, 100, 32, 0.3);
+  background: rgba(243, 223, 182, 0.92);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--k-ink);
+}
+
+/* ------------------------------------------------------------------ loading / error */
+.skeletonRow {
+  display: flex;
+  gap: 18px;
+  overflow: hidden;
+  padding: 12px 0 20px;
+}
+
+.skeleton {
+  flex: 0 0 calc((100% - 36px) / 2.24);
+  height: 400px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #f1e5cc 0%, #f8efdd 50%, #f1e5cc 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  box-shadow: 0 8px 22px rgba(60, 35, 10, 0.1);
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.errorTitle {
+  margin: 0;
+  font-family: var(--k-brush);
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.errorText {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--k-ink-soft);
+}
+
+.retry {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1.5px solid var(--k-paper-edge);
+  border-radius: 10px;
+  background: rgba(255, 252, 244, 0.9);
+  color: var(--k-ink);
+  font-family: var(--k-brush);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.retry svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 560px) {
+  .skeleton {
+    flex-basis: calc((100% - 18px) / 1.16);
+  }
+
+  .lead {
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 0 10px 20px;
+  }
+}
+
+/* Practice page: the selected card's footer label */
+.training {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--k-orange);
+  white-space: nowrap;
+}
+
+.training::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--k-orange);
+  box-shadow: 0 0 0 3px var(--k-orange-soft);
+}

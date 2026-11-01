@@ -1,0 +1,120 @@
+/* Design tokens. Every component uses these variables; the two themes only change the variables.
+   Variable NAMES are a shared contract between components: refine values freely, do not rename. */
+
+:root {
+  /* typography */
+  --font-display: 'Bebas Neue', 'Rajdhani', 'Arial Narrow', sans-serif;
+  --font-ui: 'Rajdhani', 'Inter Variable', system-ui, sans-serif;
+  --font-body: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-kanji: 'Yuji Syuku', 'Yu Mincho', serif;
+
+  /* type scale (fluid; display sizes use Bebas Neue, small labels use Rajdhani caps) */
+  --fs-hero: clamp(60px, 9.6vw, 156px);
+  --fs-h1: clamp(42px, 5.6vw, 80px);
+  --fs-h2: clamp(32px, 3.6vw, 52px);
+  --fs-h3: clamp(24px, 2.2vw, 32px);
+  --fs-lead: clamp(16px, 1.3vw, 19px);
+  --fs-body: 16px;
+  --fs-sm: 14px;
+  --fs-xs: 12px;
+  --tracking-ui: 0.14em;
+  --tracking-display: 0.035em;
+
+  /* surfaces (dark, cinematic) */
+  --bg-0: #05060b;
+  --bg-1: #090c16;
+  --bg-2: #0f1427;
+  --surface: rgba(13, 17, 34, 0.66);
+  --surface-strong: rgba(15, 20, 40, 0.94);
+  --surface-hover: rgba(26, 33, 64, 0.78);
+  --border: rgba(170, 186, 255, 0.09);
+  --border-strong: rgba(180, 196, 255, 0.2);
+
+  /* text */
+  --text: #eef1f8;
+  --text-muted: #a9b1c8;
+  --text-dim: #7d86a1;
+
+  /* status */
+  --success: #3ddc97;
+  --warning: #ffb547;
+  --danger: #ff5d6c;
+  --info: #5ab8ff;
+
+  /* jutsu colours (same in both themes) */
+  --jutsu-fire: #ff6a1a;
+  --jutsu-chidori: #58b8ff;
+  --jutsu-rasengan: #4a9dff;
+  --jutsu-clone: #d4d9e6;
+
+  /* shape and motion */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 150ms;
+  --dur: 280ms;
+  --dur-slow: 600ms;
+
+  /* layout */
+  --nav-height: 68px;
+  --sidebar-width: 248px;
+  --content-max: 1280px;
+  --page-gutter: clamp(16px, 4vw, 40px);
+
+  /* elevation */
+  --shadow-1: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 12px 32px rgba(0, 0, 0, 0.35);
+  --shadow-2: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --nav-height: 60px;
+  }
+}
+
+/* Naruto mode: warm orange / gold chakra */
+:root[data-theme='naruto'] {
+  --accent: #ff7a18;
+  --accent-2: #ffc23d;
+  --accent-3: #ff3d00;
+  --accent-contrast: #160800;
+  --glow: rgba(255, 122, 24, 0.45);
+  --glow-soft: rgba(255, 122, 24, 0.14);
+  --chakra-gradient: linear-gradient(120deg, #ff4a0a 0%, #ff7a18 42%, #ffc23d 100%);
+  --bg-tint: radial-gradient(1100px 620px at 12% -12%, rgba(255, 112, 24, 0.17), transparent 62%),
+    radial-gradient(900px 520px at 105% 8%, rgba(255, 186, 61, 0.08), transparent 60%),
+    radial-gradient(1200px 700px at 50% 120%, rgba(40, 60, 140, 0.16), transparent 65%);
+}
+
+/* Sasuke mode: electric blue / purple chakra, darker */
+:root[data-theme='sasuke'] {
+  --bg-0: #030409;
+  --bg-1: #070913;
+  --bg-2: #0c0f22;
+  --surface: rgba(11, 13, 32, 0.68);
+  --surface-strong: rgba(13, 15, 38, 0.95);
+  --surface-hover: rgba(24, 26, 62, 0.8);
+  --border: rgba(160, 170, 255, 0.1);
+  --border-strong: rgba(170, 176, 255, 0.22);
+
+  --accent: #4b93ff;
+  --accent-2: #a46bff;
+  --accent-3: #22d8ff;
+  --accent-contrast: #02040d;
+  --glow: rgba(75, 147, 255, 0.5);
+  --glow-soft: rgba(140, 100, 255, 0.16);
+  --chakra-gradient: linear-gradient(120deg, #22d8ff 0%, #4b93ff 45%, #a46bff 100%);
+  --bg-tint: radial-gradient(1100px 620px at 12% -12%, rgba(60, 120, 255, 0.17), transparent 62%),
+    radial-gradient(900px 560px at 105% 6%, rgba(150, 90, 255, 0.13), transparent 60%),
+    radial-gradient(1200px 700px at 50% 120%, rgba(90, 40, 170, 0.14), transparent 65%);
+}

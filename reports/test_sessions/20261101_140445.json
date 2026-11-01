@@ -1,0 +1,216 @@
+{
+  "start": "2026-11-01T14:04:45",
+  "person": "me",
+  "lighting": "day",
+  "seconds": 20,
+  "saved": [
+    {
+      "step": 1,
+      "label": "idle",
+      "id": "me_day_20261101_140600",
+      "frames": 426,
+      "hands": 0.0,
+      "note": "IDLE 1: hands down, relaxed. Move naturally, touch your face, wave a little."
+    },
+    {
+      "step": 2,
+      "label": "ram",
+      "id": "me_day_20261101_140631",
+      "frames": 316,
+      "hands": 0.72,
+      "note": ""
+    },
+    {
+      "step": 4,
+      "label": "tiger",
+      "id": "me_day_20261101_140826",
+      "frames": 286,
+      "hands": 0.81,
+      "note": ""
+    },
+    {
+      "step": 3,
+      "label": "snake",
+      "id": "me_day_20261101_141409",
+      "frames": 342,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 5,
+      "label": "dog",
+      "id": "me_day_20261101_141440",
+      "frames": 346,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 6,
+      "label": "monkey",
+      "id": "me_day_20261101_141518",
+      "frames": 306,
+      "hands": 0.94,
+      "note": ""
+    },
+    {
+      "step": 7,
+      "label": "boar",
+      "id": "me_day_20261101_141550",
+      "frames": 317,
+      "hands": 0.88,
+      "note": ""
+    },
+    {
+      "step": 8,
+      "label": "horse",
+      "id": "me_day_20261101_141623",
+      "frames": 350,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 9,
+      "label": "clone_seal",
+      "id": "me_day_20261101_141650",
+      "frames": 352,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 10,
+      "label": "rasengan_palm",
+      "id": "me_day_20261101_141718",
+      "frames": 343,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 11,
+      "label": "idle",
+      "id": "me_day_20261101_141753",
+      "frames": 336,
+      "hands": 1.0,
+      "note": "IDLE 2: an OK sign (thumb and index make a circle). Move it around."
+    },
+    {
+      "step": 12,
+      "label": "idle",
+      "id": "me_day_20261101_141901",
+      "frames": 294,
+      "hands": 0.78,
+      "note": "IDLE 3: half-formed signs, a fist, a claw. NOT a flat open palm."
+    },
+    {
+      "step": 13,
+      "label": "ram",
+      "id": "me_day_20261101_141955",
+      "frames": 295,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 14,
+      "label": "snake",
+      "id": "me_day_20261101_142024",
+      "frames": 348,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 15,
+      "label": "tiger",
+      "id": "me_day_20261101_142054",
+      "frames": 321,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 16,
+      "label": "dog",
+      "id": "me_day_20261101_142126",
+      "frames": 344,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 17,
+      "label": "monkey",
+      "id": "me_day_20261101_142204",
+      "frames": 306,
+      "hands": 0.99,
+      "note": ""
+    },
+    {
+      "step": 18,
+      "label": "boar",
+      "id": "me_day_20261101_142239",
+      "frames": 300,
+      "hands": 0.97,
+      "note": ""
+    },
+    {
+      "step": 19,
+      "label": "horse",
+      "id": "me_day_20261101_142311",
+      "frames": 353,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 20,
+      "label": "clone_seal",
+      "id": "me_day_20261101_142339",
+      "frames": 344,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 21,
+      "label": "rasengan_palm",
+      "id": "me_day_20261101_142407",
+      "frames": 345,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 22,
+      "label": "idle",
+      "id": "me_day_20261101_142440",
+      "frames": 338,
+      "hands": 0.97,
+      "note": "IDLE 4: random hand movements (scratch your head, point...). NOT a flat open palm."
+    }
+  ],
+  "not_saved": [
+    {
+      "step": 3,
+      "label": "snake",
+      "hands": 0.0,
+      "reason": "hands not seen enough, recorded again"
+    },
+    {
+      "step": 3,
+      "label": "snake",
+      "hands": 0.0,
+      "reason": "hands not seen enough, recorded again"
+    }
+  ],
+  "finished": true,
+  "tries": {
+    "2": 2
+  },
+  "rejected": [
+    {
+      "step": 3,
+      "label": "snake",
+      "id": "me_day_20261101_140757",
+      "frames": 413,
+      "hands": 0.0,
+      "note": "",
+      "reason": "hands not seen enough: not part of the test set"
+    }
+  ],
+  "resumed": [
+    "2026-11-01T14:12:57"
+  ]
+}

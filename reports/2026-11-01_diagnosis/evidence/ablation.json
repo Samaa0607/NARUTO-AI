@@ -1,0 +1,1196 @@
+{
+ "per_recording": [
+  {
+   "set": "train",
+   "rec": "me_night_20261030_220743",
+   "label": "boar",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "boar": 1
+    },
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "boar": 1
+    },
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "boar": 1
+    },
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 0.994,
+    "wrong": {
+     "idle": 2
+    },
+    "confirmed": {
+     "boar": 1
+    },
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "boar": 1
+    },
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_night_20261030_214750",
+   "label": "clone_seal",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "clone_seal": 1
+    },
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "clone_seal": 1
+    },
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "clone_seal": 1
+    },
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "clone_seal": 1
+    },
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 0.0,
+    "wrong": {
+     "idle": 376
+    },
+    "confirmed": {},
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_night_20261030_215059",
+   "label": "dog",
+   "aligned": "exact",
+   "current": {
+    "recall": 0.991,
+    "wrong": {
+     "idle": 3
+    },
+    "confirmed": {
+     "dog": 1
+    },
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 0.991,
+    "wrong": {
+     "idle": 3
+    },
+    "confirmed": {
+     "dog": 1
+    },
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 0.991,
+    "wrong": {
+     "idle": 3
+    },
+    "confirmed": {
+     "dog": 1
+    },
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 0.97,
+    "wrong": {
+     "idle": 10
+    },
+    "confirmed": {
+     "dog": 1
+    },
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 0.991,
+    "wrong": {
+     "idle": 3
+    },
+    "confirmed": {
+     "dog": 1
+    },
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_night_20261030_220040",
+   "label": "horse",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "horse": 1
+    },
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "horse": 1
+    },
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "horse": 1
+    },
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "horse": 1
+    },
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "horse": 1
+    },
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_night_20261030_221934",
+   "label": "idle",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_night_20261030_222121",
+   "label": "idle",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_night_20261030_222258",
+   "label": "idle",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_night_20261030_222645",
+   "label": "idle",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_night_20261030_215447",
+   "label": "monkey",
+   "aligned": "exact",
+   "current": {
+    "recall": 0.971,
+    "wrong": {
+     "idle": 10
+    },
+    "confirmed": {
+     "monkey": 1
+    },
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 0.971,
+    "wrong": {
+     "idle": 10
+    },
+    "confirmed": {
+     "monkey": 1
+    },
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 0.971,
+    "wrong": {
+     "idle": 10
+    },
+    "confirmed": {
+     "monkey": 1
+    },
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 0.343,
+    "wrong": {
+     "idle": 224
+    },
+    "confirmed": {
+     "monkey": 2
+    },
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 0.971,
+    "wrong": {
+     "idle": 10
+    },
+    "confirmed": {
+     "monkey": 1
+    },
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_night_20261030_215808",
+   "label": "monkey",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "monkey": 1
+    },
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "monkey": 1
+    },
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "monkey": 1
+    },
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 0.93,
+    "wrong": {
+     "idle": 23
+    },
+    "confirmed": {
+     "monkey": 3
+    },
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "monkey": 1
+    },
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_night_20261030_220443",
+   "label": "ram",
+   "aligned": "exact",
+   "current": {
+    "recall": 0.977,
+    "wrong": {
+     "idle": 8
+    },
+    "confirmed": {
+     "ram": 3
+    },
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 0.977,
+    "wrong": {
+     "idle": 8
+    },
+    "confirmed": {
+     "ram": 3
+    },
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 0.977,
+    "wrong": {
+     "idle": 8
+    },
+    "confirmed": {
+     "ram": 3
+    },
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 0.983,
+    "wrong": {
+     "idle": 6
+    },
+    "confirmed": {
+     "ram": 1
+    },
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 0.977,
+    "wrong": {
+     "idle": 8
+    },
+    "confirmed": {
+     "ram": 3
+    },
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_day_20261030_174647",
+   "label": "rasengan_palm",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 0.0,
+    "wrong": {
+     "idle": 343
+    },
+    "confirmed": {},
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_day_20261030_174917",
+   "label": "rasengan_palm",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 0.0,
+    "wrong": {
+     "idle": 369
+    },
+    "confirmed": {},
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_day_20261030_175113",
+   "label": "rasengan_palm",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 0.0,
+    "wrong": {
+     "idle": 320
+    },
+    "confirmed": {},
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_night_20261030_220610",
+   "label": "snake",
+   "aligned": "exact",
+   "current": {
+    "recall": 0.96,
+    "wrong": {
+     "idle": 14
+    },
+    "confirmed": {
+     "snake": 4
+    },
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 0.96,
+    "wrong": {
+     "idle": 14
+    },
+    "confirmed": {
+     "snake": 4
+    },
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 0.96,
+    "wrong": {
+     "idle": 14
+    },
+    "confirmed": {
+     "snake": 4
+    },
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "snake": 1
+    },
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 0.96,
+    "wrong": {
+     "idle": 14
+    },
+    "confirmed": {
+     "snake": 4
+    },
+    "rejected": 0
+   }
+  },
+  {
+   "set": "train",
+   "rec": "me_night_20261030_220235",
+   "label": "tiger",
+   "aligned": "exact",
+   "current": {
+    "recall": 0.993,
+    "wrong": {
+     "idle": 2
+    },
+    "confirmed": {
+     "tiger": 2
+    },
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 0.993,
+    "wrong": {
+     "idle": 2
+    },
+    "confirmed": {
+     "tiger": 2
+    },
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 0.993,
+    "wrong": {
+     "idle": 2
+    },
+    "confirmed": {
+     "tiger": 2
+    },
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 0.993,
+    "wrong": {
+     "idle": 2
+    },
+    "confirmed": {
+     "tiger": 1
+    },
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 0.993,
+    "wrong": {
+     "idle": 2
+    },
+    "confirmed": {
+     "tiger": 2
+    },
+    "rejected": 0
+   }
+  },
+  {
+   "set": "validation",
+   "rec": "me_night_20261030_222524",
+   "label": "idle",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   }
+  },
+  {
+   "set": "validation",
+   "rec": "me_night_20261030_222754",
+   "label": "idle",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {},
+    "rejected": 0
+   }
+  },
+  {
+   "set": "validation",
+   "rec": "me_day_20261030_175251",
+   "label": "rasengan_palm",
+   "aligned": "exact",
+   "current": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "no_margin": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "before_session": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "landmarks_only": {
+    "recall": 1.0,
+    "wrong": {},
+    "confirmed": {
+     "rasengan_palm": 1
+    },
+    "rejected": 0
+   },
+   "yolox_only": {
+    "recall": 0.0,
+    "wrong": {
+     "idle": 357
+    },
+    "confirmed": {},
+    "rejected": 0
+   }
+  }
+ ],
+ "per_set": {
+  "train": {
+   "current": {
+    "boar": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 339
+    },
+    "clone_seal": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 376
+    },
+    "dog": {
+     "recall": 0.991,
+     "precision": 1.0,
+     "frames": 334
+    },
+    "horse": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 338
+    },
+    "idle": {
+     "recall": 1.0,
+     "precision": 0.975,
+     "frames": 1428
+    },
+    "monkey": {
+     "recall": 0.985,
+     "precision": 1.0,
+     "frames": 668
+    },
+    "ram": {
+     "recall": 0.977,
+     "precision": 1.0,
+     "frames": 346
+    },
+    "rasengan_palm": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 1032
+    },
+    "snake": {
+     "recall": 0.96,
+     "precision": 1.0,
+     "frames": 350
+    },
+    "tiger": {
+     "recall": 0.993,
+     "precision": 1.0,
+     "frames": 307
+    }
+   },
+   "no_margin": {
+    "boar": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 339
+    },
+    "clone_seal": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 376
+    },
+    "dog": {
+     "recall": 0.991,
+     "precision": 1.0,
+     "frames": 334
+    },
+    "horse": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 338
+    },
+    "idle": {
+     "recall": 1.0,
+     "precision": 0.975,
+     "frames": 1428
+    },
+    "monkey": {
+     "recall": 0.985,
+     "precision": 1.0,
+     "frames": 668
+    },
+    "ram": {
+     "recall": 0.977,
+     "precision": 1.0,
+     "frames": 346
+    },
+    "rasengan_palm": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 1032
+    },
+    "snake": {
+     "recall": 0.96,
+     "precision": 1.0,
+     "frames": 350
+    },
+    "tiger": {
+     "recall": 0.993,
+     "precision": 1.0,
+     "frames": 307
+    }
+   },
+   "before_session": {
+    "boar": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 339
+    },
+    "clone_seal": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 376
+    },
+    "dog": {
+     "recall": 0.991,
+     "precision": 1.0,
+     "frames": 334
+    },
+    "horse": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 338
+    },
+    "idle": {
+     "recall": 1.0,
+     "precision": 0.975,
+     "frames": 1428
+    },
+    "monkey": {
+     "recall": 0.985,
+     "precision": 1.0,
+     "frames": 668
+    },
+    "ram": {
+     "recall": 0.977,
+     "precision": 1.0,
+     "frames": 346
+    },
+    "rasengan_palm": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 1032
+    },
+    "snake": {
+     "recall": 0.96,
+     "precision": 1.0,
+     "frames": 350
+    },
+    "tiger": {
+     "recall": 0.993,
+     "precision": 1.0,
+     "frames": 307
+    }
+   },
+   "landmarks_only": {
+    "boar": {
+     "recall": 0.994,
+     "precision": 1.0,
+     "frames": 339
+    },
+    "clone_seal": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 376
+    },
+    "dog": {
+     "recall": 0.97,
+     "precision": 1.0,
+     "frames": 334
+    },
+    "horse": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 338
+    },
+    "idle": {
+     "recall": 1.0,
+     "precision": 0.842,
+     "frames": 1428
+    },
+    "monkey": {
+     "recall": 0.63,
+     "precision": 1.0,
+     "frames": 668
+    },
+    "ram": {
+     "recall": 0.983,
+     "precision": 1.0,
+     "frames": 346
+    },
+    "rasengan_palm": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 1032
+    },
+    "snake": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 350
+    },
+    "tiger": {
+     "recall": 0.993,
+     "precision": 1.0,
+     "frames": 307
+    }
+   },
+   "yolox_only": {
+    "boar": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 339
+    },
+    "clone_seal": {
+     "recall": 0.0,
+     "precision": null,
+     "frames": 376
+    },
+    "dog": {
+     "recall": 0.991,
+     "precision": 1.0,
+     "frames": 334
+    },
+    "horse": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 338
+    },
+    "idle": {
+     "recall": 1.0,
+     "precision": 0.497,
+     "frames": 1428
+    },
+    "monkey": {
+     "recall": 0.985,
+     "precision": 1.0,
+     "frames": 668
+    },
+    "ram": {
+     "recall": 0.977,
+     "precision": 1.0,
+     "frames": 346
+    },
+    "rasengan_palm": {
+     "recall": 0.0,
+     "precision": null,
+     "frames": 1032
+    },
+    "snake": {
+     "recall": 0.96,
+     "precision": 1.0,
+     "frames": 350
+    },
+    "tiger": {
+     "recall": 0.993,
+     "precision": 1.0,
+     "frames": 307
+    }
+   }
+  },
+  "validation": {
+   "current": {
+    "idle": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 731
+    },
+    "rasengan_palm": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 357
+    }
+   },
+   "no_margin": {
+    "idle": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 731
+    },
+    "rasengan_palm": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 357
+    }
+   },
+   "before_session": {
+    "idle": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 731
+    },
+    "rasengan_palm": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 357
+    }
+   },
+   "landmarks_only": {
+    "idle": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 731
+    },
+    "rasengan_palm": {
+     "recall": 1.0,
+     "precision": 1.0,
+     "frames": 357
+    }
+   },
+   "yolox_only": {
+    "idle": {
+     "recall": 1.0,
+     "precision": 0.672,
+     "frames": 731
+    },
+    "rasengan_palm": {
+     "recall": 0.0,
+     "precision": null,
+     "frames": 357
+    }
+   }
+  }
+ }
+}

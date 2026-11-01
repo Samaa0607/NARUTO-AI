@@ -1,0 +1,1024 @@
+/* "FIRE STYLE — HAND SIGN SEQUENCE": header with progress dots, four numbered sign tiles with
+   arrows between them, one hint line and the line-art credit. The drawings are instructions, so the
+   tiles give them as much room as the layout allows (4:3 tiles, thin padding; 2 x 2 in a narrow
+   column) and always show them whole (object-fit: contain, never cropped). */
+
+.card {
+  --jc: var(--k-orange);
+  --gap: clamp(16px, 2.2vw, 26px);
+  transition: box-shadow 400ms var(--k-ease);
+}
+
+.card > :last-child {
+  padding: 14px clamp(14px, 2.6vw, 30px) 12px;
+}
+
+.complete {
+  box-shadow:
+    var(--k-shadow),
+    0 0 0 2px rgba(240, 100, 30, 0.45),
+    0 0 36px rgba(255, 138, 61, 0.35);
+}
+
+/* ------------------------------------------------------------------ header */
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  min-height: 48px;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--k-brush);
+  font-size: clamp(28px, 2.6vw, 36px);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  color: var(--k-ink);
+}
+
+.kicker {
+  font-family: var(--k-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+}
+
+.progress {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.dots {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: clamp(130px, 15vw, 200px);
+  height: 16px;
+}
+
+.line {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  top: 50%;
+  height: 2px;
+  translate: 0 -50%;
+  border-radius: 2px;
+  background: rgba(42, 32, 23, 0.2);
+  overflow: hidden;
+}
+
+.lineFill {
+  position: absolute;
+  inset: 0;
+  background: var(--k-orange);
+  transform-origin: left center;
+  transition: transform 450ms var(--k-ease);
+}
+
+.dot {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #8b7a66;
+  background: var(--k-paper);
+  transition: background 200ms var(--k-ease), border-color 200ms var(--k-ease), box-shadow 200ms var(--k-ease);
+}
+
+.dot_done {
+  border-color: var(--k-orange);
+  background: var(--k-orange);
+}
+
+.dot_current {
+  border-color: var(--k-orange);
+  box-shadow: 0 0 0 4px var(--k-orange-soft);
+}
+
+.count {
+  min-width: 2.8em;
+  font-family: var(--k-brush);
+  font-size: clamp(28px, 2.4vw, 34px);
+  line-height: 1;
+  color: var(--k-orange);
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* the countdown and "Start over" (Live / Home) share one row */
+.countdownRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0 2px;
+}
+
+.countdownRow .countdown {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+/* "Start over" (Live / Home, while a sequence is in progress); its slot stays when hidden */
+.reset {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px 4px 9px;
+  border: 1.5px solid var(--k-paper-edge);
+  border-radius: 999px;
+  background: #fffaf0;
+  color: var(--k-ink);
+  font-family: var(--k-body);
+  font-size: 12.5px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 160ms var(--k-ease), border-color 160ms var(--k-ease);
+}
+
+.reset[hidden] {
+  display: inline-flex;
+  visibility: hidden;
+}
+
+.reset:hover {
+  border-color: var(--k-orange);
+  color: var(--k-orange);
+}
+
+.reset:focus-visible {
+  outline: 2px solid var(--k-blue);
+  outline-offset: 2px;
+}
+
+.reset svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* on the card: a wrong attempt (amber, the steps done are kept) and a reset by the time limit */
+.warnHint {
+  color: #7a4c0c;
+}
+
+.warnHint strong {
+  color: #9a5a06;
+}
+
+.notice {
+  color: #8f2516;
+}
+
+.warnHint svg,
+.notice svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 2px;
+  vertical-align: -3px;
+}
+
+/* ------------------------------------------------------------------ tiles */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px var(--gap);
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.tile {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1.5px solid var(--k-paper-edge);
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(60, 35, 10, 0.08);
+  transition: border-color 220ms var(--k-ease), box-shadow 260ms var(--k-ease), background 220ms var(--k-ease);
+}
+
+.tileSkeleton {
+  background: linear-gradient(90deg, #f1e5cc 0%, #f8efdd 50%, #f1e5cc 100%);
+}
+
+/* absolutely placed: the drawing never changes the tile's size, so all four tiles stay equal */
+.art {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  max-width: none;
+  object-fit: contain;
+  /* white drawing background on a white tile (no blend mode: some browsers mis-composite it) */
+  transition: opacity 220ms var(--k-ease);
+}
+
+.missing {
+  position: absolute;
+  inset: 6px;
+  display: grid;
+  place-items: center;
+  color: var(--k-ink-faint);
+}
+
+.missing svg {
+  width: 34px;
+  height: 34px;
+}
+
+.num {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+  border-radius: 6px;
+  border: 1.5px solid rgba(42, 32, 23, 0.35);
+  background: #fffaf0;
+  font-family: var(--k-body);
+  font-size: 12.5px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--k-ink);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--gap) / -2);
+  width: 18px;
+  height: 18px;
+  translate: -50% -50%;
+  color: var(--k-ink);
+  stroke-width: 2.4;
+}
+
+.check {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--k-ready);
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(63, 127, 71, 0.35);
+}
+
+.check svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 3;
+}
+
+.signName {
+  font-family: var(--k-body);
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--k-ink);
+  text-align: center;
+}
+
+.untrained {
+  margin-top: -4px;
+  font-family: var(--k-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--k-train);
+}
+
+/* done: muted, with a check */
+.done .tile {
+  background: #f6efe1;
+}
+
+.done .art {
+  opacity: 0.5;
+}
+
+.done .signName {
+  color: var(--k-ink-soft);
+}
+
+/* the sign the AI waits for now */
+.current .tile {
+  border: 2px solid var(--k-orange);
+  background: #fffaf3;
+  box-shadow: 0 0 0 4px var(--k-orange-soft), 0 6px 18px rgba(240, 100, 30, 0.22);
+  transform: translateY(-3px); /* a slight lift */
+}
+
+.current .num {
+  border-color: var(--k-orange);
+  background: var(--k-orange);
+  color: #fff;
+}
+
+.current .signName {
+  color: var(--k-orange);
+}
+
+/* Active step focus (focusStep): once the backend has confirmed a sign, the next sign's step zooms
+   in and the others step back a little. Every layout leaves more room between the steps than the
+   zoom adds (gaps >= 7.5% of a step's width, the neighbours shrink by 2.5%), so the zoomed step never
+   covers another one; it is a transform, so the card's size never changes. The spring is in the
+   full-motion block below. */
+.step {
+  transform-origin: 50% 55%;
+}
+
+.focus .step {
+  scale: 0.95;
+}
+
+.focus .current {
+  scale: 1.15;
+}
+
+/* a wrong attempt at the current step: a gentle amber ring on its tile (the steps done are kept);
+   it stays until the step is confirmed, and fades in again on every new attempt */
+.miss {
+  position: absolute;
+  inset: -3px;
+  z-index: 2;
+  border-radius: 12px;
+  border: 2px solid #dc9a1e;
+  box-shadow: 0 0 0 4px rgba(220, 154, 30, 0.2);
+  pointer-events: none;
+}
+
+.focus .current .tile {
+  box-shadow: 0 0 0 4px var(--k-orange-soft), 0 10px 26px rgba(240, 100, 30, 0.34);
+}
+
+
+/* ------------------------------------------------------------------ hint + credit */
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 18px;
+  margin-top: 12px;
+  font-family: var(--k-body);
+}
+
+.hint {
+  flex: 1 1 360px;
+  min-width: 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--k-ink-soft);
+}
+
+.hint strong {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--k-ink);
+}
+
+.timeLeft {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.success {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 800;
+  color: var(--k-orange);
+}
+
+.success svg {
+  width: 18px;
+  height: 18px;
+}
+
+.warn strong {
+  color: var(--k-train);
+}
+
+.credit {
+  flex: 0 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 10px;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--k-ink-faint);
+}
+
+.credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(156, 138, 115, 0.5);
+}
+
+.credit a:hover {
+  color: var(--k-ink-soft);
+}
+
+.credit a:focus-visible {
+  outline: 2px solid var(--k-blue);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ sizes */
+@media (max-width: 640px) {
+  .head {
+    gap: 2px 10px;
+  }
+
+  .progress {
+    flex-basis: 100%;
+    justify-content: space-between;
+    margin: 4px 0 0;
+  }
+
+  .dots {
+    width: auto;
+    flex: 1;
+    max-width: 220px;
+  }
+
+  .kicker {
+    font-size: 12.5px;
+  }
+
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 14px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .tile {
+    padding: 5px;
+  }
+
+  .signName {
+    font-size: 12.5px;
+  }
+}
+
+/* ------------------------------------------------------------------ gesture animations */
+/* Transform / opacity only (no layout, no repainted shadows): the glow is a pre-drawn layer whose
+   opacity breathes. Full motion only: Settings > Animations ("reduced" / "off", data-motion) and the
+   OS "reduce motion" preference keep the calm static states above. */
+.shine {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.shine::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  bottom: -10%;
+  left: 0;
+  width: 45%;
+  background: linear-gradient(100deg, transparent 10%, rgba(255, 226, 170, 0.75) 50%, transparent 90%);
+  opacity: 0;
+  transform: translateX(-120%) skewX(-14deg);
+}
+
+.current .tile::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  box-shadow: 0 0 0 7px rgba(240, 100, 30, 0.12), 0 8px 26px rgba(240, 100, 30, 0.36);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.complete .tile {
+  border-color: rgba(240, 100, 30, 0.55);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card[data-motion='full'] .tile {
+    transition:
+      border-color 220ms var(--k-ease),
+      box-shadow 260ms var(--k-ease),
+      background 220ms var(--k-ease),
+      transform 380ms var(--k-ease);
+  }
+
+  /* the zoom focus moves with a spring (a damped spring sampled: ~10% overshoot, settled in 0.6 s) */
+  .card[data-motion='full'] .step {
+    transition: scale 620ms cubic-bezier(0.34, 1.45, 0.64, 1);
+    transition-timing-function: linear(
+      0,
+      0.096 4.8%,
+      0.308 9.7%,
+      0.626 16.1%,
+      0.88 22.6%,
+      1.032 29%,
+      1.095 35.5%,
+      1.097 41.9%,
+      1.071 48.4%,
+      1.039 54.8%,
+      1.013 61.3%,
+      0.995 69.4%,
+      0.99 80.6%,
+      0.996 93.5%,
+      1
+    );
+  }
+
+  /* the sign the AI waits for: breathing lift and glow */
+  .card[data-motion='full'] .current .tile {
+    animation: breathe 2.6s ease-in-out infinite;
+  }
+
+  .card[data-motion='full'] .current .tile::after {
+    animation: glow 2.6s ease-in-out infinite;
+  }
+
+  /* ...and a small motion that suggests how the sign is formed */
+  .card[data-motion='full'] .current [data-gesture='rise'] {
+    animation: rise 2.6s ease-in-out infinite;
+  }
+
+  .card[data-motion='full'] .current [data-gesture='press'] {
+    animation: press 2.6s ease-in-out infinite;
+  }
+
+  .card[data-motion='full'] .current [data-gesture='twist'] {
+    animation: twist 2.6s ease-in-out infinite;
+  }
+
+  .card[data-motion='full'] .current [data-gesture='push'] {
+    animation: push 2.6s ease-in-out infinite;
+  }
+
+  /* a confirmed step: the tile settles back, the check pops in */
+  .card[data-motion='full'] .done .tile {
+    animation: settle 560ms var(--k-ease) both;
+  }
+
+  .card[data-motion='full'] .check {
+    animation: pop 480ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  .card[data-motion='full'] .miss {
+    animation: miss 700ms ease-out both;
+  }
+
+  /* the backend fired the jutsu: one shimmer across the four tiles */
+  .card[data-motion='full'].complete .shine::before {
+    animation: shimmer 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+    animation-delay: calc(var(--i, 0) * 110ms + 120ms);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: translateY(-3px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-5px) scale(1.02);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes rise {
+  0%,
+  100% {
+    translate: 0 1px;
+  }
+
+  50% {
+    translate: 0 -3px;
+  }
+}
+
+@keyframes press {
+  0%,
+  100% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 0.955 1;
+  }
+}
+
+@keyframes twist {
+  0%,
+  100% {
+    rotate: -2.5deg;
+  }
+
+  50% {
+    rotate: 2.5deg;
+  }
+}
+
+@keyframes push {
+  0%,
+  100% {
+    scale: 0.97;
+  }
+
+  50% {
+    scale: 1.05;
+  }
+}
+
+@keyframes settle {
+  0% {
+    transform: translateY(-4px) scale(1.03);
+  }
+
+  55% {
+    transform: translateY(1px) scale(0.985);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes pop {
+  0% {
+    scale: 0.3;
+    opacity: 0;
+  }
+
+  60% {
+    scale: 1.22;
+    opacity: 1;
+  }
+
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes miss {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0;
+    transform: translateX(-120%) skewX(-14deg);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(330%) skewX(-14deg);
+  }
+}
+
+/* ------------------------------------------------------------------ side (the Live page) */
+/* the card is its own size container: in a narrow side column a compact 2 x 2 layout; at full
+   width (Live on tablets) the normal one */
+.side {
+  container: sequence / inline-size;
+}
+
+@container sequence (max-width: 460px) {
+  .head {
+    gap: 2px 8px;
+    min-height: 0;
+  }
+
+  .jutsuIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  /* the title, then "N / 4" on the same line; the tiles show each step's state */
+  .kicker {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .progress {
+    flex-basis: auto;
+    margin: 0 0 0 auto;
+  }
+
+  .dots {
+    display: none;
+  }
+
+  .count {
+    min-width: 2.2em;
+    font-size: 26px;
+  }
+
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 12px;
+    margin-top: 10px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .step {
+    gap: 5px;
+  }
+
+  .tile {
+    padding: 10px 8px 4px;
+  }
+
+  .art {
+    left: 8px;
+    top: 10px;
+    width: calc(100% - 16px);
+    height: calc(100% - 14px);
+  }
+
+  .num {
+    top: 5px;
+    left: 5px;
+    min-width: 21px;
+    height: 21px;
+    font-size: 12px;
+  }
+
+  .check {
+    top: 5px;
+    right: 5px;
+    width: 21px;
+    height: 21px;
+  }
+
+  .check svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .signName {
+    font-size: 12px;
+  }
+
+  .foot {
+    margin-top: 10px;
+  }
+
+  .hint {
+    flex-basis: 100%;
+    font-size: 13.5px;
+  }
+
+  .credit {
+    font-size: 10.5px;
+  }
+}
+
+/* ------------------------------------------------------------------ animated motif in the title */
+/* the place of the jutsu icon (components/art/JutsuIcon draws the window, the ring and the art) */
+.jutsuIcon {
+  display: block;
+  flex: none;
+  width: 40px;
+  height: 40px;
+}
+
+/* ------------------------------------------------------------------ countdown to the next sign */
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 30px;
+  margin: 6px 0 2px;
+  opacity: 0.35;
+  transition: opacity 200ms var(--k-ease);
+}
+
+.counting {
+  opacity: 1;
+}
+
+.countdownIcon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  color: var(--k-orange);
+}
+
+.countdownTrack {
+  position: relative;
+  flex: 1;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--k-paper-2);
+  box-shadow: inset 0 0 0 1px var(--k-paper-edge);
+}
+
+.countdownFill {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--k-orange), var(--k-orange-2));
+  transition: transform 160ms linear, background 200ms;
+}
+
+.countdownText {
+  flex: none;
+  min-width: 4.5em;
+  font-family: var(--k-body);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--k-ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.countdownFor {
+  font-weight: 600;
+  color: var(--k-ink-soft);
+}
+
+.urgent .countdownFill {
+  background: linear-gradient(90deg, #d93a2b, #f0641e);
+}
+
+.urgent .countdownText,
+.urgent .countdownIcon {
+  color: #c4321f;
+}
+
+/* narrow side column (Live): the "for HORSE" part would not fit */
+.side .countdownFor {
+  display: none;
+}
+
+/* ------------------------------------------------------------------ Live side column (compact)
+   One line of header, the countdown, the four steps 2 x 2 with the drawings as large as the column
+   allows (they are what the user copies) and a short footer. The jutsu list above is 2 x 2 too, so
+   the column stays about as tall as the camera card next to it. */
+@container sequence (max-width: 460px) {
+  .head {
+    flex-wrap: nowrap;
+  }
+
+  .title {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 25px;
+  }
+
+  .card > :last-child {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .countdown {
+    min-height: 24px;
+    margin: 2px 0 0;
+  }
+
+  .countdownRow {
+    gap: 8px;
+    margin: 2px 0 0;
+  }
+
+  .reset {
+    padding: 3px 9px 3px 7px;
+    font-size: 11.5px;
+  }
+
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 12px;
+    margin-top: 8px;
+  }
+
+  .tile {
+    aspect-ratio: 2 / 1;
+    padding: 4px;
+  }
+
+  .art {
+    left: 4px;
+    top: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+  }
+
+  .num {
+    top: 3px;
+    left: 3px;
+    min-width: 19px;
+    height: 19px;
+    font-size: 11px;
+  }
+
+  .check {
+    top: 3px;
+    right: 3px;
+    width: 19px;
+    height: 19px;
+  }
+
+  .check svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .signName {
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+  }
+
+  .untrained {
+    display: none;
+  }
+
+  .hint {
+    font-size: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,178 @@
+.header {
+  /* emblem height drives the whole logo: ~100px at 1672px wide, ~50px on phones */
+  --logo-h: clamp(48px, 4vw + 34px, 100px);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(8px, 1.1vw, 16px) 12px 0;
+}
+
+/* ------------------------------------------------------------------ logo */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--logo-h) * 0.2);
+  color: var(--k-brush-black);
+  text-decoration: none;
+  border-radius: 14px;
+}
+
+.brand:hover {
+  text-decoration: none;
+}
+
+.brand:focus-visible {
+  outline: 2px solid var(--k-blue);
+  outline-offset: 4px;
+}
+
+.emblem {
+  flex: none;
+  width: var(--logo-h);
+  height: var(--logo-h);
+  /* a thin light rim lifts the black ink off the sky */
+  filter: drop-shadow(0 1.5px 0 rgba(255, 248, 236, 0.7)) drop-shadow(0 3px 6px rgba(60, 35, 10, 0.18));
+}
+
+.divider {
+  flex: none;
+  width: 2px;
+  height: calc(var(--logo-h) * 0.5);
+  border-radius: 2px;
+  background: currentColor;
+  opacity: 0.8;
+  transform: rotate(5deg);
+}
+
+.word {
+  position: relative;
+  display: inline-block;
+  padding: 0 0.06em;
+  font-family: var(--k-logo);
+  font-size: calc(var(--logo-h) * 0.74);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transform: rotate(-4deg) skewX(-9deg);
+}
+
+.wordText {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding-top: 0.12em;
+  text-shadow: 0 1px 0 rgba(255, 248, 236, 0.35);
+}
+
+.swash {
+  position: absolute;
+  z-index: 0;
+  left: -0.6em;
+  right: -0.3em;
+  bottom: 0.02em;
+  width: calc(100% + 0.9em);
+  height: 0.56em;
+  max-width: none;
+  transform: rotate(2deg);
+  filter: drop-shadow(0 2px 3px rgba(150, 50, 0, 0.18));
+}
+
+/* ------------------------------------------------------------------ navigation */
+.nav {
+  position: relative;
+  margin-top: clamp(0px, 0.9vw, 14px);
+  max-width: 100%;
+}
+
+/* soft cream haze only behind the nav words (keeps the ink readable over the sky) */
+.nav::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -6px -10%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 247, 234, 0.72), rgba(255, 247, 234, 0.45) 60%, rgba(255, 247, 234, 0));
+  pointer-events: none;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: clamp(10px, 3.4vw, 62px);
+  row-gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 8px;
+  border-radius: 8px;
+  color: var(--k-ink);
+  font-family: var(--k-brush);
+  font-size: clamp(20px, 0.62vw + 15.5px, 27px);
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 180ms var(--k-ease);
+}
+
+.link:hover {
+  color: #8f3a0c;
+  text-decoration: none;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--k-blue);
+  outline-offset: 0;
+}
+
+/* active: deeper orange than the brush so the word stays readable (≥ 4.5:1 on the haze) */
+.link[aria-current='page'] {
+  color: #b8420a;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+}
+
+.ink {
+  position: absolute;
+  z-index: 0;
+  left: -6px;
+  right: -12px;
+  bottom: 3px;
+  height: 8px;
+  pointer-events: none;
+}
+
+.ink svg {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  fill: var(--k-orange);
+}
+
+/* ------------------------------------------------------------------ small screens */
+@media (max-width: 560px) {
+  .header {
+    padding-top: 6px;
+  }
+
+  .nav {
+    margin-top: 2px;
+  }
+
+  .link {
+    padding: 0 5px;
+    min-height: 40px;
+  }
+}

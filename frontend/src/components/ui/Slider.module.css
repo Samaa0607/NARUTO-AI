@@ -1,0 +1,130 @@
+.slider {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.icon {
+  display: inline-flex;
+  color: var(--accent);
+}
+
+.icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.value {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  min-width: 4ch;
+  text-align: right;
+}
+
+.description {
+  color: var(--text-dim);
+  font-size: var(--fs-sm);
+}
+
+.input {
+  --fill: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 26px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.input:focus-visible {
+  outline: none;
+}
+
+.input::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 6px;
+  background:
+    linear-gradient(90deg, var(--accent-3), var(--accent) 60%, var(--accent-2)) 0 0 / var(--fill) 100% no-repeat,
+    rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+}
+
+.input::-moz-range-track {
+  height: 6px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.input::-moz-range-progress {
+  height: 6px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--accent-3), var(--accent) 60%, var(--accent-2));
+}
+
+.input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -7px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid var(--accent);
+  box-shadow:
+    0 0 0 4px var(--glow-soft),
+    0 0 16px var(--glow);
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+}
+
+.input::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 16px var(--glow);
+}
+
+.input:hover::-webkit-slider-thumb {
+  transform: scale(1.12);
+}
+
+.input:focus-visible::-webkit-slider-thumb {
+  box-shadow:
+    0 0 0 4px var(--accent-2),
+    0 0 18px var(--glow);
+}
+
+.input:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 4px var(--accent-2);
+}
+
+.disabled {
+  opacity: 0.45;
+}
+
+.disabled .input {
+  cursor: not-allowed;
+}

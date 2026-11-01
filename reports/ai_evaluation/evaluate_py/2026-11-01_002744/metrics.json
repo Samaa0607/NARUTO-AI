@@ -1,0 +1,1559 @@
+{
+  "format": "shinobi-eval-v1",
+  "created": "2026-11-01T00:27:44",
+  "command": "evaluate.py run --sets validation,train --out reports/ai_evaluation/evaluate_py --title AI evaluation 2026-11-01 (run A: installed landmark model; leakage guard on) --note No TEST recordings exist (data/splits.json: 16 train, 3 validation, 0 test). Validation numbers were used to choose the model: not a final result. YOLOX numbers on train recordings are on data YOLOX never trained on, but the thresholds were tuned while these recordings existed.",
+  "title": "AI evaluation 2026-11-01 (run A: installed landmark model; leakage guard on)",
+  "notes": [
+    "No TEST recordings exist (data/splits.json: 16 train, 3 validation, 0 test). Validation numbers were used to choose the model: not a final result. YOLOX numbers on train recordings are on data YOLOX never trained on, but the thresholds were tuned while these recordings existed."
+  ],
+  "settings": {
+    "sets": [
+      "validation",
+      "train"
+    ],
+    "recognizers": [
+      "landmarks",
+      "yolox",
+      "fused"
+    ],
+    "skip_start_s": 0.5,
+    "yolox_delay_s": 0.06,
+    "seal_rate_hz": 10,
+    "yolox_runs_per_s_median": 8.9,
+    "seal_min_score": 0.7,
+    "seal_no_hand_score": 0.85,
+    "seal_confirm": 2,
+    "seal_max_age": 0.35,
+    "landmark_min_prob": 0.6,
+    "conf_on": 0.75,
+    "hold_seconds": 0.3,
+    "data": "C:\\Users\\user\\Desktop\\SHINOBI-AI\\data",
+    "splits": "C:\\Users\\user\\Desktop\\SHINOBI-AI\\data\\splits.json"
+  },
+  "sets_evaluated": [
+    "validation",
+    "train"
+  ],
+  "sessions_by_set": {
+    "validation": [
+      "me_night_20261030_222524",
+      "me_night_20261030_222754",
+      "me_day_20261030_175251"
+    ],
+    "train": [
+      "me_night_20261030_221934",
+      "me_night_20261030_222121",
+      "me_night_20261030_222258",
+      "me_night_20261030_222645",
+      "me_night_20261030_220443",
+      "me_night_20261030_220610",
+      "me_night_20261030_220235",
+      "me_night_20261030_215059",
+      "me_night_20261030_215447",
+      "me_night_20261030_215808",
+      "me_night_20261030_220743",
+      "me_night_20261030_220040",
+      "me_night_20261030_214750",
+      "me_day_20261030_174647",
+      "me_day_20261030_174917",
+      "me_day_20261030_175113"
+    ]
+  },
+  "model": {
+    "path": "C:\\Users\\user\\Desktop\\SHINOBI-AI\\models\\gesture_model.joblib",
+    "exists": true,
+    "usable": true,
+    "reason": "trained with splits",
+    "train_sessions": [
+      "me_day_20261030_174647",
+      "me_day_20261030_174917",
+      "me_day_20261030_175113",
+      "me_night_20261030_214750",
+      "me_night_20261030_215059",
+      "me_night_20261030_215447",
+      "me_night_20261030_215808",
+      "me_night_20261030_220040",
+      "me_night_20261030_220235",
+      "me_night_20261030_220443",
+      "me_night_20261030_220610",
+      "me_night_20261030_220743",
+      "me_night_20261030_221934",
+      "me_night_20261030_222121",
+      "me_night_20261030_222258",
+      "me_night_20261030_222645"
+    ],
+    "validation_sessions": [
+      "me_day_20261030_175251",
+      "me_night_20261030_222524",
+      "me_night_20261030_222754"
+    ],
+    "model_name": "random_forest",
+    "created": "2026-10-31T14:36:03",
+    "selection": "default"
+  },
+  "yolox_used": true,
+  "yolox_requested": true,
+  "frame_level": {
+    "validation": {
+      "landmarks": {
+        "frames": 1088,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "idle": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 731,
+            "predicted": 731
+          },
+          "ram": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "snake": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "tiger": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "dog": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "monkey": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "boar": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "horse": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "clone_seal": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "rasengan_palm": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 357,
+            "predicted": 357
+          }
+        },
+        "confusion": {
+          "rows": [
+            "idle",
+            "rasengan_palm"
+          ],
+          "cols": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse",
+            "clone_seal",
+            "rasengan_palm"
+          ],
+          "matrix": [
+            [
+              731,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              357
+            ]
+          ],
+          "correct_col": {
+            "idle": "idle",
+            "rasengan_palm": "rasengan_palm"
+          }
+        },
+        "sessions": [
+          "me_day_20261030_175251",
+          "me_night_20261030_222524",
+          "me_night_20261030_222754"
+        ],
+        "latency_ms": {
+          "n": 1118,
+          "mean": 0.94,
+          "median": 0.81,
+          "p90": 1.47,
+          "max": 12.37
+        }
+      },
+      "yolox": {
+        "frames": 552,
+        "accuracy": 0.9981884057971014,
+        "balanced_accuracy": 0.9981884057971014,
+        "macro_f1": 0.99909338168631,
+        "per_class": {
+          "idle": {
+            "precision": 1.0,
+            "recall": 0.9981884057971014,
+            "f1": 0.99909338168631,
+            "support": 552,
+            "predicted": 551
+          },
+          "ram": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "snake": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "tiger": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "dog": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "monkey": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "boar": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "horse": {
+            "precision": 0.0,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 1
+          }
+        },
+        "confusion": {
+          "rows": [
+            "idle",
+            "rasengan_palm"
+          ],
+          "cols": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse"
+          ],
+          "matrix": [
+            [
+              364,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              187,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "correct_col": {
+            "idle": "idle",
+            "rasengan_palm": "idle"
+          }
+        },
+        "sessions": [
+          "me_day_20261030_175251",
+          "me_night_20261030_222524",
+          "me_night_20261030_222754"
+        ],
+        "latency_ms": {
+          "n": 569,
+          "mean": 39.93,
+          "median": 38.8,
+          "p90": 49.3,
+          "max": 93.36
+        }
+      },
+      "fused": {
+        "frames": 1088,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "idle": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 731,
+            "predicted": 731
+          },
+          "ram": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "snake": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "tiger": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "dog": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "monkey": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "boar": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "horse": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "clone_seal": {
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "support": 0,
+            "predicted": 0
+          },
+          "rasengan_palm": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 357,
+            "predicted": 357
+          }
+        },
+        "confusion": {
+          "rows": [
+            "idle",
+            "rasengan_palm"
+          ],
+          "cols": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse",
+            "clone_seal",
+            "rasengan_palm"
+          ],
+          "matrix": [
+            [
+              731,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              357
+            ]
+          ],
+          "correct_col": {
+            "idle": "idle",
+            "rasengan_palm": "rasengan_palm"
+          }
+        },
+        "sessions": [
+          "me_day_20261030_175251",
+          "me_night_20261030_222524",
+          "me_night_20261030_222754"
+        ],
+        "latency_ms": {
+          "n": 1118,
+          "mean": 0.08,
+          "median": 0.08,
+          "p90": 0.13,
+          "max": 0.97
+        }
+      }
+    },
+    "train": {
+      "landmarks": {
+        "frames": 0,
+        "skipped": "trained on this recording"
+      },
+      "yolox": {
+        "frames": 3129,
+        "accuracy": 0.9968040907638223,
+        "balanced_accuracy": 0.9935360176473087,
+        "macro_f1": 0.9963362102722954,
+        "per_class": {
+          "idle": {
+            "precision": 0.9935979513444302,
+            "recall": 1.0,
+            "f1": 0.9967886962106615,
+            "support": 1552,
+            "predicted": 1562
+          },
+          "ram": {
+            "precision": 1.0,
+            "recall": 0.984375,
+            "f1": 0.9921259842519685,
+            "support": 192,
+            "predicted": 189
+          },
+          "snake": {
+            "precision": 1.0,
+            "recall": 0.9742268041237113,
+            "f1": 0.9869451697127937,
+            "support": 194,
+            "predicted": 189
+          },
+          "tiger": {
+            "precision": 1.0,
+            "recall": 0.9947368421052631,
+            "f1": 0.9973614775725593,
+            "support": 190,
+            "predicted": 189
+          },
+          "dog": {
+            "precision": 1.0,
+            "recall": 0.9949494949494949,
+            "f1": 0.9974683544303797,
+            "support": 198,
+            "predicted": 197
+          },
+          "monkey": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 437,
+            "predicted": 437
+          },
+          "boar": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 175,
+            "predicted": 175
+          },
+          "horse": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 191,
+            "predicted": 191
+          }
+        },
+        "confusion": {
+          "rows": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse",
+            "clone_seal",
+            "rasengan_palm"
+          ],
+          "cols": [
+            "idle",
+            "ram",
+            "snake",
+            "tiger",
+            "dog",
+            "monkey",
+            "boar",
+            "horse"
+          ],
+          "matrix": [
+            [
+              788,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              3,
+              189,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5,
+              0,
+              189,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              189,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              197,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              437,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              175,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              191
+            ],
+            [
+              187,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              577,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "correct_col": {
+            "idle": "idle",
+            "ram": "ram",
+            "snake": "snake",
+            "tiger": "tiger",
+            "dog": "dog",
+            "monkey": "monkey",
+            "boar": "boar",
+            "horse": "horse",
+            "clone_seal": "idle",
+            "rasengan_palm": "idle"
+          }
+        },
+        "sessions": [
+          "me_day_20261030_174647",
+          "me_day_20261030_174917",
+          "me_day_20261030_175113",
+          "me_night_20261030_214750",
+          "me_night_20261030_215059",
+          "me_night_20261030_215447",
+          "me_night_20261030_215808",
+          "me_night_20261030_220040",
+          "me_night_20261030_220235",
+          "me_night_20261030_220443",
+          "me_night_20261030_220610",
+          "me_night_20261030_220743",
+          "me_night_20261030_221934",
+          "me_night_20261030_222121",
+          "me_night_20261030_222258",
+          "me_night_20261030_222645"
+        ],
+        "latency_ms": {
+          "n": 3217,
+          "mean": 31.95,
+          "median": 30.61,
+          "p90": 35.55,
+          "max": 77.39
+        }
+      },
+      "fused": {
+        "frames": 0,
+        "skipped": "trained on this recording"
+      }
+    }
+  },
+  "sequence_level": {
+    "takes_found": 0,
+    "takes": {
+      "validation": {},
+      "train": {}
+    },
+    "single_sign_streams": {
+      "sessions": 3,
+      "minutes": 1.0,
+      "false_activations": 0,
+      "per_minute": 0.0,
+      "details": []
+    }
+  },
+  "recordings": [
+    {
+      "id": "me_night_20261030_222524",
+      "set": "validation",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 372,
+      "scored_frames": 358,
+      "duration_s": 20.01,
+      "hands_found": 1.0,
+      "model_note": "the landmark model was chosen with this recording (validation)",
+      "landmarks": {
+        "frames": 358,
+        "accuracy": 1.0,
+        "latency_ms": {
+          "n": 372,
+          "mean": 0.89,
+          "median": 0.81,
+          "p90": 1.09,
+          "max": 2.45
+        }
+      },
+      "video": {
+        "frames": 187,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 180,
+        "accuracy": 0.9944,
+        "most_common_mistake": "horse",
+        "latency_ms": {
+          "n": 187,
+          "mean": 42.38,
+          "median": 40.94,
+          "p90": 52.23,
+          "max": 93.36
+        }
+      },
+      "yolox_runs_per_s": 8.9,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 358,
+        "accuracy": 1.0,
+        "sources": {
+          "none": 358
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 372,
+          "mean": 0.07,
+          "median": 0.07,
+          "p90": 0.12,
+          "max": 0.97
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_222754",
+      "set": "validation",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 381,
+      "scored_frames": 373,
+      "duration_s": 20.05,
+      "hands_found": 1.0,
+      "model_note": "the landmark model was chosen with this recording (validation)",
+      "landmarks": {
+        "frames": 373,
+        "accuracy": 1.0,
+        "latency_ms": {
+          "n": 381,
+          "mean": 1.17,
+          "median": 0.85,
+          "p90": 1.6,
+          "max": 12.37
+        }
+      },
+      "video": {
+        "frames": 190,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 185,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 190,
+          "mean": 37.13,
+          "median": 36.38,
+          "p90": 44.78,
+          "max": 63.21
+        }
+      },
+      "yolox_runs_per_s": 9.03,
+      "controller": {
+        "confirmed": [],
+        "fired": []
+      },
+      "fused": {
+        "frames": 373,
+        "accuracy": 1.0,
+        "sources": {
+          "none": 373
+        },
+        "conflicts": 0,
+        "first_confirmed_s": null,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 381,
+          "mean": 0.09,
+          "median": 0.08,
+          "p90": 0.14,
+          "max": 0.81
+        }
+      }
+    },
+    {
+      "id": "me_day_20261030_175251",
+      "set": "validation",
+      "kind": "single",
+      "group": "rasengan_palm",
+      "lighting": "day",
+      "date": "2026-10-30",
+      "frames": 365,
+      "scored_frames": 357,
+      "duration_s": 20.01,
+      "hands_found": 1.0,
+      "model_note": "the landmark model was chosen with this recording (validation)",
+      "landmarks": {
+        "frames": 357,
+        "accuracy": 1.0,
+        "latency_ms": {
+          "n": 365,
+          "mean": 0.73,
+          "median": 0.56,
+          "p90": 1.01,
+          "max": 11.2
+        }
+      },
+      "video": {
+        "frames": 192,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 187,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 192,
+          "mean": 40.33,
+          "median": 39.34,
+          "p90": 50.52,
+          "max": 72.67
+        }
+      },
+      "yolox_runs_per_s": 8.85,
+      "controller": {
+        "confirmed": [
+          [
+            0.478,
+            "rasengan_palm"
+          ]
+        ],
+        "fired": []
+      },
+      "fused": {
+        "frames": 357,
+        "accuracy": 1.0,
+        "sources": {
+          "landmarks": 357
+        },
+        "conflicts": 0,
+        "first_confirmed_s": 0.478,
+        "wrong_confirmations": [],
+        "jutsu_fired": [],
+        "latency_ms": {
+          "n": 365,
+          "mean": 0.09,
+          "median": 0.08,
+          "p90": 0.12,
+          "max": 0.88
+        }
+      }
+    },
+    {
+      "id": "me_night_20261030_221934",
+      "set": "train",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 412,
+      "scored_frames": 401,
+      "duration_s": 20.0,
+      "hands_found": 0.252,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 217,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 211,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 217,
+          "mean": 35.9,
+          "median": 32.43,
+          "p90": 48.5,
+          "max": 58.94
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_night_20261030_222121",
+      "set": "train",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 363,
+      "scored_frames": 355,
+      "duration_s": 20.02,
+      "hands_found": 0.944,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 187,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 182,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 187,
+          "mean": 34.12,
+          "median": 32.8,
+          "p90": 39.95,
+          "max": 59.04
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_night_20261030_222258",
+      "set": "train",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 361,
+      "scored_frames": 354,
+      "duration_s": 20.02,
+      "hands_found": 0.972,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 196,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 191,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 196,
+          "mean": 32.73,
+          "median": 30.54,
+          "p90": 41.46,
+          "max": 77.39
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_night_20261030_222645",
+      "set": "train",
+      "kind": "single",
+      "group": "idle",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 324,
+      "scored_frames": 318,
+      "duration_s": 20.01,
+      "hands_found": 0.984,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 210,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 204,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 210,
+          "mean": 30.88,
+          "median": 30.14,
+          "p90": 32.54,
+          "max": 42.28
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_night_20261030_220443",
+      "set": "train",
+      "kind": "single",
+      "group": "ram",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 354,
+      "scored_frames": 346,
+      "duration_s": 20.05,
+      "hands_found": 1.0,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 198,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 192,
+        "accuracy": 0.9844,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 198,
+          "mean": 30.81,
+          "median": 30.5,
+          "p90": 31.77,
+          "max": 38.39
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_night_20261030_220610",
+      "set": "train",
+      "kind": "single",
+      "group": "snake",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 364,
+      "scored_frames": 350,
+      "duration_s": 20.03,
+      "hands_found": 1.0,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 201,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 194,
+        "accuracy": 0.9742,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 201,
+          "mean": 31.17,
+          "median": 30.65,
+          "p90": 32.92,
+          "max": 41.55
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_night_20261030_220235",
+      "set": "train",
+      "kind": "single",
+      "group": "tiger",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 315,
+      "scored_frames": 307,
+      "duration_s": 20.07,
+      "hands_found": 1.0,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 195,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 190,
+        "accuracy": 0.9947,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 195,
+          "mean": 30.76,
+          "median": 30.38,
+          "p90": 31.78,
+          "max": 39.75
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_night_20261030_215059",
+      "set": "train",
+      "kind": "single",
+      "group": "dog",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 340,
+      "scored_frames": 334,
+      "duration_s": 20.04,
+      "hands_found": 1.0,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 203,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 198,
+        "accuracy": 0.9949,
+        "most_common_mistake": "idle",
+        "latency_ms": {
+          "n": 203,
+          "mean": 31.25,
+          "median": 31.07,
+          "p90": 32.42,
+          "max": 41.13
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_night_20261030_215447",
+      "set": "train",
+      "kind": "single",
+      "group": "monkey",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 348,
+      "scored_frames": 341,
+      "duration_s": 20.02,
+      "hands_found": 0.358,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 218,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 213,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 218,
+          "mean": 30.94,
+          "median": 30.61,
+          "p90": 31.74,
+          "max": 44.44
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_night_20261030_215808",
+      "set": "train",
+      "kind": "single",
+      "group": "monkey",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 334,
+      "scored_frames": 327,
+      "duration_s": 20.01,
+      "hands_found": 0.933,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 229,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 224,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 229,
+          "mean": 34.89,
+          "median": 32.97,
+          "p90": 42.28,
+          "max": 75.68
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_night_20261030_220743",
+      "set": "train",
+      "kind": "single",
+      "group": "boar",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 352,
+      "scored_frames": 339,
+      "duration_s": 20.06,
+      "hands_found": 1.0,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 180,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 175,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 180,
+          "mean": 31.82,
+          "median": 30.91,
+          "p90": 34.49,
+          "max": 43.31
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_night_20261030_220040",
+      "set": "train",
+      "kind": "single",
+      "group": "horse",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 346,
+      "scored_frames": 338,
+      "duration_s": 20.01,
+      "hands_found": 1.0,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 196,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 191,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 196,
+          "mean": 30.87,
+          "median": 30.5,
+          "p90": 31.55,
+          "max": 40.69
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_night_20261030_214750",
+      "set": "train",
+      "kind": "single",
+      "group": "clone_seal",
+      "lighting": "night",
+      "date": "2026-10-30",
+      "frames": 384,
+      "scored_frames": 376,
+      "duration_s": 20.02,
+      "hands_found": 1.0,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 192,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 187,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 192,
+          "mean": 30.73,
+          "median": 30.16,
+          "p90": 32.13,
+          "max": 42.64
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_day_20261030_174647",
+      "set": "train",
+      "kind": "single",
+      "group": "rasengan_palm",
+      "lighting": "day",
+      "date": "2026-10-30",
+      "frames": 357,
+      "scored_frames": 343,
+      "duration_s": 20.06,
+      "hands_found": 1.0,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 204,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 197,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 204,
+          "mean": 31.16,
+          "median": 30.23,
+          "p90": 34.24,
+          "max": 42.35
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_day_20261030_174917",
+      "set": "train",
+      "kind": "single",
+      "group": "rasengan_palm",
+      "lighting": "day",
+      "date": "2026-10-30",
+      "frames": 376,
+      "scored_frames": 369,
+      "duration_s": 20.06,
+      "hands_found": 1.0,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 199,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 193,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 199,
+          "mean": 32.24,
+          "median": 31.07,
+          "p90": 36.53,
+          "max": 46.07
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    },
+    {
+      "id": "me_day_20261030_175113",
+      "set": "train",
+      "kind": "single",
+      "group": "rasengan_palm",
+      "lighting": "day",
+      "date": "2026-10-30",
+      "frames": 327,
+      "scored_frames": 320,
+      "duration_s": 20.01,
+      "hands_found": 1.0,
+      "model_note": "the landmark model was trained on this recording: landmarks + fused skipped",
+      "landmarks": {
+        "skipped": "trained on this recording"
+      },
+      "video": {
+        "frames": 192,
+        "aligned": "exact"
+      },
+      "yolox": {
+        "frames": 187,
+        "accuracy": 1.0,
+        "most_common_mistake": null,
+        "latency_ms": {
+          "n": 192,
+          "mean": 30.31,
+          "median": 30.08,
+          "p90": 31.01,
+          "max": 35.56
+        }
+      },
+      "fused": {
+        "skipped": "trained on this recording"
+      }
+    }
+  ],
+  "ignored": [
+    {
+      "id": "me_day_20261030_175555",
+      "path": "landmarks/chidori/me_day_20261030_175555.npz",
+      "label": "chidori",
+      "reason": "'chidori' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_175702",
+      "path": "landmarks/chidori/me_day_20261030_175702.npz",
+      "label": "chidori",
+      "reason": "'chidori' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_175819",
+      "path": "landmarks/chidori/me_day_20261030_175819.npz",
+      "label": "chidori",
+      "reason": "'chidori' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_175931",
+      "path": "landmarks/chidori/me_day_20261030_175931.npz",
+      "label": "chidori",
+      "reason": "'chidori' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_180207",
+      "path": "landmarks/fire/me_day_20261030_180207.npz",
+      "label": "fire",
+      "reason": "'fire' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_180328",
+      "path": "landmarks/fire/me_day_20261030_180328.npz",
+      "label": "fire",
+      "reason": "'fire' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_180435",
+      "path": "landmarks/fire/me_day_20261030_180435.npz",
+      "label": "fire",
+      "reason": "'fire' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    },
+    {
+      "id": "me_day_20261030_180614",
+      "path": "landmarks/fire/me_day_20261030_180614.npz",
+      "label": "fire",
+      "reason": "'fire' is not a sign any more (not in config.GESTURES or config.LEGACY_LABELS)"
+    }
+  ],
+  "warnings": [
+    "Signs without any test recording yet: idle, ram, snake, tiger, dog, monkey, boar, horse, clone_seal, rasengan_palm. They have no honest test number.",
+    "Only one recording evaluated for: boar, clone_seal, dog, horse, ram, snake, tiger. One recording = one person, one day, one light: treat those numbers as a smoke test.",
+    "All evaluated recordings come from day 2026-10-30, night 2026-10-30: nothing here says how the app does in other light or on other days.",
+    "YOLOX sees the saved 480p reference video (mp4), not the live 720p camera frame: pixels differ a little from the app's.",
+    "Hands come from the landmarks saved while recording (MediaPipe on the live 720p frame), as the app would have them; MediaPipe itself is not re-run."
+  ],
+  "seconds": 157.5
+}

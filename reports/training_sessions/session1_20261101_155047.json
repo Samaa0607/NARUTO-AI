@@ -1,0 +1,468 @@
+{
+  "session": 1,
+  "start": "2026-11-01T15:50:47",
+  "person": "me",
+  "lighting": "day",
+  "set": "train",
+  "seconds": 20,
+  "saved": [
+    {
+      "step": 1,
+      "block": 1,
+      "camera": "A",
+      "set": "train",
+      "label": "ram",
+      "id": "me_day_20261101_162853",
+      "frames": 350,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 2,
+      "block": 1,
+      "camera": "A",
+      "set": "train",
+      "label": "snake",
+      "id": "me_day_20261101_163100",
+      "frames": 379,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 3,
+      "block": 1,
+      "camera": "A",
+      "set": "train",
+      "label": "tiger",
+      "id": "me_day_20261101_163253",
+      "frames": 372,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 4,
+      "block": 1,
+      "camera": "A",
+      "set": "train",
+      "label": "dog",
+      "id": "me_day_20261101_163553",
+      "frames": 372,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 5,
+      "block": 1,
+      "camera": "A",
+      "set": "train",
+      "label": "monkey",
+      "id": "me_day_20261101_163747",
+      "frames": 366,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 6,
+      "block": 1,
+      "camera": "A",
+      "set": "train",
+      "label": "boar",
+      "id": "me_day_20261101_164012",
+      "frames": 348,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 7,
+      "block": 1,
+      "camera": "A",
+      "set": "train",
+      "label": "horse",
+      "id": "me_day_20261101_164127",
+      "frames": 355,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 8,
+      "block": 1,
+      "camera": "A",
+      "set": "train",
+      "label": "clone_seal",
+      "id": "me_day_20261101_164328",
+      "frames": 358,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 9,
+      "block": 1,
+      "camera": "A",
+      "set": "train",
+      "label": "rasengan_palm",
+      "id": "me_day_20261101_164627",
+      "frames": 330,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 10,
+      "block": 1,
+      "camera": "A",
+      "set": "train",
+      "label": "idle",
+      "id": "me_day_20261101_164911",
+      "frames": 311,
+      "hands": 1.0,
+      "note": "IDLE: an OK sign (thumb and index make a circle). Move it around. NOT an open palm."
+    },
+    {
+      "step": 11,
+      "block": 2,
+      "camera": "B",
+      "set": "train",
+      "label": "ram",
+      "id": "me_day_20261101_170452",
+      "frames": 348,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 12,
+      "block": 2,
+      "camera": "B",
+      "set": "train",
+      "label": "snake",
+      "id": "me_day_20261101_170616",
+      "frames": 351,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 13,
+      "block": 2,
+      "camera": "B",
+      "set": "train",
+      "label": "tiger",
+      "id": "me_day_20261101_170732",
+      "frames": 348,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 14,
+      "block": 2,
+      "camera": "B",
+      "set": "train",
+      "label": "dog",
+      "id": "me_day_20261101_171314",
+      "frames": 347,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 15,
+      "block": 2,
+      "camera": "B",
+      "set": "train",
+      "label": "monkey",
+      "id": "me_day_20261101_171552",
+      "frames": 454,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 16,
+      "block": 2,
+      "camera": "B",
+      "set": "train",
+      "label": "boar",
+      "id": "me_day_20261101_171821",
+      "frames": 450,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 17,
+      "block": 2,
+      "camera": "B",
+      "set": "train",
+      "label": "horse",
+      "id": "me_day_20261101_172019",
+      "frames": 430,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 18,
+      "block": 2,
+      "camera": "B",
+      "set": "train",
+      "label": "clone_seal",
+      "id": "me_day_20261101_172325",
+      "frames": 435,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 19,
+      "block": 2,
+      "camera": "B",
+      "set": "train",
+      "label": "rasengan_palm",
+      "id": "me_day_20261101_172516",
+      "frames": 417,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 20,
+      "block": 2,
+      "camera": "B",
+      "set": "train",
+      "label": "idle",
+      "id": "me_day_20261101_172732",
+      "frames": 449,
+      "hands": 1.0,
+      "note": "IDLE: fists and claw hands. Move them around."
+    },
+    {
+      "step": 21,
+      "block": 3,
+      "camera": "A-far",
+      "set": "train",
+      "label": "ram",
+      "id": "me_day_20261101_173331",
+      "frames": 399,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 22,
+      "block": 3,
+      "camera": "A-far",
+      "set": "train",
+      "label": "snake",
+      "id": "me_day_20261101_173557",
+      "frames": 381,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 23,
+      "block": 3,
+      "camera": "A-far",
+      "set": "train",
+      "label": "tiger",
+      "id": "me_day_20261101_173745",
+      "frames": 382,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 24,
+      "block": 3,
+      "camera": "A-far",
+      "set": "train",
+      "label": "dog",
+      "id": "me_day_20261101_173907",
+      "frames": 379,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 25,
+      "block": 3,
+      "camera": "A-far",
+      "set": "train",
+      "label": "clone_seal",
+      "id": "me_day_20261101_174201",
+      "frames": 363,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 26,
+      "block": 3,
+      "camera": "A-far",
+      "set": "train",
+      "label": "rasengan_palm",
+      "id": "me_day_20261101_174404",
+      "frames": 342,
+      "hands": 1.0,
+      "note": ""
+    },
+    {
+      "step": 27,
+      "block": 3,
+      "camera": "A-far",
+      "set": "train",
+      "label": "idle",
+      "id": "me_day_20261101_174911",
+      "frames": 343,
+      "hands": 1.0,
+      "note": "IDLE: point at things, scratch your head, touch your face."
+    }
+  ],
+  "redone": [
+    {
+      "step": 1,
+      "label": "ram",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 1,
+      "label": "ram",
+      "hands": 0.76,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 2,
+      "label": "snake",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 3,
+      "label": "tiger",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 4,
+      "label": "dog",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 4,
+      "label": "dog",
+      "hands": 0.99,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 4,
+      "label": "dog",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 5,
+      "label": "monkey",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 6,
+      "label": "boar",
+      "hands": 0.8,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 9,
+      "label": "rasengan_palm",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 10,
+      "label": "idle",
+      "hands": 0.59,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 11,
+      "label": "ram",
+      "hands": 0.98,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 11,
+      "label": "ram",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 11,
+      "label": "ram",
+      "hands": 0.94,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 11,
+      "label": "ram",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 11,
+      "label": "ram",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 15,
+      "label": "monkey",
+      "hands": 0.96,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 15,
+      "label": "monkey",
+      "hands": 0.9,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 18,
+      "label": "clone_seal",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 20,
+      "label": "idle",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 22,
+      "label": "snake",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 22,
+      "label": "snake",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 23,
+      "label": "tiger",
+      "hands": 1.0,
+      "reason": "the user chose to record it again"
+    },
+    {
+      "step": 27,
+      "label": "idle",
+      "hands": 0.98,
+      "reason": "the user chose to record it again"
+    }
+  ],
+  "not_saved": [
+    {
+      "step": 6,
+      "label": "boar",
+      "hands": 0.32,
+      "reason": "hands not seen enough, recorded again"
+    },
+    {
+      "step": 22,
+      "label": "snake",
+      "hands": 0.31,
+      "reason": "hands not seen enough, recorded again"
+    }
+  ],
+  "finished": true
+}

@@ -1,0 +1,404 @@
+/* "JUTSU" card: four paper rows (icon, brush name, subtitle, status pill, chevron). */
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card > :last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px clamp(12px, 1.8vw, 18px) 18px;
+}
+
+.list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.list > li {
+  flex: 1;
+  display: flex;
+}
+
+.row {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+  min-height: 70px;
+  padding: 8px 12px 8px 10px;
+  border: 1.5px solid var(--k-paper-edge);
+  border-radius: 12px;
+  background: #fdf8ee;
+  color: var(--k-ink);
+  font-family: var(--k-body);
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(60, 35, 10, 0.06);
+  transition:
+    border-color 160ms var(--k-ease),
+    box-shadow 200ms var(--k-ease),
+    background 160ms var(--k-ease),
+    transform 160ms var(--k-ease);
+}
+
+.row:hover {
+  border-color: rgba(122, 82, 40, 0.42);
+  background: #fffbf4;
+}
+
+.row:active {
+  transform: translateY(1px);
+}
+
+.row:focus-visible {
+  outline: 2px solid var(--k-blue);
+  outline-offset: 2px;
+}
+
+.selected,
+.selected:hover {
+  border-color: var(--k-orange);
+  background: #fffaf3;
+  box-shadow: 0 0 0 3px var(--k-orange-soft), 0 2px 8px rgba(240, 100, 30, 0.12);
+}
+
+/* the place of the jutsu icon (components/art/JutsuIcon draws the window, the ring and the art) */
+.icon {
+  flex: none;
+  display: block;
+  width: 54px;
+  height: 54px;
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.name {
+  font-family: var(--k-brush);
+  font-size: 24px;
+  line-height: 1.02;
+  color: var(--k-ink);
+  /* the full name, never cut: a long one may take a second line */
+  overflow-wrap: anywhere;
+}
+
+.sub {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--k-ink-soft);
+  /* up to two lines instead of cutting the name of the technique */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pill {
+  flex: none;
+  padding: 4px 9px;
+  border-radius: 7px;
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.ready {
+  background: var(--k-ready-bg);
+  color: var(--k-ready);
+  box-shadow: inset 0 0 0 1px rgba(63, 127, 71, 0.18);
+}
+
+.train {
+  background: var(--k-train-bg);
+  color: var(--k-train);
+  box-shadow: inset 0 0 0 1px rgba(143, 100, 32, 0.2);
+}
+
+.count {
+  flex: none;
+  min-width: 2.6em;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: var(--k-orange-soft);
+  color: var(--k-orange);
+  font-family: var(--k-brush);
+  font-size: 25px;
+  line-height: 1.1;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.chevron {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  color: var(--k-ink-soft);
+  transition: transform 160ms var(--k-ease), color 160ms var(--k-ease);
+}
+
+.row:hover .chevron,
+.selected .chevron {
+  color: var(--k-orange);
+  transform: translateX(2px);
+}
+
+/* ------------------------------------------------------------------ loading / error */
+.skeleton {
+  min-height: 70px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #f1e5cc 0%, #f8efdd 50%, #f1e5cc 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: -100% 0;
+  }
+}
+
+.error {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 8px;
+  text-align: center;
+  font-family: var(--k-body);
+}
+
+.errorTitle {
+  font-family: var(--k-brush);
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+.errorText {
+  max-width: 40ch;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--k-ink-soft);
+}
+
+.retry {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--k-paper-edge);
+  border-radius: 9px;
+  background: #fffaf0;
+  color: var(--k-ink);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.retry:focus-visible {
+  outline: 2px solid var(--k-blue);
+  outline-offset: 2px;
+}
+
+.retry svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ------------------------------------------------------------------ sizes */
+/* tablet: the card spans the width, two rows side by side */
+@media (min-width: 620px) and (max-width: 899px) {
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 440px) {
+  .row {
+    gap: 10px;
+    min-height: 64px;
+    padding: 7px 8px;
+  }
+
+  .icon {
+    width: 44px;
+    height: 44px;
+  }
+
+
+  .name {
+    font-size: 24px;
+  }
+
+  .sub {
+    font-size: 12.5px;
+  }
+
+  .pill {
+    max-width: 78px;
+    padding: 4px 8px;
+    font-size: 11.5px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .chevron {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* ------------------------------------------------------------------ compact (the Live page) */
+/* the card is its own size container: tighter rows in a narrow side column, two rows side by side
+   when it spans a wide one (Live on tablets) */
+.compact {
+  container: jutsu-list / inline-size;
+}
+
+.compact > :last-child {
+  padding: 14px 12px 14px;
+}
+
+.compact .list {
+  gap: 8px;
+}
+
+.compact .list > li {
+  flex: none;
+}
+
+@container jutsu-list (max-width: 420px) {
+  .row {
+    gap: 10px;
+    min-height: 56px;
+    padding: 6px 8px 6px 7px;
+    border-radius: 11px;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .name {
+    font-size: 21px;
+  }
+
+  .sub {
+    font-size: 12px;
+  }
+
+  .pill {
+    max-width: 76px;
+    padding: 3px 7px;
+    font-size: 11px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .count {
+    min-width: 2.3em;
+    font-size: 22px;
+  }
+
+  .chevron {
+    display: none;
+  }
+
+  .skeleton {
+    min-height: 56px;
+  }
+}
+
+@container jutsu-list (min-width: 600px) {
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Live side column: the four jutsu 2 x 2 (icon, name, status under the name; the technique's full
+   name is on the Jutsu page), so the hand-sign drawings below get the room they need */
+@container jutsu-list (max-width: 420px) {
+  .compact > :last-child {
+    padding: 10px 10px 10px;
+  }
+
+  .compact .list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .compact .sub {
+    display: none;
+  }
+
+  .compact .row {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-content: center;
+    gap: 2px 8px;
+    min-height: 48px;
+    padding: 5px 8px 5px 6px;
+  }
+
+  .compact .icon {
+    grid-row: 1 / span 2;
+    width: 34px;
+    height: 34px;
+  }
+
+  .compact .text {
+    grid-column: 2;
+  }
+
+  .compact .name {
+    font-size: 19px;
+  }
+
+  .compact .pill,
+  .compact .count {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .compact .pill {
+    max-width: none;
+    padding: 2px 6px;
+    font-size: 10.5px;
+    text-align: left;
+  }
+
+  .compact .count {
+    min-width: 0;
+    padding: 0 7px;
+    font-size: 17px;
+  }
+
+  .compact .skeleton {
+    min-height: 48px;
+  }
+}

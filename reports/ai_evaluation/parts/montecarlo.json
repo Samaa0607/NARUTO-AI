@@ -1,0 +1,48 @@
+{
+  "about": "SequenceMatcher alone (the app's class, current rules: per-jutsu counters, a wrong sign keeps the progress, 7 s limit in Live, none in Practice) fed one uniformly random sign every 1.8-3.6 s, for 200.0 simulated hours. It shows how often signs made in NO particular order complete a jutsu by chance. Recognition is assumed perfect here; the spliced random streams of the 'sequences' part include the real recognisers.",
+  "hours": 200.0,
+  "live": {
+    "per_hour": {
+      "shadow_clone": 1.36,
+      "fire_style": 1.39,
+      "chidori": 1.34,
+      "rasengan": 1.46
+    },
+    "total_per_hour": 5.54
+  },
+  "practice": {
+    "fire_style": {
+      "per_hour": {
+        "fire_style": 37.09
+      },
+      "total_per_hour": 37.09
+    },
+    "chidori": {
+      "per_hour": {
+        "chidori": 37.32
+      },
+      "total_per_hour": 37.32
+    },
+    "shadow_clone": {
+      "per_hour": {
+        "shadow_clone": 37.07
+      },
+      "total_per_hour": 37.07
+    },
+    "rasengan": {
+      "per_hour": {
+        "rasengan": 37.31
+      },
+      "total_per_hour": 37.31
+    }
+  },
+  "live_previous_rule_for_comparison": {
+    "per_hour": {
+      "chidori": 0.33,
+      "rasengan": 0.26,
+      "shadow_clone": 0.32,
+      "fire_style": 0.27
+    },
+    "total_per_hour": 1.17
+  }
+}

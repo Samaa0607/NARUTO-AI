@@ -1,0 +1,87 @@
+/* The Live page: a wider centred column than Home (the camera is the focus) that still leaves
+   Naruto and Sasuke visible at the sides; the camera card takes ~70% of it, the jutsu list and the
+   hand-sign sequence share the narrow column on the right. Tablet and phone: one column. */
+
+.live {
+  width: 100%;
+  /* 1240px at 1672x941, ~1210px on a 1440x900 laptop: the camera is the focus here; Naruto and
+     Sasuke stay at the sides */
+  max-width: min(1240px, max(84vw, 124vh), 100%);
+  margin: 0 auto;
+  padding: 0 clamp(8px, 1.6vw, 18px) 24px;
+  color: var(--k-ink);
+  font-family: var(--k-body);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(300px, 30%, 360px);
+  gap: 18px;
+  /* both columns get the height of the taller one: the camera card's top and bottom line up with
+     the jutsu list's top and the sequence card's bottom */
+  align-items: stretch;
+}
+
+/* the tallest video that still keeps Start / Stop on screen under the header */
+.camera {
+  --video-max-h: max(240px, calc(100vh - 360px));
+  --video-max-h: max(240px, calc(100dvh - 360px));
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.side > .list {
+  flex: none;
+}
+
+/* the sequence card fills the rest of the column (down to the camera's bottom); its hint and
+   credit stay at the bottom, the tiles right under the header */
+.side > .sequence {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.side > .sequence > :last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.side > .sequence > :last-child > :last-child {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+/* tablet and phone: the camera first at full width, then the list and the sequence */
+@media (max-width: 1079px) {
+  .live {
+    max-width: min(900px, 100%);
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .camera {
+    --video-max-h: max(220px, calc(100vh - 240px));
+    --video-max-h: max(220px, calc(100dvh - 240px));
+  }
+}
+
+@media (max-width: 480px) {
+  .live {
+    padding: 0 2px 20px;
+  }
+
+  .grid,
+  .side {
+    gap: 14px;
+  }
+}

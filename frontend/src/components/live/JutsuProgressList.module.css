@@ -1,0 +1,123 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  --jc: var(--accent);
+  --jc2: var(--accent-2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--dur) var(--ease-out), background var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out);
+}
+
+.row:hover {
+  border-color: color-mix(in srgb, var(--jc) 45%, transparent);
+  background: var(--surface-hover);
+}
+
+.focus {
+  border-color: color-mix(in srgb, var(--jc) 70%, transparent);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--jc) 14%, transparent), transparent 80%);
+}
+
+.leader {
+  box-shadow: 0 0 22px color-mix(in srgb, var(--jc) 30%, transparent);
+}
+
+.glyph {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-family: var(--font-kanji);
+  font-size: 20px;
+  color: var(--jc2);
+  background: color-mix(in srgb, var(--jc) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--jc) 40%, transparent);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.title {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pips {
+  display: inline-flex;
+  gap: 5px;
+  flex: none;
+}
+
+.pip {
+  width: 16px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+}
+
+.pipOn {
+  background: var(--jc);
+  box-shadow: 0 0 10px var(--jc);
+}
+
+.state {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+.state svg {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
+.ok {
+  color: var(--success);
+}
+
+.warn {
+  color: var(--warning);
+}

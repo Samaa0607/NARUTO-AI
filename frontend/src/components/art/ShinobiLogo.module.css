@@ -1,0 +1,42 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  line-height: 1;
+}
+
+.mark {
+  flex: none;
+  overflow: visible;
+  filter: drop-shadow(0 0 10px var(--glow-soft));
+}
+
+.blades {
+  transform-origin: 32px 32px;
+}
+
+.spin .blades {
+  animation: spin 18s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.word {
+  font-family: var(--font-display);
+  letter-spacing: 0.1em;
+  padding-top: 0.08em;
+  white-space: nowrap;
+}
+
+.ai {
+  margin-left: 0.28em;
+  background: var(--chakra-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

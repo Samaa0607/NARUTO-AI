@@ -1,0 +1,494 @@
+{
+ "ram/me_night_20261030_220443": [
+  {
+   "t": "0-2s",
+   "hands": 1.0,
+   "both": 1.0,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.87,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "2-4s",
+   "hands": 1.0,
+   "both": 1.0,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.9,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "4-6s",
+   "hands": 1.0,
+   "both": 1.0,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.89,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "6-8s",
+   "hands": 1.0,
+   "both": 1.0,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.9,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "8-10s",
+   "hands": 1.0,
+   "both": 1.0,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.9,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "10-12s",
+   "hands": 1.0,
+   "both": 0.87,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.88,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "12-14s",
+   "hands": 1.0,
+   "both": 0.46,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.85,
+   "yolox>=0.70": 0.91
+  },
+  {
+   "t": "14-16s",
+   "hands": 1.0,
+   "both": 0.12,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.85,
+   "yolox>=0.70": 0.9
+  },
+  {
+   "t": "16-18s",
+   "hands": 1.0,
+   "both": 0.88,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.88,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "18-20s",
+   "hands": 1.0,
+   "both": 1.0,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.88,
+   "yolox>=0.70": 1.0
+  }
+ ],
+ "ram/me_day_20261101_140631": [
+  {
+   "t": "0-2s",
+   "hands": 0.86,
+   "both": 0.25,
+   "landmark_ok": 0.29,
+   "yolox_true_median": 0.14,
+   "yolox>=0.70": 0.1
+  },
+  {
+   "t": "2-4s",
+   "hands": 1.0,
+   "both": 0.03,
+   "landmark_ok": 0.38,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "4-6s",
+   "hands": 1.0,
+   "both": 0.03,
+   "landmark_ok": 0.9,
+   "yolox_true_median": 0.55,
+   "yolox>=0.70": 0.38
+  },
+  {
+   "t": "6-8s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.68,
+   "yolox_true_median": 0.8,
+   "yolox>=0.70": 0.56
+  },
+  {
+   "t": "8-10s",
+   "hands": 0.46,
+   "both": 0.0,
+   "landmark_ok": 0.27,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.22
+  },
+  {
+   "t": "10-12s",
+   "hands": 0.0,
+   "both": 0.0,
+   "landmark_ok": 0.0,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "12-14s",
+   "hands": 0.28,
+   "both": 0.0,
+   "landmark_ok": 0.0,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "14-16s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.0,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "16-18s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.0,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "18-20s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.0,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  }
+ ],
+ "ram/me_day_20261101_141955": [
+  {
+   "t": "0-2s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.93,
+   "yolox_true_median": 0.25,
+   "yolox>=0.70": 0.38
+  },
+  {
+   "t": "2-4s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.9,
+   "yolox_true_median": 0.81,
+   "yolox>=0.70": 0.67
+  },
+  {
+   "t": "4-6s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.84,
+   "yolox>=0.70": 0.67
+  },
+  {
+   "t": "6-8s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.64,
+   "yolox>=0.70": 0.38
+  },
+  {
+   "t": "8-10s",
+   "hands": 1.0,
+   "both": 0.03,
+   "landmark_ok": 0.9,
+   "yolox_true_median": 0.67,
+   "yolox>=0.70": 0.38
+  },
+  {
+   "t": "10-12s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.55,
+   "yolox>=0.70": 0.33
+  },
+  {
+   "t": "12-14s",
+   "hands": 1.0,
+   "both": 0.04,
+   "landmark_ok": 0.76,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "14-16s",
+   "hands": 1.0,
+   "both": 0.71,
+   "landmark_ok": 0.94,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "16-18s",
+   "hands": 1.0,
+   "both": 0.17,
+   "landmark_ok": 0.7,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "18-20s",
+   "hands": 1.0,
+   "both": 0.07,
+   "landmark_ok": 0.96,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  }
+ ],
+ "tiger/me_night_20261030_220235": [
+  {
+   "t": "0-2s",
+   "hands": 1.0,
+   "both": 0.94,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.91,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "2-4s",
+   "hands": 1.0,
+   "both": 1.0,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.91,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "4-6s",
+   "hands": 1.0,
+   "both": 1.0,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.91,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "6-8s",
+   "hands": 1.0,
+   "both": 0.28,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.9,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "8-10s",
+   "hands": 1.0,
+   "both": 0.04,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.9,
+   "yolox>=0.70": 0.91
+  },
+  {
+   "t": "10-12s",
+   "hands": 1.0,
+   "both": 0.84,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.91,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "12-14s",
+   "hands": 1.0,
+   "both": 1.0,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.9,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "14-16s",
+   "hands": 1.0,
+   "both": 0.32,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.91,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "16-18s",
+   "hands": 1.0,
+   "both": 0.23,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.91,
+   "yolox>=0.70": 1.0
+  },
+  {
+   "t": "18-20s",
+   "hands": 1.0,
+   "both": 0.28,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.91,
+   "yolox>=0.70": 1.0
+  }
+ ],
+ "tiger/me_day_20261101_140826": [
+  {
+   "t": "0-2s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.0,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "2-4s",
+   "hands": 1.0,
+   "both": 0.74,
+   "landmark_ok": 0.0,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "4-6s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.0,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "6-8s",
+   "hands": 0.96,
+   "both": 0.0,
+   "landmark_ok": 0.0,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "8-10s",
+   "hands": 0.28,
+   "both": 0.0,
+   "landmark_ok": 0.0,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "10-12s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.0,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "12-14s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.0,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "14-16s",
+   "hands": 0.81,
+   "both": 0.0,
+   "landmark_ok": 0.0,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "16-18s",
+   "hands": 0.26,
+   "both": 0.0,
+   "landmark_ok": 0.09,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "18-20s",
+   "hands": 1.0,
+   "both": 0.15,
+   "landmark_ok": 0.04,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  }
+ ],
+ "tiger/me_day_20261101_142054": [
+  {
+   "t": "0-2s",
+   "hands": 1.0,
+   "both": 0.77,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.17,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "2-4s",
+   "hands": 1.0,
+   "both": 0.73,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.23,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "4-6s",
+   "hands": 1.0,
+   "both": 0.76,
+   "landmark_ok": 1.0,
+   "yolox_true_median": 0.65,
+   "yolox>=0.70": 0.25
+  },
+  {
+   "t": "6-8s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.94,
+   "yolox_true_median": 0.68,
+   "yolox>=0.70": 0.38
+  },
+  {
+   "t": "8-10s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.94,
+   "yolox_true_median": 0.73,
+   "yolox>=0.70": 0.62
+  },
+  {
+   "t": "10-12s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.78,
+   "yolox_true_median": 0.66,
+   "yolox>=0.70": 0.38
+  },
+  {
+   "t": "12-14s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.71,
+   "yolox_true_median": 0.25,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "14-16s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.16,
+   "yolox_true_median": 0.0,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "16-18s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.32,
+   "yolox_true_median": 0.08,
+   "yolox>=0.70": 0.0
+  },
+  {
+   "t": "18-20s",
+   "hands": 1.0,
+   "both": 0.0,
+   "landmark_ok": 0.72,
+   "yolox_true_median": 0.25,
+   "yolox>=0.70": 0.0
+  }
+ ]
+}

@@ -1,0 +1,221 @@
+/* Horizontal carousel: a clipped viewport, one sliding track, round arrows on both edges and a dot
+   pager. Slide widths come from a container query on .carousel: two cards and a peek of the third
+   on wide columns, one card and a peek of the next on phones. */
+
+.carousel {
+  container-type: inline-size;
+  position: relative;
+  min-width: 0;
+}
+
+.frame {
+  position: relative;
+}
+
+.viewport {
+  /* clip only sideways: the active card's lift and the shadows stay visible above and below. The
+     padding gives the cards' side shadows room before the clip edge. */
+  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
+  margin: 0 -14px;
+  padding: 12px 14px 20px;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.dragging {
+  cursor: grabbing;
+}
+
+.dragging * {
+  cursor: grabbing !important;
+}
+
+.track {
+  --gap: 18px;
+  /* cards visible at once (the fraction is the peek of the next card) and the gaps among them */
+  --per-view: 1.16;
+  --gaps-in-view: 1;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: var(--gap);
+  will-change: transform;
+}
+
+@container (min-width: 520px) {
+  .track {
+    --per-view: 2.24;
+    --gaps-in-view: 2;
+  }
+}
+
+@container (min-width: 1000px) {
+  .track {
+    --per-view: 2.3;
+  }
+}
+
+.slide {
+  flex: 0 0 calc((100% - var(--gaps-in-view) * var(--gap)) / var(--per-view));
+  min-width: 0;
+  display: flex;
+}
+
+.slide > * {
+  flex: 1;
+  min-width: 0;
+}
+
+.slide img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* ------------------------------------------------------------------ arrows */
+.arrow {
+  position: absolute;
+  /* level with the cards' picture band, so the arrow never sits on a card's title */
+  top: 92px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  translate: 0 -50%;
+  border: 1.5px solid rgba(122, 82, 40, 0.28);
+  border-radius: 50%;
+  background: rgba(255, 253, 248, 0.96);
+  color: var(--k-orange);
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(60, 35, 10, 0.18), 0 1px 3px rgba(60, 35, 10, 0.12);
+  transition:
+    transform 180ms var(--k-ease),
+    opacity 200ms var(--k-ease),
+    color 160ms var(--k-ease),
+    border-color 160ms var(--k-ease),
+    box-shadow 200ms var(--k-ease);
+}
+
+.arrow svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 2.6;
+}
+
+.arrow:hover:not(:disabled) {
+  color: #fff;
+  border-color: var(--k-orange);
+  background: var(--k-orange);
+  transform: scale(1.06);
+  box-shadow: 0 8px 20px rgba(240, 100, 30, 0.32);
+}
+
+.arrow:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.arrow:focus-visible {
+  outline: 2px solid var(--k-blue);
+  outline-offset: 3px;
+}
+
+.arrow:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.prev {
+  left: -10px;
+}
+
+.next {
+  right: -10px;
+}
+
+/* ------------------------------------------------------------------ pager */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: fit-content;
+  margin: -4px auto 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 251, 242, 0.9);
+  box-shadow: 0 2px 10px rgba(60, 35, 10, 0.12);
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(42, 32, 23, 0.22);
+  cursor: pointer;
+  transition: width 320ms var(--k-ease), background 200ms var(--k-ease);
+}
+
+/* bigger hit area than the visible dot */
+
+.dot::after {
+  content: '';
+  position: absolute;
+  inset: -8px -4px;
+}
+
+.dot:hover {
+  background: rgba(42, 32, 23, 0.4);
+}
+
+.dot:focus-visible {
+  outline: 2px solid var(--k-blue);
+  outline-offset: 3px;
+}
+
+.dotActive,
+.dotActive:hover {
+  width: 30px;
+  background: var(--k-orange);
+}
+
+.count {
+  min-width: 3em;
+  font-family: var(--k-brush);
+  font-size: 20px;
+  line-height: 1;
+  color: var(--k-ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 520px) {
+  .arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  .arrow svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .prev {
+    left: -6px;
+  }
+
+  .next {
+    right: -6px;
+  }
+}

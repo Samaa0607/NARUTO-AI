@@ -1,0 +1,218 @@
+.button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out),
+    background-color var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out),
+    filter var(--dur) var(--ease-out);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.button:hover {
+  text-decoration: none;
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(1px) scale(0.985);
+}
+
+.button:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+}
+
+.block {
+  display: flex;
+  width: 100%;
+}
+
+/* sizes */
+.sm {
+  min-height: 36px;
+  padding: 0 14px;
+  font-size: 13px;
+  border-radius: 8px;
+  gap: 8px;
+}
+
+.md {
+  min-height: 46px;
+  padding: 0 22px;
+  font-size: 15px;
+}
+
+.lg {
+  min-height: 58px;
+  padding: 0 30px;
+  font-size: 17px;
+  letter-spacing: 0.14em;
+}
+
+.iconOnly.sm {
+  width: 36px;
+  padding: 0;
+}
+
+.iconOnly.md {
+  width: 46px;
+  padding: 0;
+}
+
+.iconOnly.lg {
+  width: 58px;
+  padding: 0;
+}
+
+/* primary: the chakra gradient, a soft outer glow and a sheen that sweeps across on hover */
+.primary {
+  background: var(--chakra-gradient);
+  color: var(--accent-contrast);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.14) inset,
+    0 -10px 20px rgba(0, 0, 0, 0.14) inset,
+    0 10px 30px var(--glow-soft),
+    0 0 0 0 var(--glow);
+}
+
+.primary:hover:not(:disabled) {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.3) inset,
+    0 -10px 20px rgba(0, 0, 0, 0.1) inset,
+    0 14px 40px var(--glow),
+    0 0 0 4px var(--glow-soft);
+  transform: translateY(-1px);
+}
+
+.sheen {
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.55) 48%, transparent 66%);
+  transform: translateX(-120%);
+  transition: transform 700ms var(--ease-out);
+  pointer-events: none;
+}
+
+.primary:hover:not(:disabled) .sheen {
+  transform: translateX(120%);
+}
+
+/* secondary: dark glass, chakra border on hover */
+.secondary {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01)), var(--surface-strong);
+  color: var(--text);
+  border-color: var(--border-strong);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset;
+}
+
+.secondary:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--accent) 70%, transparent);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 0 24px var(--glow-soft);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.ghost:hover:not(:disabled) {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.danger {
+  background: rgba(255, 93, 108, 0.1);
+  color: #ff8590;
+  border-color: rgba(255, 93, 108, 0.38);
+}
+
+.danger:hover:not(:disabled) {
+  background: rgba(255, 93, 108, 0.18);
+  border-color: rgba(255, 93, 108, 0.65);
+  box-shadow: 0 0 22px rgba(255, 93, 108, 0.18);
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+}
+
+.icon svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.iconEnd {
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.button:hover:not(:disabled) .iconEnd {
+  transform: translateX(3px);
+}
+
+.label {
+  white-space: nowrap;
+  /* Rajdhani caps sit a little high: optical centring */
+  padding-top: 0.08em;
+}
+
+.loading {
+  cursor: progress;
+}
+
+.spinner {
+  width: 1.05em;
+  height: 1.05em;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 420px) {
+  .lg {
+    min-height: 54px;
+    padding: 0 18px;
+    font-size: 15.5px;
+    letter-spacing: 0.1em;
+  }
+
+  /* keep long calls to action on one line on small phones */
+  .lg .iconEnd {
+    display: none;
+  }
+}

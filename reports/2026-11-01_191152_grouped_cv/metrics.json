@@ -1,0 +1,1708 @@
+{
+ "created": "2026-11-01T19:10:21",
+ "step": 2,
+ "groups": {
+  "G1 oct30": {
+   "idle": [
+    "me_night_20261030_221934",
+    "me_night_20261030_222121",
+    "me_night_20261030_222258",
+    "me_night_20261030_222645"
+   ],
+   "ram": [
+    "me_night_20261030_220443"
+   ],
+   "snake": [
+    "me_night_20261030_220610"
+   ],
+   "tiger": [
+    "me_night_20261030_220235"
+   ],
+   "dog": [
+    "me_night_20261030_215059"
+   ],
+   "monkey": [
+    "me_night_20261030_215447",
+    "me_night_20261030_215808"
+   ],
+   "boar": [
+    "me_night_20261030_220743"
+   ],
+   "horse": [
+    "me_night_20261030_220040"
+   ],
+   "clone_seal": [
+    "me_night_20261030_214750"
+   ],
+   "rasengan_palm": [
+    "me_day_20261030_174647",
+    "me_day_20261030_174917",
+    "me_day_20261030_175113"
+   ]
+  },
+  "G2 A": {
+   "idle": [
+    "me_day_20261101_164911"
+   ],
+   "ram": [
+    "me_day_20261101_162853"
+   ],
+   "snake": [
+    "me_day_20261101_163100"
+   ],
+   "tiger": [
+    "me_day_20261101_163253"
+   ],
+   "dog": [
+    "me_day_20261101_163553"
+   ],
+   "monkey": [
+    "me_day_20261101_163747"
+   ],
+   "boar": [
+    "me_day_20261101_164012"
+   ],
+   "horse": [
+    "me_day_20261101_164127"
+   ],
+   "clone_seal": [
+    "me_day_20261101_164328"
+   ],
+   "rasengan_palm": [
+    "me_day_20261101_164627"
+   ]
+  },
+  "G3 B": {
+   "idle": [
+    "me_day_20261101_172732"
+   ],
+   "ram": [
+    "me_day_20261101_170452"
+   ],
+   "snake": [
+    "me_day_20261101_170616"
+   ],
+   "tiger": [
+    "me_day_20261101_170732"
+   ],
+   "dog": [
+    "me_day_20261101_171314"
+   ],
+   "monkey": [
+    "me_day_20261101_171552"
+   ],
+   "boar": [
+    "me_day_20261101_171821"
+   ],
+   "horse": [
+    "me_day_20261101_172019"
+   ],
+   "clone_seal": [
+    "me_day_20261101_172325"
+   ],
+   "rasengan_palm": [
+    "me_day_20261101_172516"
+   ]
+  },
+  "G4 A-far": {
+   "idle": [
+    "me_day_20261101_174911"
+   ],
+   "ram": [
+    "me_day_20261101_173331"
+   ],
+   "snake": [
+    "me_day_20261101_173557"
+   ],
+   "tiger": [
+    "me_day_20261101_173745"
+   ],
+   "dog": [
+    "me_day_20261101_173907"
+   ],
+   "clone_seal": [
+    "me_day_20261101_174201"
+   ],
+   "rasengan_palm": [
+    "me_day_20261101_174404"
+   ]
+  }
+ },
+ "rules": {
+  "LANDMARK_MIN_PROB": 0.6,
+  "LANDMARK_MIN_MARGIN": 0.3,
+  "PALM_MIN_THUMB_GAP": 0.6
+ },
+ "train_recordings": [
+  "me_day_20261030_174647",
+  "me_day_20261030_174917",
+  "me_day_20261030_175113",
+  "me_day_20261101_162853",
+  "me_day_20261101_163100",
+  "me_day_20261101_163253",
+  "me_day_20261101_163553",
+  "me_day_20261101_163747",
+  "me_day_20261101_164012",
+  "me_day_20261101_164127",
+  "me_day_20261101_164328",
+  "me_day_20261101_164627",
+  "me_day_20261101_164911",
+  "me_day_20261101_170452",
+  "me_day_20261101_170616",
+  "me_day_20261101_170732",
+  "me_day_20261101_171314",
+  "me_day_20261101_171552",
+  "me_day_20261101_171821",
+  "me_day_20261101_172019",
+  "me_day_20261101_172325",
+  "me_day_20261101_172516",
+  "me_day_20261101_172732",
+  "me_day_20261101_173331",
+  "me_day_20261101_173557",
+  "me_day_20261101_173745",
+  "me_day_20261101_173907",
+  "me_day_20261101_174201",
+  "me_day_20261101_174404",
+  "me_day_20261101_174911",
+  "me_night_20261030_214750",
+  "me_night_20261030_215059",
+  "me_night_20261030_215447",
+  "me_night_20261030_215808",
+  "me_night_20261030_220040",
+  "me_night_20261030_220235",
+  "me_night_20261030_220443",
+  "me_night_20261030_220610",
+  "me_night_20261030_220743",
+  "me_night_20261030_221934",
+  "me_night_20261030_222121",
+  "me_night_20261030_222258",
+  "me_night_20261030_222645"
+ ],
+ "models": {
+  "random_forest": {
+   "macro_f1": 0.856,
+   "accuracy": 0.838,
+   "per_class": {
+    "idle": {
+     "precision": 0.582,
+     "recall": 0.757,
+     "f1": 0.658,
+     "frames": 1112
+    },
+    "ram": {
+     "precision": 0.866,
+     "recall": 0.972,
+     "f1": 0.916,
+     "frames": 726
+    },
+    "snake": {
+     "precision": 0.907,
+     "recall": 0.769,
+     "f1": 0.832,
+     "frames": 739
+    },
+    "tiger": {
+     "precision": 0.982,
+     "recall": 0.78,
+     "f1": 0.869,
+     "frames": 709
+    },
+    "dog": {
+     "precision": 0.696,
+     "recall": 0.975,
+     "f1": 0.812,
+     "frames": 720
+    },
+    "monkey": {
+     "precision": 0.956,
+     "recall": 0.995,
+     "f1": 0.975,
+     "frames": 627
+    },
+    "boar": {
+     "precision": 1.0,
+     "recall": 0.609,
+     "f1": 0.757,
+     "frames": 575
+    },
+    "horse": {
+     "precision": 1.0,
+     "recall": 0.958,
+     "f1": 0.978,
+     "frames": 566
+    },
+    "clone_seal": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "frames": 771
+    },
+    "rasengan_palm": {
+     "precision": 0.861,
+     "recall": 0.677,
+     "f1": 0.758,
+     "frames": 1076
+    }
+   },
+   "confusion": [
+    [
+     842,
+     1,
+     58,
+     2,
+     89,
+     2,
+     0,
+     0,
+     0,
+     118
+    ],
+    [
+     12,
+     706,
+     0,
+     8,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     171,
+     0,
+     568,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     48,
+     108,
+     0,
+     553,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     702,
+     18,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0,
+     0,
+     2,
+     624,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     216,
+     9,
+     350,
+     0,
+     0,
+     0
+    ],
+    [
+     24,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     542,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     771,
+     0
+    ],
+    [
+     348,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     728
+    ]
+   ],
+   "per_group": {
+    "G1 oct30": {
+     "macro_f1": 0.789,
+     "frames": 2535,
+     "recall": {
+      "idle": 0.716,
+      "ram": 0.932,
+      "snake": 1.0,
+      "tiger": 0.323,
+      "dog": 0.894,
+      "monkey": 1.0,
+      "boar": 1.0,
+      "horse": 1.0,
+      "clone_seal": 1.0,
+      "rasengan_palm": 0.345
+     }
+    },
+    "G2 A": {
+     "macro_f1": 0.902,
+     "frames": 1772,
+     "recall": {
+      "idle": 0.288,
+      "ram": 0.954,
+      "snake": 1.0,
+      "tiger": 0.989,
+      "dog": 1.0,
+      "monkey": 0.995,
+      "boar": 1.0,
+      "horse": 0.865,
+      "clone_seal": 1.0,
+      "rasengan_palm": 1.0
+     }
+    },
+    "G3 B": {
+     "macro_f1": 0.859,
+     "frames": 2017,
+     "recall": {
+      "idle": 1.0,
+      "ram": 1.0,
+      "snake": 1.0,
+      "tiger": 1.0,
+      "dog": 1.0,
+      "monkey": 0.991,
+      "boar": 0.0,
+      "horse": 1.0,
+      "clone_seal": 1.0,
+      "rasengan_palm": 1.0
+     }
+    },
+    "G4 A-far": {
+     "macro_f1": 0.809,
+     "frames": 1297,
+     "recall": {
+      "idle": 1.0,
+      "ram": 1.0,
+      "snake": 0.105,
+      "tiger": 0.754,
+      "dog": 1.0,
+      "clone_seal": 1.0,
+      "rasengan_palm": 1.0
+     }
+    }
+   },
+   "per_recording": {
+    "me_day_20261030_174647": {
+     "label": "rasengan_palm",
+     "group": "G1 oct30",
+     "top_class_correct": 0.849
+    },
+    "me_day_20261030_174917": {
+     "label": "rasengan_palm",
+     "group": "G1 oct30",
+     "top_class_correct": 0.0
+    },
+    "me_day_20261030_175113": {
+     "label": "rasengan_palm",
+     "group": "G1 oct30",
+     "top_class_correct": 0.189
+    },
+    "me_day_20261101_162853": {
+     "label": "ram",
+     "group": "G2 A",
+     "top_class_correct": 0.954
+    },
+    "me_day_20261101_163100": {
+     "label": "snake",
+     "group": "G2 A",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_163253": {
+     "label": "tiger",
+     "group": "G2 A",
+     "top_class_correct": 0.989
+    },
+    "me_day_20261101_163553": {
+     "label": "dog",
+     "group": "G2 A",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_163747": {
+     "label": "monkey",
+     "group": "G2 A",
+     "top_class_correct": 0.995
+    },
+    "me_day_20261101_164012": {
+     "label": "boar",
+     "group": "G2 A",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_164127": {
+     "label": "horse",
+     "group": "G2 A",
+     "top_class_correct": 0.865
+    },
+    "me_day_20261101_164328": {
+     "label": "clone_seal",
+     "group": "G2 A",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_164627": {
+     "label": "rasengan_palm",
+     "group": "G2 A",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_164911": {
+     "label": "idle",
+     "group": "G2 A",
+     "top_class_correct": 0.288
+    },
+    "me_day_20261101_170452": {
+     "label": "ram",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_170616": {
+     "label": "snake",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_170732": {
+     "label": "tiger",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_171314": {
+     "label": "dog",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_171552": {
+     "label": "monkey",
+     "group": "G3 B",
+     "top_class_correct": 0.991
+    },
+    "me_day_20261101_171821": {
+     "label": "boar",
+     "group": "G3 B",
+     "top_class_correct": 0.0
+    },
+    "me_day_20261101_172019": {
+     "label": "horse",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_172325": {
+     "label": "clone_seal",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_172516": {
+     "label": "rasengan_palm",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_172732": {
+     "label": "idle",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_173331": {
+     "label": "ram",
+     "group": "G4 A-far",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_173557": {
+     "label": "snake",
+     "group": "G4 A-far",
+     "top_class_correct": 0.105
+    },
+    "me_day_20261101_173745": {
+     "label": "tiger",
+     "group": "G4 A-far",
+     "top_class_correct": 0.754
+    },
+    "me_day_20261101_173907": {
+     "label": "dog",
+     "group": "G4 A-far",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_174201": {
+     "label": "clone_seal",
+     "group": "G4 A-far",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_174404": {
+     "label": "rasengan_palm",
+     "group": "G4 A-far",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_174911": {
+     "label": "idle",
+     "group": "G4 A-far",
+     "top_class_correct": 1.0
+    },
+    "me_night_20261030_214750": {
+     "label": "clone_seal",
+     "group": "G1 oct30",
+     "top_class_correct": 1.0
+    },
+    "me_night_20261030_215059": {
+     "label": "dog",
+     "group": "G1 oct30",
+     "top_class_correct": 0.894
+    },
+    "me_night_20261030_215447": {
+     "label": "monkey",
+     "group": "G1 oct30",
+     "top_class_correct": 1.0
+    },
+    "me_night_20261030_215808": {
+     "label": "monkey",
+     "group": "G1 oct30",
+     "top_class_correct": 1.0
+    },
+    "me_night_20261030_220040": {
+     "label": "horse",
+     "group": "G1 oct30",
+     "top_class_correct": 1.0
+    },
+    "me_night_20261030_220235": {
+     "label": "tiger",
+     "group": "G1 oct30",
+     "top_class_correct": 0.323
+    },
+    "me_night_20261030_220443": {
+     "label": "ram",
+     "group": "G1 oct30",
+     "top_class_correct": 0.932
+    },
+    "me_night_20261030_220610": {
+     "label": "snake",
+     "group": "G1 oct30",
+     "top_class_correct": 1.0
+    },
+    "me_night_20261030_220743": {
+     "label": "boar",
+     "group": "G1 oct30",
+     "top_class_correct": 1.0
+    },
+    "me_night_20261030_221934": {
+     "label": "idle",
+     "group": "G1 oct30",
+     "top_class_correct": 0.961
+    },
+    "me_night_20261030_222121": {
+     "label": "idle",
+     "group": "G1 oct30",
+     "top_class_correct": 0.541
+    },
+    "me_night_20261030_222258": {
+     "label": "idle",
+     "group": "G1 oct30",
+     "top_class_correct": 0.614
+    },
+    "me_night_20261030_222645": {
+     "label": "idle",
+     "group": "G1 oct30",
+     "top_class_correct": 0.938
+    }
+   },
+   "app_landmark_path": {
+    "clone_seal": {
+     "accepted_share_of_its_frames": 0.999,
+     "per_group": {
+      "G1 oct30": 1.0,
+      "G2 A": 0.994,
+      "G3 B": 1.0,
+      "G4 A-far": 1.0
+     }
+    },
+    "rasengan_palm": {
+     "accepted_share_of_its_frames": 0.59,
+     "per_group": {
+      "G1 oct30": 0.169,
+      "G2 A": 1.0,
+      "G3 B": 1.0,
+      "G4 A-far": 1.0
+     }
+    }
+   },
+   "app_false_triggers": {
+    "idle_frames_accepted_as_landmark_sign": 0.0018,
+    "seal_frames_accepted_as_landmark_sign": 0.0,
+    "by_sign": {
+     "clone_seal": 0,
+     "rasengan_palm": 2
+    }
+   },
+   "on_G2_G4": {
+    "macro_f1": 0.877,
+    "per_class": {
+     "idle": {
+      "precision": 0.645,
+      "recall": 0.799,
+      "f1": 0.714,
+      "frames": 553
+     },
+     "ram": {
+      "precision": 0.996,
+      "recall": 0.985,
+      "f1": 0.991,
+      "frames": 549
+     },
+     "snake": {
+      "precision": 1.0,
+      "recall": 0.693,
+      "f1": 0.819,
+      "frames": 557
+     },
+     "tiger": {
+      "precision": 0.984,
+      "recall": 0.911,
+      "f1": 0.946,
+      "frames": 551
+     },
+     "dog": {
+      "precision": 0.716,
+      "recall": 1.0,
+      "f1": 0.835,
+      "frames": 550
+     },
+     "monkey": {
+      "precision": 0.978,
+      "recall": 0.993,
+      "f1": 0.985,
+      "frames": 410
+     },
+     "boar": {
+      "precision": 1.0,
+      "recall": 0.436,
+      "f1": 0.607,
+      "frames": 399
+     },
+     "horse": {
+      "precision": 1.0,
+      "recall": 0.939,
+      "f1": 0.969,
+      "frames": 393
+     },
+     "clone_seal": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "frames": 579
+     },
+     "rasengan_palm": {
+      "precision": 0.831,
+      "recall": 1.0,
+      "f1": 0.908,
+      "frames": 545
+     }
+    }
+   }
+  },
+  "mlp": {
+   "macro_f1": 0.889,
+   "accuracy": 0.871,
+   "per_class": {
+    "idle": {
+     "precision": 0.607,
+     "recall": 0.744,
+     "f1": 0.668,
+     "frames": 1112
+    },
+    "ram": {
+     "precision": 0.88,
+     "recall": 0.923,
+     "f1": 0.901,
+     "frames": 726
+    },
+    "snake": {
+     "precision": 0.893,
+     "recall": 0.743,
+     "f1": 0.811,
+     "frames": 739
+    },
+    "tiger": {
+     "precision": 0.879,
+     "recall": 0.841,
+     "f1": 0.859,
+     "frames": 709
+    },
+    "dog": {
+     "precision": 0.978,
+     "recall": 0.975,
+     "f1": 0.976,
+     "frames": 720
+    },
+    "monkey": {
+     "precision": 0.94,
+     "recall": 0.994,
+     "f1": 0.966,
+     "frames": 627
+    },
+    "boar": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "frames": 575
+    },
+    "horse": {
+     "precision": 0.991,
+     "recall": 0.753,
+     "f1": 0.855,
+     "frames": 566
+    },
+    "clone_seal": {
+     "precision": 1.0,
+     "recall": 1.0,
+     "f1": 1.0,
+     "frames": 771
+    },
+    "rasengan_palm": {
+     "precision": 0.86,
+     "recall": 0.836,
+     "f1": 0.848,
+     "frames": 1076
+    }
+   },
+   "confusion": [
+    [
+     827,
+     9,
+     66,
+     49,
+     15,
+     1,
+     0,
+     4,
+     0,
+     141
+    ],
+    [
+     23,
+     670,
+     0,
+     33,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     169,
+     0,
+     549,
+     0,
+     0,
+     21,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     28,
+     82,
+     0,
+     596,
+     0,
+     0,
+     0,
+     0,
+     0,
+     3
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     702,
+     18,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     1,
+     623,
+     0,
+     0,
+     0,
+     3
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     575,
+     0,
+     0,
+     0
+    ],
+    [
+     140,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     426,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     771,
+     0
+    ],
+    [
+     176,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     900
+    ]
+   ],
+   "per_group": {
+    "G1 oct30": {
+     "macro_f1": 0.834,
+     "frames": 2535,
+     "recall": {
+      "idle": 0.742,
+      "ram": 0.87,
+      "snake": 1.0,
+      "tiger": 0.329,
+      "dog": 0.894,
+      "monkey": 0.982,
+      "boar": 1.0,
+      "horse": 1.0,
+      "clone_seal": 1.0,
+      "rasengan_palm": 0.669
+     }
+    },
+    "G2 A": {
+     "macro_f1": 0.826,
+     "frames": 1772,
+     "recall": {
+      "idle": 0.282,
+      "ram": 0.943,
+      "snake": 1.0,
+      "tiger": 0.962,
+      "dog": 1.0,
+      "monkey": 1.0,
+      "boar": 1.0,
+      "horse": 0.213,
+      "clone_seal": 1.0,
+      "rasengan_palm": 1.0
+     }
+    },
+    "G3 B": {
+     "macro_f1": 1.0,
+     "frames": 2017,
+     "recall": {
+      "idle": 1.0,
+      "ram": 1.0,
+      "snake": 1.0,
+      "tiger": 1.0,
+      "dog": 1.0,
+      "monkey": 1.0,
+      "boar": 1.0,
+      "horse": 1.0,
+      "clone_seal": 1.0,
+      "rasengan_palm": 1.0
+     }
+    },
+    "G4 A-far": {
+     "macro_f1": 0.775,
+     "frames": 1297,
+     "recall": {
+      "idle": 0.831,
+      "ram": 0.885,
+      "snake": 0.005,
+      "tiger": 1.0,
+      "dog": 1.0,
+      "clone_seal": 1.0,
+      "rasengan_palm": 1.0
+     }
+    }
+   },
+   "per_recording": {
+    "me_day_20261030_174647": {
+     "label": "rasengan_palm",
+     "group": "G1 oct30",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261030_174917": {
+     "label": "rasengan_palm",
+     "group": "G1 oct30",
+     "top_class_correct": 0.069
+    },
+    "me_day_20261030_175113": {
+     "label": "rasengan_palm",
+     "group": "G1 oct30",
+     "top_class_correct": 0.994
+    },
+    "me_day_20261101_162853": {
+     "label": "ram",
+     "group": "G2 A",
+     "top_class_correct": 0.943
+    },
+    "me_day_20261101_163100": {
+     "label": "snake",
+     "group": "G2 A",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_163253": {
+     "label": "tiger",
+     "group": "G2 A",
+     "top_class_correct": 0.962
+    },
+    "me_day_20261101_163553": {
+     "label": "dog",
+     "group": "G2 A",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_163747": {
+     "label": "monkey",
+     "group": "G2 A",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_164012": {
+     "label": "boar",
+     "group": "G2 A",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_164127": {
+     "label": "horse",
+     "group": "G2 A",
+     "top_class_correct": 0.213
+    },
+    "me_day_20261101_164328": {
+     "label": "clone_seal",
+     "group": "G2 A",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_164627": {
+     "label": "rasengan_palm",
+     "group": "G2 A",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_164911": {
+     "label": "idle",
+     "group": "G2 A",
+     "top_class_correct": 0.282
+    },
+    "me_day_20261101_170452": {
+     "label": "ram",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_170616": {
+     "label": "snake",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_170732": {
+     "label": "tiger",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_171314": {
+     "label": "dog",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_171552": {
+     "label": "monkey",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_171821": {
+     "label": "boar",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_172019": {
+     "label": "horse",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_172325": {
+     "label": "clone_seal",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_172516": {
+     "label": "rasengan_palm",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_172732": {
+     "label": "idle",
+     "group": "G3 B",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_173331": {
+     "label": "ram",
+     "group": "G4 A-far",
+     "top_class_correct": 0.885
+    },
+    "me_day_20261101_173557": {
+     "label": "snake",
+     "group": "G4 A-far",
+     "top_class_correct": 0.005
+    },
+    "me_day_20261101_173745": {
+     "label": "tiger",
+     "group": "G4 A-far",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_173907": {
+     "label": "dog",
+     "group": "G4 A-far",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_174201": {
+     "label": "clone_seal",
+     "group": "G4 A-far",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_174404": {
+     "label": "rasengan_palm",
+     "group": "G4 A-far",
+     "top_class_correct": 1.0
+    },
+    "me_day_20261101_174911": {
+     "label": "idle",
+     "group": "G4 A-far",
+     "top_class_correct": 0.831
+    },
+    "me_night_20261030_214750": {
+     "label": "clone_seal",
+     "group": "G1 oct30",
+     "top_class_correct": 1.0
+    },
+    "me_night_20261030_215059": {
+     "label": "dog",
+     "group": "G1 oct30",
+     "top_class_correct": 0.894
+    },
+    "me_night_20261030_215447": {
+     "label": "monkey",
+     "group": "G1 oct30",
+     "top_class_correct": 0.984
+    },
+    "me_night_20261030_215808": {
+     "label": "monkey",
+     "group": "G1 oct30",
+     "top_class_correct": 0.981
+    },
+    "me_night_20261030_220040": {
+     "label": "horse",
+     "group": "G1 oct30",
+     "top_class_correct": 1.0
+    },
+    "me_night_20261030_220235": {
+     "label": "tiger",
+     "group": "G1 oct30",
+     "top_class_correct": 0.329
+    },
+    "me_night_20261030_220443": {
+     "label": "ram",
+     "group": "G1 oct30",
+     "top_class_correct": 0.87
+    },
+    "me_night_20261030_220610": {
+     "label": "snake",
+     "group": "G1 oct30",
+     "top_class_correct": 1.0
+    },
+    "me_night_20261030_220743": {
+     "label": "boar",
+     "group": "G1 oct30",
+     "top_class_correct": 1.0
+    },
+    "me_night_20261030_221934": {
+     "label": "idle",
+     "group": "G1 oct30",
+     "top_class_correct": 0.314
+    },
+    "me_night_20261030_222121": {
+     "label": "idle",
+     "group": "G1 oct30",
+     "top_class_correct": 0.907
+    },
+    "me_night_20261030_222258": {
+     "label": "idle",
+     "group": "G1 oct30",
+     "top_class_correct": 0.545
+    },
+    "me_night_20261030_222645": {
+     "label": "idle",
+     "group": "G1 oct30",
+     "top_class_correct": 0.919
+    }
+   },
+   "app_landmark_path": {
+    "clone_seal": {
+     "accepted_share_of_its_frames": 1.0,
+     "per_group": {
+      "G1 oct30": 1.0,
+      "G2 A": 1.0,
+      "G3 B": 1.0,
+      "G4 A-far": 1.0
+     }
+    },
+    "rasengan_palm": {
+     "accepted_share_of_its_frames": 0.824,
+     "per_group": {
+      "G1 oct30": 0.644,
+      "G2 A": 1.0,
+      "G3 B": 1.0,
+      "G4 A-far": 1.0
+     }
+    }
+   },
+   "app_false_triggers": {
+    "idle_frames_accepted_as_landmark_sign": 0.009,
+    "seal_frames_accepted_as_landmark_sign": 0.0004,
+    "by_sign": {
+     "clone_seal": 0,
+     "rasengan_palm": 12
+    }
+   },
+   "on_G2_G4": {
+    "macro_f1": 0.901,
+    "per_class": {
+     "idle": {
+      "precision": 0.571,
+      "recall": 0.745,
+      "f1": 0.647,
+      "frames": 553
+     },
+     "ram": {
+      "precision": 0.987,
+      "recall": 0.94,
+      "f1": 0.963,
+      "frames": 549
+     },
+     "snake": {
+      "precision": 1.0,
+      "recall": 0.659,
+      "f1": 0.794,
+      "frames": 557
+     },
+     "tiger": {
+      "precision": 0.899,
+      "recall": 0.987,
+      "f1": 0.941,
+      "frames": 551
+     },
+     "dog": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "frames": 550
+     },
+     "monkey": {
+      "precision": 0.951,
+      "recall": 1.0,
+      "f1": 0.975,
+      "frames": 410
+     },
+     "boar": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "frames": 399
+     },
+     "horse": {
+      "precision": 0.996,
+      "recall": 0.644,
+      "f1": 0.782,
+      "frames": 393
+     },
+     "clone_seal": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "frames": 579
+     },
+     "rasengan_palm": {
+      "precision": 0.83,
+      "recall": 1.0,
+      "f1": 0.907,
+      "frames": 545
+     }
+    }
+   }
+  }
+ },
+ "installed_model_on_unseen_groups": {
+  "macro_f1": 0.639,
+  "accuracy": 0.655,
+  "per_class": {
+   "idle": {
+    "precision": 0.28,
+    "recall": 0.796,
+    "f1": 0.414,
+    "frames": 553
+   },
+   "ram": {
+    "precision": 1.0,
+    "recall": 0.483,
+    "f1": 0.651,
+    "frames": 549
+   },
+   "snake": {
+    "precision": 1.0,
+    "recall": 0.35,
+    "f1": 0.519,
+    "frames": 557
+   },
+   "tiger": {
+    "precision": 0.494,
+    "recall": 0.495,
+    "f1": 0.495,
+    "frames": 551
+   },
+   "dog": {
+    "precision": 0.712,
+    "recall": 1.0,
+    "f1": 0.832,
+    "frames": 550
+   },
+   "monkey": {
+    "precision": 0.829,
+    "recall": 0.071,
+    "f1": 0.13,
+    "frames": 410
+   },
+   "boar": {
+    "precision": 1.0,
+    "recall": 0.436,
+    "f1": 0.607,
+    "frames": 399
+   },
+   "horse": {
+    "precision": 1.0,
+    "recall": 0.718,
+    "f1": 0.836,
+    "frames": 393
+   },
+   "clone_seal": {
+    "precision": 0.997,
+    "recall": 0.998,
+    "f1": 0.997,
+    "frames": 579
+   },
+   "rasengan_palm": {
+    "precision": 0.83,
+    "recall": 1.0,
+    "f1": 0.907,
+    "frames": 545
+   }
+  },
+  "confusion": [
+   [
+    440,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    112
+   ],
+   [
+    4,
+    265,
+    0,
+    278,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0
+   ],
+   [
+    362,
+    0,
+    195,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    278,
+    0,
+    0,
+    273,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    550,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    378,
+    0,
+    0,
+    0,
+    3,
+    29,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    219,
+    6,
+    174,
+    0,
+    0,
+    0
+   ],
+   [
+    111,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    282,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    578,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    545
+   ]
+  ],
+  "per_group": {
+   "G2 A": {
+    "macro_f1": 0.646,
+    "frames": 1772,
+    "recall": {
+     "idle": 0.282,
+     "ram": 0.543,
+     "snake": 0.358,
+     "tiger": 0.532,
+     "dog": 1.0,
+     "monkey": 0.158,
+     "boar": 1.0,
+     "horse": 0.376,
+     "clone_seal": 1.0,
+     "rasengan_palm": 1.0
+    }
+   },
+   "G3 B": {
+    "macro_f1": 0.705,
+    "frames": 2017,
+    "recall": {
+     "idle": 1.0,
+     "ram": 0.966,
+     "snake": 0.722,
+     "tiger": 1.0,
+     "dog": 1.0,
+     "monkey": 0.0,
+     "boar": 0.0,
+     "horse": 1.0,
+     "clone_seal": 1.0,
+     "rasengan_palm": 1.0
+    }
+   },
+   "G4 A-far": {
+    "macro_f1": 0.498,
+    "frames": 1297,
+    "recall": {
+     "idle": 0.994,
+     "ram": 0.01,
+     "snake": 0.0,
+     "tiger": 0.0,
+     "dog": 1.0,
+     "clone_seal": 0.995,
+     "rasengan_palm": 1.0
+    }
+   }
+  },
+  "per_recording": {
+   "me_day_20261101_162853": {
+    "label": "ram",
+    "group": "G2 A",
+    "top_class_correct": 0.543
+   },
+   "me_day_20261101_163100": {
+    "label": "snake",
+    "group": "G2 A",
+    "top_class_correct": 0.358
+   },
+   "me_day_20261101_163253": {
+    "label": "tiger",
+    "group": "G2 A",
+    "top_class_correct": 0.532
+   },
+   "me_day_20261101_163553": {
+    "label": "dog",
+    "group": "G2 A",
+    "top_class_correct": 1.0
+   },
+   "me_day_20261101_163747": {
+    "label": "monkey",
+    "group": "G2 A",
+    "top_class_correct": 0.158
+   },
+   "me_day_20261101_164012": {
+    "label": "boar",
+    "group": "G2 A",
+    "top_class_correct": 1.0
+   },
+   "me_day_20261101_164127": {
+    "label": "horse",
+    "group": "G2 A",
+    "top_class_correct": 0.376
+   },
+   "me_day_20261101_164328": {
+    "label": "clone_seal",
+    "group": "G2 A",
+    "top_class_correct": 1.0
+   },
+   "me_day_20261101_164627": {
+    "label": "rasengan_palm",
+    "group": "G2 A",
+    "top_class_correct": 1.0
+   },
+   "me_day_20261101_164911": {
+    "label": "idle",
+    "group": "G2 A",
+    "top_class_correct": 0.282
+   },
+   "me_day_20261101_170452": {
+    "label": "ram",
+    "group": "G3 B",
+    "top_class_correct": 0.966
+   },
+   "me_day_20261101_170616": {
+    "label": "snake",
+    "group": "G3 B",
+    "top_class_correct": 0.722
+   },
+   "me_day_20261101_170732": {
+    "label": "tiger",
+    "group": "G3 B",
+    "top_class_correct": 1.0
+   },
+   "me_day_20261101_171314": {
+    "label": "dog",
+    "group": "G3 B",
+    "top_class_correct": 1.0
+   },
+   "me_day_20261101_171552": {
+    "label": "monkey",
+    "group": "G3 B",
+    "top_class_correct": 0.0
+   },
+   "me_day_20261101_171821": {
+    "label": "boar",
+    "group": "G3 B",
+    "top_class_correct": 0.0
+   },
+   "me_day_20261101_172019": {
+    "label": "horse",
+    "group": "G3 B",
+    "top_class_correct": 1.0
+   },
+   "me_day_20261101_172325": {
+    "label": "clone_seal",
+    "group": "G3 B",
+    "top_class_correct": 1.0
+   },
+   "me_day_20261101_172516": {
+    "label": "rasengan_palm",
+    "group": "G3 B",
+    "top_class_correct": 1.0
+   },
+   "me_day_20261101_172732": {
+    "label": "idle",
+    "group": "G3 B",
+    "top_class_correct": 1.0
+   },
+   "me_day_20261101_173331": {
+    "label": "ram",
+    "group": "G4 A-far",
+    "top_class_correct": 0.01
+   },
+   "me_day_20261101_173557": {
+    "label": "snake",
+    "group": "G4 A-far",
+    "top_class_correct": 0.0
+   },
+   "me_day_20261101_173745": {
+    "label": "tiger",
+    "group": "G4 A-far",
+    "top_class_correct": 0.0
+   },
+   "me_day_20261101_173907": {
+    "label": "dog",
+    "group": "G4 A-far",
+    "top_class_correct": 1.0
+   },
+   "me_day_20261101_174201": {
+    "label": "clone_seal",
+    "group": "G4 A-far",
+    "top_class_correct": 0.995
+   },
+   "me_day_20261101_174404": {
+    "label": "rasengan_palm",
+    "group": "G4 A-far",
+    "top_class_correct": 1.0
+   },
+   "me_day_20261101_174911": {
+    "label": "idle",
+    "group": "G4 A-far",
+    "top_class_correct": 0.994
+   }
+  },
+  "app_landmark_path": {
+   "clone_seal": {
+    "accepted_share_of_its_frames": 0.82,
+    "per_group": {
+     "G2 A": 0.994,
+     "G3 B": 1.0,
+     "G4 A-far": 0.434
+    }
+   },
+   "rasengan_palm": {
+    "accepted_share_of_its_frames": 0.952,
+    "per_group": {
+     "G2 A": 1.0,
+     "G3 B": 1.0,
+     "G4 A-far": 0.848
+    }
+   }
+  },
+  "app_false_triggers": {
+   "idle_frames_accepted_as_landmark_sign": 0.0018,
+   "seal_frames_accepted_as_landmark_sign": 0.0,
+   "by_sign": {
+    "clone_seal": 0,
+    "rasengan_palm": 1
+   }
+  },
+  "model": {
+   "model_name": "random_forest",
+   "created": "2026-10-31T14:36:03",
+   "selection": "default"
+  }
+ }
+}

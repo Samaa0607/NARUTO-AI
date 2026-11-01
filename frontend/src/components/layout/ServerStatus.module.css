@@ -1,0 +1,107 @@
+.status {
+  --tone: var(--text-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  cursor: default;
+}
+
+button.status {
+  cursor: pointer;
+  transition: border-color var(--dur) var(--ease-out), color var(--dur) var(--ease-out);
+}
+
+button.status:hover {
+  border-color: rgba(255, 93, 108, 0.5);
+  color: var(--text);
+}
+
+.dotOnly {
+  padding: 0;
+  width: 32px;
+  justify-content: center;
+}
+
+.label {
+  padding-top: 0.1em;
+}
+
+.dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--tone);
+  box-shadow: 0 0 10px var(--tone);
+}
+
+.online {
+  --tone: var(--success);
+}
+
+.online .dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--tone);
+  opacity: 0;
+  animation: ping 2.6s var(--ease-out) infinite;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.offline {
+  --tone: var(--danger);
+}
+
+.loading {
+  --tone: var(--warning);
+}
+
+.loading .dot {
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 1259px) {
+  .responsive {
+    padding: 0;
+    width: 32px;
+    justify-content: center;
+  }
+
+  .responsive .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}

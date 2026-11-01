@@ -1,0 +1,101 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #f3e3c8;
+}
+
+/* the painted plate: cover, a little more sky than ground on very wide screens */
+.plate {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 20%;
+  user-select: none;
+}
+
+/* portrait / phone: the characters are off-screen anyway; a light parchment wash over the lower,
+   blurred part of the plate keeps the page airy behind the content */
+.wash {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+/* the two character accents: soft lights, not borders */
+.light {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: soft-light;
+}
+
+.naruto {
+  background:
+    radial-gradient(30% 48% at 9% 64%, rgba(255, 138, 50, 0.55), transparent 72%),
+    radial-gradient(22% 30% at 2% 96%, rgba(255, 120, 40, 0.35), transparent 75%);
+}
+
+.sasuke {
+  background:
+    radial-gradient(28% 46% at 91% 62%, rgba(120, 175, 255, 0.6), transparent 72%),
+    radial-gradient(22% 30% at 98% 96%, rgba(110, 160, 245, 0.35), transparent 75%);
+}
+
+.leaves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-motion='full'] .light {
+    animation: breathe 9s ease-in-out infinite alternate;
+  }
+
+  :root[data-motion='full'] .sasuke {
+    animation-delay: -4.5s;
+  }
+}
+
+@keyframes breathe {
+  from {
+    opacity: 0.7;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .plate {
+    object-position: 50% 0%;
+  }
+
+  .wash {
+    display: block;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 22%,
+      rgba(248, 238, 220, 0.55) 40%,
+      rgba(246, 234, 212, 0.88) 62%,
+      #f3e3c8 100%
+    );
+  }
+
+  .naruto {
+    background: radial-gradient(60% 34% at 0% 30%, rgba(255, 138, 50, 0.5), transparent 72%);
+  }
+
+  .sasuke {
+    background: radial-gradient(60% 34% at 100% 30%, rgba(120, 175, 255, 0.55), transparent 72%);
+  }
+}

@@ -1,0 +1,64 @@
+.tile {
+  --tint: #eef1f8;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 50% 58%, color-mix(in srgb, var(--tint) 16%, transparent), transparent 66%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.2)),
+    var(--bg-1);
+}
+
+/* the drawing group: black background + inverted lines, screen-blended onto the tile */
+.art {
+  position: absolute;
+  inset: 9%;
+  isolation: isolate;
+  background: #000;
+  mix-blend-mode: screen;
+}
+
+.lines,
+.halo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.lines {
+  filter: invert(1) contrast(1.6);
+}
+
+.halo {
+  filter: invert(1) blur(5px) brightness(1.8);
+  opacity: 0.55;
+}
+
+/* multiply: white lines take the tint colour, black stays black (and disappears in the screen blend) */
+.tinter {
+  position: absolute;
+  inset: 0;
+  background: var(--tint);
+  mix-blend-mode: multiply;
+}
+
+.missing {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--text-dim);
+}
+
+.missing svg {
+  width: 30%;
+  height: 30%;
+  max-width: 48px;
+  max-height: 48px;
+  opacity: 0.6;
+}

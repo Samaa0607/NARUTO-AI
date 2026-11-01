@@ -1,0 +1,147 @@
+/* The selected jutsu's hand signs, on parchment under the carousel. */
+
+.card > :last-child {
+  padding: 16px clamp(16px, 2.6vw, 30px) 18px;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+
+.titles {
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--k-brush);
+  font-size: clamp(32px, 3vw, 40px);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--k-ink);
+}
+
+.sub {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--k-ink-soft);
+}
+
+.kanji {
+  margin-left: 6px;
+  font-family: 'Yuji Syuku', 'Noto Serif JP', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--k-ink);
+}
+
+.kind {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px 5px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.kind svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.4;
+}
+
+.official {
+  color: #1f5fae;
+  background: #e5effb;
+  border: 1px solid rgba(47, 120, 208, 0.3);
+}
+
+.custom {
+  color: #b34a12;
+  background: #fde9da;
+  border: 1px solid rgba(240, 100, 30, 0.3);
+}
+
+.lead {
+  margin: 10px 0 18px;
+  max-width: 62ch;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--k-ink-soft);
+}
+
+.notes {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.provenance,
+.training {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+}
+
+.provenance {
+  border: 1px solid rgba(47, 120, 208, 0.22);
+  background: rgba(239, 246, 255, 0.75);
+}
+
+.provenance > svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  color: var(--k-blue);
+}
+
+.tag {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1f5fae;
+}
+
+.provText {
+  margin: 3px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--k-ink);
+}
+
+.training {
+  border: 1px solid rgba(143, 100, 32, 0.3);
+  background: rgba(243, 223, 182, 0.55);
+}
+
+.training > svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  color: var(--k-train);
+}
+
+.training p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--k-ink);
+}
+
+.credit {
+  margin-top: 14px;
+}

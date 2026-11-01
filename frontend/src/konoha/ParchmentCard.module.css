@@ -1,0 +1,37 @@
+.card {
+  position: relative;
+  min-width: 0;
+  color: var(--k-ink);
+  font-family: var(--k-body);
+  border-radius: var(--k-radius);
+  border: 1px solid var(--k-paper-edge);
+  box-shadow: var(--k-shadow);
+  /* paper: warm base + soft fibres and darker edges */
+  background:
+    radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(150, 105, 50, 0.13) 100%),
+    repeating-linear-gradient(115deg, rgba(120, 80, 30, 0.018) 0 2px, transparent 2px 7px),
+    var(--k-paper);
+}
+
+.titled {
+  margin-top: 22px; /* room for the brush tag that sits over the top edge */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: -22px 14px 0 -10px;
+  min-height: 44px;
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.body {
+  padding: 14px 18px 18px;
+}

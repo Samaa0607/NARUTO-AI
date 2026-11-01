@@ -1,0 +1,191 @@
+/* Four numbered sign tiles (white, line art), arrows between them, names, cues. A light glow walks
+   1 → 4 over the tiles (6 s loop) to show the order; global motion settings switch it off. */
+
+.steps {
+  --walk: 6s;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px clamp(18px, 2.6vw, 30px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  text-align: center;
+}
+
+.tile {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 6px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(122, 82, 40, 0.18);
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(60, 35, 10, 0.08);
+  animation: walk var(--walk) var(--k-ease) infinite;
+}
+
+/* the glow sits on the tile for ~1.5 s, then moves on to the next one */
+@keyframes walk {
+  0%,
+  26%,
+  100% {
+    border-color: rgba(122, 82, 40, 0.18);
+    box-shadow: 0 3px 10px rgba(60, 35, 10, 0.08);
+    translate: 0 0;
+  }
+  6%,
+  18% {
+    border-color: rgba(240, 100, 30, 0.75);
+    box-shadow:
+      0 0 0 4px rgba(240, 100, 30, 0.12),
+      0 8px 20px rgba(240, 100, 30, 0.2);
+    translate: 0 -3px;
+  }
+}
+
+.art {
+  position: absolute;
+  inset: 12px 10px 8px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  max-width: none;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.missing {
+  position: absolute;
+  inset: 12px 10px 8px;
+  display: grid;
+  place-items: center;
+  color: var(--k-ink-faint);
+}
+
+.missing svg {
+  width: 34px;
+  height: 34px;
+}
+
+.num {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--k-orange);
+  color: #fff;
+  font-family: var(--k-brush);
+  font-size: 19px;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(240, 100, 30, 0.35);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: calc(clamp(18px, 2.6vw, 30px) / -2);
+  width: 20px;
+  height: 20px;
+  translate: 50% -50%;
+  color: var(--k-blue);
+  stroke-width: 2.6;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--k-body);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-ink);
+}
+
+.jp {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--k-ink-soft);
+}
+
+.untrained {
+  margin: 2px 0 0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--k-train-bg);
+  color: var(--k-train);
+  font-size: 11.5px;
+  font-weight: 800;
+}
+
+.cues {
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--k-ink-soft);
+}
+
+.cues li {
+  position: relative;
+  padding-left: 14px;
+}
+
+.cues li + li {
+  margin-top: 3px;
+}
+
+.cues li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--k-orange);
+}
+
+.credit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--k-ink-faint);
+}
+
+.credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.credit a:hover {
+  color: var(--k-ink-soft);
+}
+
+@media (max-width: 760px) {
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .arrow {
+    display: none;
+  }
+}

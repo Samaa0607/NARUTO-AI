@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" data-theme="naruto">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- new file names (+ ?v=): browsers cache tab icons by URL and kept showing the old icon -->
+    <link rel="icon" type="image/svg+xml" href="/konoha-leaf.svg?v=3" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/konoha-leaf-48.png?v=3" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/konoha-leaf-32.png?v=3" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/konoha-leaf-180.png?v=3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#05060b" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="SHINOBI AI: perform Naruto-inspired hand-sign sequences in front of your webcam and activate jutsu in real time. An unofficial fan project." />
+    <meta property="og:title" content="NARUTO" />
+    <meta property="og:description" content="Awaken Your Chakra. Master Your Jutsu. Real-time hand-sign recognition in your browser." />
+    <meta property="og:type" content="website" />
+    <title>NARUTO</title>
+    <script>
+      // apply the saved theme before the first paint (no flash of the wrong colours)
+      try {
+        var t = JSON.parse(localStorage.getItem('shinobi.theme'))
+        if (t === 'sasuke' || t === 'naruto') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

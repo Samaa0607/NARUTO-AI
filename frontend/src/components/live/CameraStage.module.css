@@ -1,0 +1,340 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+/* ------------------------------------------------------------------ the chakra frame */
+.stage {
+  --ar: 1.7778;
+  --frame: color-mix(in srgb, var(--accent) 30%, transparent);
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  aspect-ratio: var(--ar);
+  max-height: min(74vh, 760px);
+  min-height: 220px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 50% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 60%),
+    linear-gradient(180deg, #070912, #020306);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-2);
+  transition: box-shadow var(--dur-slow) var(--ease-out), border-color var(--dur-slow) var(--ease-out);
+}
+
+.stage::before {
+  /* animated chakra rim */
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: var(--chakra-gradient);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.25;
+  pointer-events: none;
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+
+.live {
+  border-color: transparent;
+  box-shadow: var(--shadow-2), 0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent), 0 0 48px var(--glow-soft);
+}
+
+.live::before {
+  opacity: 0.85;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.media [hidden] {
+  display: none !important;
+}
+
+.canvas,
+.preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  background: #000;
+}
+
+.preview {
+  transform: scaleX(-1); /* local preview = selfie view, like the server's mirrored frames */
+  filter: saturate(0.75) brightness(0.8);
+}
+
+.dim {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(70% 70% at 50% 50%, rgba(2, 3, 8, 0.25), rgba(2, 3, 8, 0.7)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 3px);
+}
+
+/* scanner corners */
+.corner {
+  position: absolute;
+  z-index: 4;
+  width: clamp(18px, 3vw, 30px);
+  height: clamp(18px, 3vw, 30px);
+  border: 2px solid var(--accent);
+  opacity: 0.55;
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px var(--glow));
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+
+.live .corner {
+  opacity: 0.9;
+}
+
+.corner[data-pos='tl'] {
+  top: 12px;
+  left: 12px;
+  border-right: 0;
+  border-bottom: 0;
+  border-top-left-radius: 10px;
+}
+
+.corner[data-pos='tr'] {
+  top: 12px;
+  right: 12px;
+  border-left: 0;
+  border-bottom: 0;
+  border-top-right-radius: 10px;
+}
+
+.corner[data-pos='bl'] {
+  bottom: 12px;
+  left: 12px;
+  border-right: 0;
+  border-top: 0;
+  border-bottom-left-radius: 10px;
+}
+
+.corner[data-pos='br'] {
+  bottom: 12px;
+  right: 12px;
+  border-left: 0;
+  border-top: 0;
+  border-bottom-right-radius: 10px;
+}
+
+.topLeft {
+  position: absolute;
+  z-index: 6;
+  top: clamp(14px, 2.4vw, 22px);
+  left: clamp(14px, 2.4vw, 22px);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.overlay > * {
+  pointer-events: auto;
+}
+
+/* ------------------------------------------------------------------ AI not live */
+.aiNotice {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: min(440px, calc(100% - 32px));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: clamp(16px, 3vw, 26px);
+  text-align: center;
+  border-radius: var(--radius);
+  background: rgba(5, 7, 15, 0.82);
+  border: 1px solid var(--border-strong);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+.aiIcon {
+  --c: var(--accent);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--c);
+  border: 1px solid color-mix(in srgb, var(--c) 50%, transparent);
+  background: color-mix(in srgb, var(--c) 12%, transparent);
+  box-shadow: 0 0 22px color-mix(in srgb, var(--c) 30%, transparent);
+}
+
+.aiIcon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.aiIcon.danger {
+  --c: var(--danger);
+}
+
+.aiIcon.warning {
+  --c: var(--warning);
+}
+
+.aiIcon.success {
+  --c: var(--success);
+}
+
+.aiTitle {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  letter-spacing: var(--tracking-display);
+  line-height: 1;
+}
+
+.aiText {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+
+/* ------------------------------------------------------------------ camera off */
+.idle {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  padding: var(--space-5);
+  background:
+    radial-gradient(60% 60% at 50% 45%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%),
+    repeating-radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 28px);
+}
+
+.idleBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 460px;
+  text-align: center;
+}
+
+.seal {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(64px, 9vw, 92px);
+  height: clamp(64px, 9vw, 92px);
+  margin-bottom: 4px;
+  border-radius: 50%;
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%);
+  box-shadow: 0 0 40px var(--glow-soft), inset 0 0 24px var(--glow-soft);
+}
+
+.seal::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px dashed color-mix(in srgb, var(--accent) 35%, transparent);
+  animation: turn 18s linear infinite;
+}
+
+.seal svg {
+  width: 40%;
+  height: 40%;
+}
+
+.sealDanger {
+  color: var(--danger);
+  border-color: rgba(255, 93, 108, 0.45);
+  background: radial-gradient(circle, rgba(255, 93, 108, 0.16), transparent 70%);
+  box-shadow: 0 0 40px rgba(255, 93, 108, 0.12);
+}
+
+.sealDanger::after {
+  border-color: rgba(255, 93, 108, 0.3);
+}
+
+.idleTitle {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: var(--tracking-display);
+  line-height: 1;
+}
+
+.idleText {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  margin-bottom: 6px;
+}
+
+.spin {
+  animation: turn 1s linear infinite;
+}
+
+@keyframes turn {
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* ------------------------------------------------------------------ controls under the stage */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-3) var(--space-4);
+}
+
+.picker {
+  flex: 1 1 200px;
+  max-width: 340px;
+  min-width: 0;
+}
+
+.landmarks {
+  flex: 0 1 auto;
+  margin-left: auto;
+  min-width: 0;
+}
+
+@media (max-width: 560px) {
+  .stage {
+    border-radius: var(--radius);
+    max-height: 62vh;
+  }
+
+  .picker {
+    max-width: none;
+    flex-basis: 100%;
+    order: 3;
+  }
+
+  .landmarks {
+    margin-left: 0;
+  }
+}

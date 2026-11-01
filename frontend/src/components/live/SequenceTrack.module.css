@@ -1,0 +1,280 @@
+.track {
+  --jc: var(--accent);
+  --jc2: var(--accent-2);
+  --tile: clamp(64px, 11vw, 116px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: clamp(14px, 2vw, 22px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--jc) 10%, transparent), transparent 55%),
+    var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  min-width: 0;
+}
+
+.lg {
+  --tile: clamp(66px, 13vw, 138px);
+}
+
+.completed {
+  border-color: color-mix(in srgb, var(--jc) 55%, transparent);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--jc) 22%, transparent);
+}
+
+/* ------------------------------------------------------------------ title row */
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.glyph {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  font-family: var(--font-kanji);
+  font-size: 24px;
+  color: var(--jc2);
+  background: color-mix(in srgb, var(--jc) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--jc) 45%, transparent);
+  text-shadow: 0 0 12px var(--jc);
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.title {
+  font-size: clamp(24px, 2.4vw, 32px);
+  color: #fff;
+  line-height: 1;
+}
+
+.name {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.headRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.count {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  color: var(--jc2);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ steps */
+.steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(8px, 1.6vw, 20px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rail {
+  position: absolute;
+  top: calc(var(--tile) / 2);
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.railFill {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--jc), var(--jc2));
+  box-shadow: 0 0 12px var(--jc);
+  border-radius: inherit;
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  text-align: center;
+}
+
+.tileWrap {
+  position: relative;
+  width: min(100%, var(--tile));
+}
+
+.tile {
+  width: 100%;
+  transition: border-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out), opacity var(--dur) var(--ease-out),
+    transform var(--dur) var(--ease-out);
+}
+
+.tilePlaceholder {
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-1);
+}
+
+.todo .tile {
+  opacity: 0.5;
+}
+
+.next .tile {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 24px var(--glow);
+  animation: nextPulse 1.6s ease-in-out infinite;
+}
+
+.done .tile {
+  border-color: var(--jc);
+  box-shadow: 0 0 0 1px var(--jc), 0 0 26px color-mix(in srgb, var(--jc) 45%, transparent);
+}
+
+@keyframes nextPulse {
+  50% {
+    box-shadow: 0 0 0 1px var(--accent), 0 0 8px var(--glow-soft);
+  }
+}
+
+.doneSeal {
+  position: absolute;
+  right: -6px;
+  top: -6px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--jc);
+  color: #07070c;
+  box-shadow: 0 0 14px var(--jc);
+}
+
+.doneSeal svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 3;
+}
+
+.num {
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.done .num {
+  color: var(--jc2);
+}
+
+.signLabel {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: clamp(12px, 1.2vw, 15px);
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+  line-height: 1.2;
+}
+
+.done .signLabel {
+  color: var(--text);
+}
+
+.next .signLabel {
+  color: var(--accent-2);
+}
+
+.unrec {
+  font-size: 11px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--warning);
+  line-height: 1.2;
+}
+
+/* ------------------------------------------------------------------ countdown */
+.timer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--text-dim);
+  opacity: 0.45;
+  transition: opacity var(--dur) var(--ease-out);
+}
+
+.timerOn {
+  opacity: 1;
+  color: var(--text-muted);
+}
+
+.timer > svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+.timerBar {
+  position: relative;
+  flex: 1;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.timerFill {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--jc), var(--jc2));
+  transition: transform 160ms linear;
+}
+
+.timerLow {
+  background: linear-gradient(90deg, var(--danger), var(--warning));
+}
+
+.timerText {
+  min-width: 46px;
+  text-align: right;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

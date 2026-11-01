@@ -1,0 +1,71 @@
+.pill {
+  --c: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  padding: 0 12px 0 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--c) 45%, transparent);
+  background: rgba(4, 6, 14, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 10px var(--c);
+}
+
+.success {
+  --c: var(--success);
+}
+
+.success .dot {
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.accent {
+  --c: var(--accent);
+}
+
+.accent .dot,
+.warning .dot {
+  animation: pulse 0.9s ease-in-out infinite;
+}
+
+.warning {
+  --c: var(--warning);
+}
+
+.danger {
+  --c: var(--danger);
+}
+
+.neutral {
+  --c: var(--text-dim);
+}
+
+.meta {
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}

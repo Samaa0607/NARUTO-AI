@@ -1,0 +1,167 @@
+.motif {
+  overflow: visible;
+  flex: none;
+  filter: drop-shadow(0 0 14px color-mix(in srgb, var(--m-c) 45%, transparent));
+}
+
+.motif g {
+  transform-box: fill-box;
+}
+
+/* fire */
+.flameOuter,
+.flameInner {
+  transform-origin: 50% 100%;
+}
+
+.animated .flameOuter {
+  animation: flicker 1.9s ease-in-out infinite;
+}
+
+.animated .flameInner {
+  animation: flicker 1.3s ease-in-out infinite reverse;
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    transform: scale(1, 1) skewX(0deg);
+  }
+  30% {
+    transform: scale(0.97, 1.06) skewX(-2deg);
+  }
+  60% {
+    transform: scale(1.02, 0.96) skewX(1.5deg);
+  }
+}
+
+.animated .embers circle {
+  animation: ember 2.6s ease-in infinite;
+  transform-box: fill-box;
+}
+
+.animated .embers circle:nth-child(2) {
+  animation-delay: -0.9s;
+}
+
+.animated .embers circle:nth-child(3) {
+  animation-delay: -1.7s;
+}
+
+@keyframes ember {
+  0% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-16px);
+    opacity: 0;
+  }
+}
+
+/* lightning */
+.animated .bolt {
+  animation: crackle 1.6s steps(1, end) infinite;
+}
+
+@keyframes crackle {
+  0% {
+    opacity: 1;
+  }
+  12% {
+    opacity: 0.25;
+  }
+  18% {
+    opacity: 1;
+  }
+  46% {
+    opacity: 0.85;
+  }
+  52% {
+    opacity: 0.15;
+  }
+  60% {
+    opacity: 1;
+  }
+}
+
+.pulse {
+  transform-origin: 50% 50%;
+}
+
+.animated .pulse {
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.12);
+    opacity: 0.8;
+  }
+}
+
+/* sphere */
+.swirl,
+.ringSlow {
+  transform-origin: 50% 50%;
+}
+
+.animated .swirl {
+  animation: rotate 2.8s linear infinite;
+}
+
+.animated .ringSlow {
+  animation: rotate 22s linear infinite reverse;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* smoke */
+.cloud {
+  transform-origin: 50% 70%;
+}
+
+.animated .cloud {
+  animation: breathe 5s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  50% {
+    transform: scale(1.04) translateY(-1.5px);
+  }
+}
+
+.animated .puffA,
+.animated .puffB,
+.animated .puffC {
+  animation: rise 4.2s ease-out infinite;
+}
+
+.animated .puffB {
+  animation-delay: -1.4s;
+}
+
+.animated .puffC {
+  animation-delay: -2.8s;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(18px) scale(0.6);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-14px) scale(1.3);
+    opacity: 0;
+  }
+}

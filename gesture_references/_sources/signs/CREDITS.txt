@@ -1,0 +1,27 @@
+Hand-seal line art in this folder
+================================
+
+ram.png, snake.png, tiger.png, dog.png, monkey.png, boar.png, horse.png, clone_seal.png
+
+Author:   Schlum (https://commons.wikimedia.org/wiki/User:Schlum)
+Source:   Wikimedia Commons, "Naruto Mudra" series, vectorized from photographs
+License:  CC BY-SA 4.0  https://creativecommons.org/licenses/by-sa/4.0/
+Changes:  rendered to PNG by Wikimedia (960 px wide), cropped to the drawing,
+          transparent background replaced with white. File names translated:
+
+  ram.png         <- https://commons.wikimedia.org/wiki/File:Mudra-Naruto-Chevre.svg
+  snake.png       <- https://commons.wikimedia.org/wiki/File:Mudra-Naruto-Serpent.svg
+  tiger.png       <- https://commons.wikimedia.org/wiki/File:Mudra-Naruto-Tigre.svg
+  dog.png         <- https://commons.wikimedia.org/wiki/File:Mudra-Naruto-Chien.svg
+  monkey.png      <- https://commons.wikimedia.org/wiki/File:Mudra-Naruto-Singe.svg
+  boar.png        <- https://commons.wikimedia.org/wiki/File:Mudra-Naruto-Cochon.svg
+  horse.png       <- https://commons.wikimedia.org/wiki/File:Mudra-Naruto-Cheval.svg
+  clone_seal.png  <- https://commons.wikimedia.org/wiki/File:Mudra-Naruto-KageBunshin.svg
+
+Because of the ShareAlike term, every card built from these drawings
+(gesture_references/*/step_*.png and sequence_reference.png) is also
+CC BY-SA 4.0 and carries the credit line on the image.
+
+rasengan_palm.png is not from Commons: tools/build_gesture_references.py draws it
+from one recorded MediaPipe hand pose (../rasengan_palm_landmarks.json).
+These are illustrations, not anime screenshots.

@@ -1,0 +1,98 @@
+.badge {
+  --tone: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 24px;
+  padding: 2px 10px 1px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--tone);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.md {
+  min-height: 30px;
+  padding: 3px 13px 2px;
+  font-size: 13px;
+  gap: 8px;
+}
+
+.icon {
+  display: inline-flex;
+  margin-top: -1px;
+}
+
+.icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+.md .icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tone);
+  box-shadow: 0 0 0 0 var(--tone);
+  animation: pulse 2.2s var(--ease-out) infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--tone) 60%, transparent);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 7px transparent;
+  }
+}
+
+.accent {
+  --tone: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  background: var(--glow-soft);
+}
+
+.success {
+  --tone: var(--success);
+  border-color: rgba(61, 220, 151, 0.4);
+  background: rgba(61, 220, 151, 0.08);
+}
+
+.warning {
+  --tone: var(--warning);
+  border-color: rgba(255, 181, 71, 0.42);
+  background: rgba(255, 181, 71, 0.08);
+}
+
+.danger {
+  --tone: #ff7d89;
+  border-color: rgba(255, 93, 108, 0.42);
+  background: rgba(255, 93, 108, 0.08);
+}
+
+/* official seal sequence: solid jade "stamp" */
+.official {
+  --tone: #4ee3a3;
+  border-color: rgba(78, 227, 163, 0.5);
+  background: linear-gradient(180deg, rgba(78, 227, 163, 0.16), rgba(78, 227, 163, 0.06));
+}
+
+/* custom SHINOBI AI sequence: dashed amber outline, clearly different from the official stamp */
+.custom {
+  --tone: #ffc56b;
+  border: 1px dashed rgba(255, 197, 107, 0.7);
+  background: rgba(255, 197, 107, 0.07);
+}

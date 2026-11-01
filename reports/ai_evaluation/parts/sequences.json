@@ -1,0 +1,442 @@
+{
+  "about": "No guided sequence takes exist (data/sequences is missing), so performances are SPLICED from the single-sign recordings: an idle lead-in, each sign held 1.6-2.6 s, 0.4-1.2 s of idle between signs (real transitions between seals are not in the data), 3 s of idle after. Windows are random; the held-out validation recording is used where a sign has one (idle, rasengan_palm). Everything else comes from TRAIN recordings, see 'signs' per jutsu.",
+  "trials": {
+    "fire_style|live|model": {
+      "jutsu": "fire_style",
+      "mode": "live",
+      "landmark_model": true,
+      "trials": 40,
+      "outcomes": {
+        "success": 40
+      },
+      "activation_rate": 1.0,
+      "wrong_jutsu_fired": {},
+      "latency_from_last_sign_start_s": {
+        "n": 40,
+        "median": 0.743,
+        "p90": 0.891,
+        "min": 0.581,
+        "max": 1.266
+      },
+      "latency_from_last_sign_end_s": {
+        "n": 40,
+        "median": -1.461,
+        "p90": -0.914,
+        "min": -1.931,
+        "max": -0.461
+      },
+      "first_four_confirmed_in_order": 40,
+      "signs": {
+        "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "boar": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "horse": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+      }
+    },
+    "fire_style|live|yolox_path": {
+      "jutsu": "fire_style",
+      "mode": "live",
+      "landmark_model": false,
+      "trials": 40,
+      "outcomes": {
+        "success": 40
+      },
+      "activation_rate": 1.0,
+      "wrong_jutsu_fired": {},
+      "latency_from_last_sign_start_s": {
+        "n": 40,
+        "median": 0.709,
+        "p90": 0.818,
+        "min": 0.584,
+        "max": 1.18
+      },
+      "latency_from_last_sign_end_s": {
+        "n": 40,
+        "median": -1.368,
+        "p90": -0.951,
+        "min": -1.89,
+        "max": -0.582
+      },
+      "first_four_confirmed_in_order": 40,
+      "signs": {
+        "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "boar": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "horse": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+      }
+    },
+    "fire_style|practice|model": {
+      "jutsu": "fire_style",
+      "mode": "practice",
+      "landmark_model": true,
+      "trials": 40,
+      "outcomes": {
+        "success": 40
+      },
+      "activation_rate": 1.0,
+      "wrong_jutsu_fired": {},
+      "latency_from_last_sign_start_s": {
+        "n": 40,
+        "median": 0.733,
+        "p90": 0.838,
+        "min": 0.609,
+        "max": 0.907
+      },
+      "latency_from_last_sign_end_s": {
+        "n": 40,
+        "median": -1.327,
+        "p90": -0.924,
+        "min": -1.876,
+        "max": -0.812
+      },
+      "first_four_confirmed_in_order": 40,
+      "signs": {
+        "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "boar": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "horse": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+      }
+    },
+    "fire_style|practice|yolox_path": {
+      "jutsu": "fire_style",
+      "mode": "practice",
+      "landmark_model": false,
+      "trials": 40,
+      "outcomes": {
+        "success": 40
+      },
+      "activation_rate": 1.0,
+      "wrong_jutsu_fired": {},
+      "latency_from_last_sign_start_s": {
+        "n": 40,
+        "median": 0.763,
+        "p90": 0.85,
+        "min": 0.578,
+        "max": 1.511
+      },
+      "latency_from_last_sign_end_s": {
+        "n": 40,
+        "median": -1.166,
+        "p90": -0.947,
+        "min": -1.968,
+        "max": -0.735
+      },
+      "first_four_confirmed_in_order": 40,
+      "signs": {
+        "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "boar": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "horse": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+      }
+    },
+    "chidori|live|model": {
+      "jutsu": "chidori",
+      "mode": "live",
+      "landmark_model": true,
+      "trials": 40,
+      "outcomes": {
+        "success": 40
+      },
+      "activation_rate": 1.0,
+      "wrong_jutsu_fired": {},
+      "latency_from_last_sign_start_s": {
+        "n": 40,
+        "median": 0.745,
+        "p90": 0.805,
+        "min": 0.598,
+        "max": 0.841
+      },
+      "latency_from_last_sign_end_s": {
+        "n": 40,
+        "median": -1.309,
+        "p90": -0.995,
+        "min": -1.828,
+        "max": -0.922
+      },
+      "first_four_confirmed_in_order": 40,
+      "signs": {
+        "snake": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "dog": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+      }
+    },
+    "chidori|live|yolox_path": {
+      "jutsu": "chidori",
+      "mode": "live",
+      "landmark_model": false,
+      "trials": 40,
+      "outcomes": {
+        "success": 40
+      },
+      "activation_rate": 1.0,
+      "wrong_jutsu_fired": {},
+      "latency_from_last_sign_start_s": {
+        "n": 40,
+        "median": 0.742,
+        "p90": 0.796,
+        "min": 0.602,
+        "max": 0.831
+      },
+      "latency_from_last_sign_end_s": {
+        "n": 40,
+        "median": -1.46,
+        "p90": -0.914,
+        "min": -1.966,
+        "max": -0.787
+      },
+      "first_four_confirmed_in_order": 40,
+      "signs": {
+        "snake": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "dog": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+      }
+    },
+    "chidori|practice|model": {
+      "jutsu": "chidori",
+      "mode": "practice",
+      "landmark_model": true,
+      "trials": 40,
+      "outcomes": {
+        "success": 40
+      },
+      "activation_rate": 1.0,
+      "wrong_jutsu_fired": {},
+      "latency_from_last_sign_start_s": {
+        "n": 40,
+        "median": 0.69,
+        "p90": 0.798,
+        "min": 0.589,
+        "max": 0.844
+      },
+      "latency_from_last_sign_end_s": {
+        "n": 40,
+        "median": -1.471,
+        "p90": -1.066,
+        "min": -1.929,
+        "max": -0.888
+      },
+      "first_four_confirmed_in_order": 40,
+      "signs": {
+        "snake": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "dog": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+      }
+    },
+    "chidori|practice|yolox_path": {
+      "jutsu": "chidori",
+      "mode": "practice",
+      "landmark_model": false,
+      "trials": 40,
+      "outcomes": {
+        "success": 40
+      },
+      "activation_rate": 1.0,
+      "wrong_jutsu_fired": {},
+      "latency_from_last_sign_start_s": {
+        "n": 40,
+        "median": 0.719,
+        "p90": 0.783,
+        "min": 0.613,
+        "max": 0.807
+      },
+      "latency_from_last_sign_end_s": {
+        "n": 40,
+        "median": -1.392,
+        "p90": -1.054,
+        "min": -1.897,
+        "max": -0.89
+      },
+      "first_four_confirmed_in_order": 40,
+      "signs": {
+        "snake": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "dog": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "monkey": "YOLOX (never trained on our recordings; thresholds tuned while they existed)"
+      }
+    },
+    "shadow_clone|live|model": {
+      "jutsu": "shadow_clone",
+      "mode": "live",
+      "landmark_model": true,
+      "trials": 40,
+      "outcomes": {
+        "success": 40
+      },
+      "activation_rate": 1.0,
+      "wrong_jutsu_fired": {},
+      "latency_from_last_sign_start_s": {
+        "n": 40,
+        "median": 0.454,
+        "p90": 0.476,
+        "min": 0.373,
+        "max": 0.511
+      },
+      "latency_from_last_sign_end_s": {
+        "n": 40,
+        "median": -1.575,
+        "p90": -1.201,
+        "min": -2.13,
+        "max": -1.165
+      },
+      "first_four_confirmed_in_order": 40,
+      "signs": {
+        "ram": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "snake": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "clone_seal": "landmark model; its only recording is a TRAIN recording -> optimistic"
+      }
+    },
+    "shadow_clone|practice|model": {
+      "jutsu": "shadow_clone",
+      "mode": "practice",
+      "landmark_model": true,
+      "trials": 40,
+      "outcomes": {
+        "success": 40
+      },
+      "activation_rate": 1.0,
+      "wrong_jutsu_fired": {},
+      "latency_from_last_sign_start_s": {
+        "n": 40,
+        "median": 0.458,
+        "p90": 0.495,
+        "min": 0.386,
+        "max": 0.553
+      },
+      "latency_from_last_sign_end_s": {
+        "n": 40,
+        "median": -1.813,
+        "p90": -1.336,
+        "min": -2.113,
+        "max": -1.069
+      },
+      "first_four_confirmed_in_order": 40,
+      "signs": {
+        "ram": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "snake": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "tiger": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "clone_seal": "landmark model; its only recording is a TRAIN recording -> optimistic"
+      }
+    },
+    "rasengan|live|model": {
+      "jutsu": "rasengan",
+      "mode": "live",
+      "landmark_model": true,
+      "trials": 40,
+      "outcomes": {
+        "success": 40
+      },
+      "activation_rate": 1.0,
+      "wrong_jutsu_fired": {},
+      "latency_from_last_sign_start_s": {
+        "n": 40,
+        "median": 0.48,
+        "p90": 0.51,
+        "min": 0.416,
+        "max": 0.528
+      },
+      "latency_from_last_sign_end_s": {
+        "n": 40,
+        "median": -1.645,
+        "p90": -1.212,
+        "min": -2.082,
+        "max": -1.12
+      },
+      "first_four_confirmed_in_order": 40,
+      "signs": {
+        "clone_seal": "landmark model; its only recording is a TRAIN recording -> optimistic",
+        "dog": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "horse": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "rasengan_palm": "landmark model; held-out VALIDATION recording (used to choose the model)"
+      }
+    },
+    "rasengan|practice|model": {
+      "jutsu": "rasengan",
+      "mode": "practice",
+      "landmark_model": true,
+      "trials": 40,
+      "outcomes": {
+        "success": 40
+      },
+      "activation_rate": 1.0,
+      "wrong_jutsu_fired": {},
+      "latency_from_last_sign_start_s": {
+        "n": 40,
+        "median": 0.477,
+        "p90": 0.502,
+        "min": 0.393,
+        "max": 0.514
+      },
+      "latency_from_last_sign_end_s": {
+        "n": 40,
+        "median": -1.638,
+        "p90": -1.215,
+        "min": -2.067,
+        "max": -1.153
+      },
+      "first_four_confirmed_in_order": 40,
+      "signs": {
+        "clone_seal": "landmark model; its only recording is a TRAIN recording -> optimistic",
+        "dog": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "horse": "YOLOX (never trained on our recordings; thresholds tuned while they existed)",
+        "rasengan_palm": "landmark model; held-out VALIDATION recording (used to choose the model)"
+      }
+    }
+  },
+  "mixed": {
+    "performances": 100,
+    "expected_fired": 100,
+    "missed": 0,
+    "wrong_or_extra": {},
+    "streams": 25
+  },
+  "random_streams": {
+    "minutes_per_stream": 20.0,
+    "live": {
+      "events": 0,
+      "minutes": 20.01,
+      "per_hour": 0.0,
+      "upper_95_per_hour_if_zero": 9.0,
+      "by_jutsu": {},
+      "confirmed_signs": 399
+    },
+    "practice": {
+      "fire_style": {
+        "events": 14,
+        "minutes": 20.01,
+        "per_hour": 41.99,
+        "upper_95_per_hour_if_zero": null
+      },
+      "chidori": {
+        "events": 12,
+        "minutes": 20.01,
+        "per_hour": 35.99,
+        "upper_95_per_hour_if_zero": null
+      },
+      "shadow_clone": {
+        "events": 12,
+        "minutes": 20.01,
+        "per_hour": 35.99,
+        "upper_95_per_hour_if_zero": null
+      },
+      "rasengan": {
+        "events": 10,
+        "minutes": 20.01,
+        "per_hour": 29.99,
+        "upper_95_per_hour_if_zero": null
+      }
+    }
+  },
+  "settings": {
+    "SEQUENCE_MAX_GAP": 7.0,
+    "COOLDOWN_SECONDS": 1.5,
+    "HOLD_SECONDS": 0.3,
+    "SEAL_CONFIRM": 2,
+    "SEAL_MIN_SCORE": 0.7,
+    "LANDMARK_MIN_PROB": 0.6,
+    "seed": 20261101
+  }
+}

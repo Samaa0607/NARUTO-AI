@@ -1,0 +1,92 @@
+.panel {
+  position: relative;
+  min-width: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0) 40%),
+    var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+}
+
+/* hairline of chakra light along the top edge */
+.panel::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 55%, transparent), transparent);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.pad-none {
+  padding: 0;
+}
+
+.pad-sm {
+  padding: var(--space-4);
+}
+
+.pad-md {
+  padding: clamp(18px, 2.2vw, 24px);
+}
+
+.pad-lg {
+  padding: clamp(20px, 3vw, 36px);
+}
+
+.glow {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--surface-strong), var(--surface-strong)) padding-box,
+    linear-gradient(140deg, color-mix(in srgb, var(--accent) 80%, transparent), transparent 40%, transparent 60%,
+        color-mix(in srgb, var(--accent-2) 70%, transparent))
+      border-box;
+  box-shadow:
+    var(--shadow-2),
+    0 0 40px var(--glow-soft);
+}
+
+.glow::before {
+  opacity: 1;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--space-4);
+  min-width: 0;
+}
+
+.icon {
+  display: inline-flex;
+  color: var(--accent);
+  filter: drop-shadow(0 0 8px var(--glow));
+}
+
+.icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.title {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: var(--tracking-ui);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  gap: var(--space-2);
+}
